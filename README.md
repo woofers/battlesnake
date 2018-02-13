@@ -40,8 +40,5 @@ a basic java battle snake
 
 ---
 
-## Heroku Deployment
-*Coming Soon!*
-
 ## Other Handy Tools
 - Postman chrome plugin, for testing web api POST requests
