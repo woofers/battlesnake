@@ -1,1 +1,1 @@
-web: maven jetty:run
+web: mvn jetty:run
