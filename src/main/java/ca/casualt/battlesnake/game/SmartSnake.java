@@ -43,7 +43,7 @@ public class SmartSnake
         return moveResponse;
     }
 
-    public StartResponse startResponse()
+    public static StartResponse startResponse()
     {
         StartResponse startResponse = new StartResponse();
         startResponse.setColor(COLOR);

@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ca.casualt.battlesnake.http.response.StartResponse;
+import ca.casualt.battlesnake.http.response.StartResponse;
+
+import ca.casualt.battlesnake.game.SmartSnake;
+
 import com.google.gson.Gson;
 
 /**
@@ -40,12 +44,7 @@ public class StartServlet extends HttpServlet {
     protected void doPost(final HttpServletRequest req, final HttpServletResponse resp)
             throws ServletException, IOException {
 
-        final StartResponse startResponse = new StartResponse();
-        startResponse.setColor("#535F6B");
-        startResponse.setHeadUrl("https://i.imgur.com/FX5ZLYE.png");
-        startResponse.setName("Solid Snake");
-        startResponse.setTaunt("Metal… Gear?!");
-
+        final StartResponse startResponse = SmartSnake.startResponse();
         final String responseBody = gson.toJson(startResponse);
         resp.getWriter().println(responseBody);
     }
