@@ -16,8 +16,7 @@
 
 	<dependencies>
 		<!-- Web request support -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
+		<dependency> <groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
 			<scope>provided</scope>
@@ -47,7 +46,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/BasicBattleSnake</contextPath>
+						<contextPath>/</contextPath>
 					</webApp>
 				</configuration>
 			</plugin>
