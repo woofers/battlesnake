@@ -3,8 +3,8 @@ package ca.casualt.snakes.basicbattlesnake.utilities;
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.casualt.snakes.basicbattlesnake.types.BoardSpec;
-import ca.casualt.snakes.basicbattlesnake.types.Point;
+import ca.casualt.snakes.basicbattlesnake.game.data.BoardSpec;
+import ca.casualt.snakes.basicbattlesnake.math.Point;
 
 /**
  * For deriving pieces of handy information about the board from the base data

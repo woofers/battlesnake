@@ -2,8 +2,8 @@ package ca.casualt.snakes.basicbattlesnake.utilities;
 
 import java.util.function.Predicate;
 
-import ca.casualt.snakes.basicbattlesnake.types.Move;
-import ca.casualt.snakes.basicbattlesnake.types.Point;
+import ca.casualt.snakes.basicbattlesnake.game.data.Move;
+import ca.casualt.snakes.basicbattlesnake.math.Point;
 
 /**
  * For deriving directional and path related intelligence.

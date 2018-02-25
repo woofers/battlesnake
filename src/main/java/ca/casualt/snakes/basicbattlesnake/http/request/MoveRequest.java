@@ -1,4 +1,8 @@
-package ca.casualt.snakes.basicbattlesnake.types;
+package ca.casualt.snakes.basicbattlesnake.http.request;
+
+import ca.casualt.snakes.basicbattlesnake.game.data.BoardSpec;
+import ca.casualt.snakes.basicbattlesnake.math.Point;
+import ca.casualt.snakes.basicbattlesnake.game.Snake;
 
 import java.util.List;
 import java.util.stream.Collectors;

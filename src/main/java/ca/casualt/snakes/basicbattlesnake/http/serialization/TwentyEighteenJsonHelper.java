@@ -1,4 +1,4 @@
-package ca.casualt.snakes.basicbattlesnake.types.serialization;
+package ca.casualt.snakes.basicbattlesnake.http.serialization;
 
 import java.util.Map.Entry;
 

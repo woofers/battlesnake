@@ -1,4 +1,6 @@
-package ca.casualt.snakes.basicbattlesnake.types;
+package ca.casualt.snakes.basicbattlesnake.game;
+
+import ca.casualt.snakes.basicbattlesnake.math.Point;
 
 import java.util.List;
 import java.util.stream.Collectors;

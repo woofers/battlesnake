@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import ca.casualt.snakes.basicbattlesnake.types.MoveRequest;
-import ca.casualt.snakes.basicbattlesnake.types.MoveResponse;
-import ca.casualt.snakes.basicbattlesnake.types.serialization.TwentyEighteenJsonHelper;
-import ca.casualt.snakes.basicbattlesnake.utilities.movers.Mover;
-import ca.casualt.snakes.basicbattlesnake.utilities.movers.RandomMover;
+import ca.casualt.snakes.basicbattlesnake.http.request.MoveRequest;
+import ca.casualt.snakes.basicbattlesnake.http.response.MoveResponse;
+import ca.casualt.snakes.basicbattlesnake.http.serialization.TwentyEighteenJsonHelper;
+import ca.casualt.snakes.basicbattlesnake.game.move.Mover;
+import ca.casualt.snakes.basicbattlesnake.game.move.RandomMover;
 
 /**
  * This is the servlet that is hit when triggering the /move endpoint.

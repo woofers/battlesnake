@@ -1,4 +1,4 @@
-package ca.casualt.snakes.basicbattlesnake.types;
+package ca.casualt.snakes.basicbattlesnake.game.data;
 
 /**
  * The four valid moves.

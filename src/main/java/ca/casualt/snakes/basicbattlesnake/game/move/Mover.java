@@ -1,7 +1,7 @@
-package ca.casualt.snakes.basicbattlesnake.utilities.movers;
+package ca.casualt.snakes.basicbattlesnake.game.move;
 
-import ca.casualt.snakes.basicbattlesnake.types.Move;
-import ca.casualt.snakes.basicbattlesnake.types.MoveRequest;
+import ca.casualt.snakes.basicbattlesnake.game.data.Move;
+import ca.casualt.snakes.basicbattlesnake.http.request.MoveRequest;
 
 /**
  * A thing that'll move a snake. <br>

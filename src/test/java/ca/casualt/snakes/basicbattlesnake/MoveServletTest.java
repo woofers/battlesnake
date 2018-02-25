@@ -7,7 +7,7 @@ import java.net.URISyntaxException;
 
 import org.junit.Test;
 
-import ca.casualt.snakes.basicbattlesnake.types.MoveRequest;
+import ca.casualt.snakes.basicbattlesnake.http.request.MoveRequest;
 import ca.casualt.snakes.basicbattlesnake.types.serialization.TwentyEighteenJsonHelperTest;
 
 public class MoveServletTest {

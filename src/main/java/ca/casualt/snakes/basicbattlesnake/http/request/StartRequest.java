@@ -1,4 +1,4 @@
-package ca.casualt.snakes.basicbattlesnake.types;
+package ca.casualt.snakes.basicbattlesnake.http.request;
 
 import com.google.gson.annotations.SerializedName;
 

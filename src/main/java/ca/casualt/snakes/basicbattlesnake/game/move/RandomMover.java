@@ -1,4 +1,4 @@
-package ca.casualt.snakes.basicbattlesnake.utilities.movers;
+package ca.casualt.snakes.basicbattlesnake.game.move;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,9 +8,9 @@ import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import ca.casualt.snakes.basicbattlesnake.types.Move;
-import ca.casualt.snakes.basicbattlesnake.types.MoveRequest;
-import ca.casualt.snakes.basicbattlesnake.types.Point;
+import ca.casualt.snakes.basicbattlesnake.game.data.Move;
+import ca.casualt.snakes.basicbattlesnake.http.request.MoveRequest;
+import ca.casualt.snakes.basicbattlesnake.math.Point;
 import ca.casualt.snakes.basicbattlesnake.utilities.BoardDerivations;
 import ca.casualt.snakes.basicbattlesnake.utilities.PathingDerivations;
 

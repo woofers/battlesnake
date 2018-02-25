@@ -1,4 +1,6 @@
-package ca.casualt.snakes.basicbattlesnake.types;
+package ca.casualt.snakes.basicbattlesnake.http.response;
+
+import ca.casualt.snakes.basicbattlesnake.game.data.Move;
 
 /**
  * A response to a move request.

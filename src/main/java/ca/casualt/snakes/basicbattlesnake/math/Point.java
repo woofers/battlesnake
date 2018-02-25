@@ -1,4 +1,4 @@
-package ca.casualt.snakes.basicbattlesnake.types;
+package ca.casualt.snakes.basicbattlesnake.math;
 
 import java.util.ArrayList;
 import java.util.Arrays;

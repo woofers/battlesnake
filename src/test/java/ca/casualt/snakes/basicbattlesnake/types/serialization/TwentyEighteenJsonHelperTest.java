@@ -9,6 +9,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import ca.casualt.snakes.basicbattlesnake.http.serialization.TwentyEighteenJsonHelper;
 import org.junit.Test;
 
 import com.google.gson.JsonParser;

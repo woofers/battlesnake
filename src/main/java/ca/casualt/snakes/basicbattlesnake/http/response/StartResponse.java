@@ -1,5 +1,7 @@
-package ca.casualt.snakes.basicbattlesnake.types;
+package ca.casualt.snakes.basicbattlesnake.http.response;
 
+import ca.casualt.snakes.basicbattlesnake.game.data.HeadType;
+import ca.casualt.snakes.basicbattlesnake.game.data.TailType;
 import com.google.gson.annotations.SerializedName;
 
 /**

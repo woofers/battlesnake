@@ -1,9 +1,6 @@
 package ca.casualt.snakes.basicbattlesnake;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import ca.casualt.snakes.basicbattlesnake.types.StartRequest;
-import ca.casualt.snakes.basicbattlesnake.types.StartResponse;
+import ca.casualt.snakes.basicbattlesnake.http.response.StartResponse;
 
 /**
  * This is the servlet that is hit when triggering the /start endpoint.
