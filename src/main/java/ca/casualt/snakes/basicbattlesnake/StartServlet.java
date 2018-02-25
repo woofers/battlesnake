@@ -26,36 +26,32 @@ import ca.casualt.snakes.basicbattlesnake.types.StartResponse;
 @WebServlet("/start")
 public class StartServlet extends HttpServlet {
 
-	/**
-	 * Used for json serialization/deserialization.
-	 */
-	private final Gson gson = new Gson();
+    /**
+     * Used for json serialization/deserialization.
+     */
+    private final Gson gson = new Gson();
 
-	/**
-	 * This handles the standard post request, converts the json request body
-	 * into a java object, and creates a response.
-	 *
-	 * @param req
-	 *            The http request.
-	 *
-	 * @param resp
-	 *            The http response.
-	 */
-	@Override
-	protected void doPost(final HttpServletRequest req, final HttpServletResponse resp)
-			throws ServletException, IOException {
-		final String requestBody = new BufferedReader(new InputStreamReader(req.getInputStream())).lines()
-				.collect(Collectors.joining("\n"));
-		System.out.println("Start Request body: [" + requestBody + "]");
-		final StartRequest startRequest = gson.fromJson(requestBody, StartRequest.class);
+    /**
+     * This handles the standard post request, converts the json request body
+     * into a java object, and creates a response.
+     *
+     * @param req
+     *            The http request.
+     *
+     * @param resp
+     *            The http response.
+     */
+    @Override
+    protected void doPost(final HttpServletRequest req, final HttpServletResponse resp)
+            throws ServletException, IOException {
 
-		final StartResponse startResponse = new StartResponse();
-		startResponse.setColor("blue");
-		startResponse.setHeadUrl("http://i.imgur.com/JyoU2DD.png?1");
-		startResponse.setName("BasicSnake");
-		startResponse.setTaunt("Yarrrrrr!");
+        final StartResponse startResponse = new StartResponse();
+        startResponse.setColor("#FFB732");
+        startResponse.setHeadUrl("http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/cb/cbcaf2d8795966200b09fc13150c04f1cc4f8ed3_full.jpg");
+        startResponse.setName("Woofers Snake");
+        startResponse.setTaunt("Woof!");
 
-		final String responseBody = gson.toJson(startResponse);
-		resp.getWriter().println(responseBody);
-	}
+        final String responseBody = gson.toJson(startResponse);
+        resp.getWriter().println(responseBody);
+    }
 }
