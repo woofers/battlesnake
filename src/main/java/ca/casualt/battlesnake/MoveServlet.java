@@ -17,6 +17,7 @@ import ca.casualt.battlesnake.http.serialization.TwentyEighteenJsonHelper;
 import com.google.gson.Gson;
 
 import ca.casualt.battlesnake.game.move.Mover;
+import ca.casualt.battlesnake.game.Board;
 import ca.casualt.battlesnake.game.move.RandomMover;
 
 /**
@@ -59,10 +60,11 @@ public class MoveServlet extends HttpServlet {
         System.out.println("Move Request body: [" + requestBody + "]");
 
         final MoveRequest moveRequest = parseToMoveRequest(requestBody);
-
         final MoveResponse moveResponse = new MoveResponse();
 
-        moveResponse.setMove(mover.getMove(moveRequest));
+        Board board = new Board(moveRequest);
+
+        moveResponse.setMove(board.move());
         System.out.println("Move to do: " + moveResponse.getMove());
         moveResponse.setTaunt("Walk the plank you scallywag!");
 
