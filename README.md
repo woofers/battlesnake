@@ -28,4 +28,4 @@ A simple Java Battle Snake.
 ## Deployment<a id="sec-1-2" name="sec-1-2"></a>
 
 1.  Build .war file `mvn install`
-2.  Deploy to Heroku `heroku war:deploy BattleSnake.war --app <name>`
+2.  Deploy to Heroku `heroku war:deploy target/BattleSnake.war --app <name>`
