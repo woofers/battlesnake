@@ -1,0 +1,17 @@
+
+#+TITLE:	Battle Snake 2018
+#+AUTHOR:	Jaxson Van Doorn
+#+EMAIL:	jaxson.vandoorn@gmail.com
+#+OPTIONS:  num:nil
+
+* Battle Snake 2018
+A simple Java Battle Snake.
+** Prerequisites
+1. Install Maven
+2. Install Jetty
+3. Install Heroku
+4. Install .war Heroku deployment plug-in ~heroku plugins:install heroku-cli-deploy~
+5. Create a Heroku App ~heroku create <name>~
+** Deployment
+1. Build .war file ~mvn install~
+2. Deploy to Heroku ~heroku war:deploy BattleSnake.war --app <name>~

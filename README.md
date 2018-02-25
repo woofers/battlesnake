@@ -1,44 +1,31 @@
-# BasicBattleSnake
-a basic java battle snake
-
-## Base Technologies
-- Java 8 SDK - [Link](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- Maven 3.3 - [Link](https://maven.apache.org/download.cgi)
-- Servlet 3.0 - 
-- Gson 2.8.0 - [Link](https://github.com/google/gson)
-
-## Minimum Requirements to run
-1. Install Java 8 SDK - [Link](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html)
-2. Install Maven 3.3+ - [Link](https://maven.apache.org/install.html)
-3. Checkout project from git - [Link](https://guides.github.com/activities/hello-world/)
-4. From project directory that contains the pom.xml, run `mvn jetty:run`
-
-### Verify running
-- [http://localhost:8080/BasicBattleSnake/](http://localhost:8080/BasicBattleSnake/) -> should produce static web page: `Hello Static World!`
-- [http://localhost:8080/BasicBattleSnake/start](http://localhost:8080/BasicBattleSnake/start)
-- [http://localhost:8080/BasicBattleSnake/move](http://localhost:8080/BasicBattleSnake/move)
-
-#### Expected Response times
-- Tomcat 4-5 ms
-- Jetty 6-7 ms
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Battle Snake 2018</a>
+<ul>
+<li><a href="#sec-1-1">Prerequisites</a></li>
+<li><a href="#sec-1-2">Deployment</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 
 
----
+# Battle Snake 2018<a id="sec-1" name="sec-1"></a>
 
-## More Advanced Requirements to run
-1. Install Java 8 SDK
-2. Install Eclipse JEE Edition (I used Neon)
-3. Install Maven 3.3+ (optional since Eclipse comes with maven)
-4. Import project into Eclipse via git
-5. Alt-F5 to ensure Maven is synched  
-**At this point, you could use step #4 from the minimum requirements**  
-*OR*  
-6. Install Tomcat 8.0+ (I used 8.5 when I made this) 
-7. Install above could be done through eclipse, but if done separately, need to add the tomcat server installation to eclipse.
-8. Run-As -> Run on Server  
-*Verifications steps should be the same*
+A simple Java Battle Snake.
 
----
+## Prerequisites<a id="sec-1-1" name="sec-1-1"></a>
 
-## Other Handy Tools
-- Postman chrome plugin, for testing web api POST requests
+1.  Install Maven
+2.  Install Jetty
+3.  Install Heroku
+4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy`
+5.  Create a Heroku App `heroku create <name>`
+
+## Deployment<a id="sec-1-2" name="sec-1-2"></a>
+
+1.  Build .war file `mvn install`
+2.  Deploy to Heroku `heroku war:deploy BattleSnake.war --app <name>`
