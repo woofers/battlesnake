@@ -41,10 +41,10 @@ public class StartServlet extends HttpServlet {
             throws ServletException, IOException {
 
         final StartResponse startResponse = new StartResponse();
-        startResponse.setColor("#FFB732");
-        startResponse.setHeadUrl("http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/cb/cbcaf2d8795966200b09fc13150c04f1cc4f8ed3_full.jpg");
-        startResponse.setName("Woofers Snake");
-        startResponse.setTaunt("Woof!");
+        startResponse.setColor("#535F6B");
+        startResponse.setHeadUrl("https://i.imgur.com/FX5ZLYE.png");
+        startResponse.setName("Solid Snake");
+        startResponse.setTaunt("Metal… Gear?!");
 
         final String responseBody = gson.toJson(startResponse);
         resp.getWriter().println(responseBody);

@@ -10,7 +10,7 @@ public class Board
     private String id;
     private int turn;
 
-    private Snake you;
+    private SmartSnake you;
 
     private List<Snake> snakes;
 
@@ -23,16 +23,15 @@ public class Board
     {
         this.id = request.getId();
         this.turn = request.getTurn();
-        this.you = request.getYou();
+        this.you = new SmartSnake(request.getYou());
         this.snakes = request.getSnakes();
         this.width = request.getWidth();
         this.height = request.getHeight();
         this.food = request.getFood();
     }
 
-    public Move move()
+    public SmartSnake mySnake()
     {
-        System.out.println("Chosing Move " + you);
-        return new SmartSnake(you).move();
+        return you;
     }
 }

@@ -18,6 +18,7 @@ import com.google.gson.Gson;
 
 import ca.casualt.battlesnake.game.move.Mover;
 import ca.casualt.battlesnake.game.Board;
+import ca.casualt.battlesnake.game.SmartSnake;
 import ca.casualt.battlesnake.game.move.RandomMover;
 
 /**
@@ -60,14 +61,16 @@ public class MoveServlet extends HttpServlet {
         System.out.println("Move Request body: [" + requestBody + "]");
 
         final MoveRequest moveRequest = parseToMoveRequest(requestBody);
-        final MoveResponse moveResponse = new MoveResponse();
 
         Board board = new Board(moveRequest);
+        SmartSnake snake = board.mySnake();
 
-        moveResponse.setMove(board.move());
+        final MoveResponse moveResponse = snake.moveResponse();
+
+        //moveResponse.setMove(board.move());
+        //moveResponse.setTaunt("Walk the plank you scallywag!");
+
         System.out.println("Move to do: " + moveResponse.getMove());
-        moveResponse.setTaunt("Walk the plank you scallywag!");
-
         final String responseBody = gson.toJson(moveResponse);
         resp.getWriter().println(responseBody);
     }
