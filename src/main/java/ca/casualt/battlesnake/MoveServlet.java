@@ -44,11 +44,8 @@ public class MoveServlet extends HttpServlet {
     /**
      * This handles the stnadard post request, converts the json request body
      * into a java object, and creates a random response.
-     *
-     * @param req
-     *            The http request.
-     * @param resp
-     *            The http response.
+     * @param req The http request.
+     * @param resp The http response.
      */
     @Override
     protected void doPost(final HttpServletRequest req, final HttpServletResponse resp)
@@ -70,7 +67,8 @@ public class MoveServlet extends HttpServlet {
         resp.getWriter().println(responseBody);
     }
 
-    public MoveRequest parseToMoveRequest(final String requestBody) {
+    public MoveRequest parseToMoveRequest(final String requestBody)
+    {
         return gson.fromJson(TwentyEighteenJsonHelper.cleanJson(requestBody), MoveRequest.class);
     }
 

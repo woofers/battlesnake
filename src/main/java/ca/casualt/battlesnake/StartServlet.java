@@ -23,7 +23,8 @@ import com.google.gson.Gson;
  */
 @SuppressWarnings("serial")
 @WebServlet("/start")
-public class StartServlet extends HttpServlet {
+public class StartServlet extends HttpServlet
+{
 
     /**
      * Used for json serialization/deserialization.
@@ -38,7 +39,8 @@ public class StartServlet extends HttpServlet {
      */
     @Override
     protected void doPost(final HttpServletRequest req, final HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws ServletException, IOException
+    {
 
         final StartResponse startResponse = SmartSnake.startResponse();
         final String responseBody = gson.toJson(startResponse);
