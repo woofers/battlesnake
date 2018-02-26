@@ -3,6 +3,9 @@ package ca.casualt.battlesnake.game;
 import ca.casualt.battlesnake.game.data.Move;
 import ca.casualt.battlesnake.http.response.MoveResponse;
 import ca.casualt.battlesnake.http.response.StartResponse;
+import java.util.List;
+import ca.casualt.battlesnake.game.math.Point;
+
 
 /**
  * @author Jaxson Van Doorn
@@ -23,6 +26,36 @@ public class SmartSnake
         setTaunt(MOVE_TAUNT);
     }
 
+    public String id()
+    {
+        return snake.getId();
+    }
+
+    public void setID(String id)
+    {
+        snake.setId(id);
+    }
+
+    public String name()
+    {
+        return snake.getName();
+    }
+
+    public void setName(String name)
+    {
+        snake.setName(name);
+    }
+
+    public int health()
+    {
+        return snake.getHealth();
+    }
+
+    public void setHealth(int health)
+    {
+        snake.setHealth(health);
+    }
+
     public String taunt()
     {
         return snake.getTaunt();
@@ -31,6 +64,31 @@ public class SmartSnake
     public void setTaunt(String taunt)
     {
         snake.setTaunt(taunt);
+    }
+
+    public int length()
+    {
+        return snake.getLength();
+    }
+
+    public void setLength(int length)
+    {
+        snake.setLength(length);
+    }
+
+    public Point head()
+    {
+        return snake.getHead();
+    }
+
+    public List<Point> body()
+    {
+        return snake.getBody();
+    }
+
+    protected void grow()
+    {
+
     }
 
     public Move move()

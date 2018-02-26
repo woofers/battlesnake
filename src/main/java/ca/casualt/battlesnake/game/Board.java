@@ -33,6 +33,16 @@ public class Board
         this.food = request.getFood();
     }
 
+    public void undo()
+    {
+
+    }
+
+    private void playTurn(Move move)
+    {
+
+    }
+
     public int width()
     {
         return width;
