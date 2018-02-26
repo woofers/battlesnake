@@ -5,6 +5,9 @@ import ca.casualt.battlesnake.game.data.Move;
 import ca.casualt.battlesnake.game.math.Point;
 import java.util.List;
 
+/**
+ * @author Jaxson Van Doorn
+ */
 public class Board
 {
     private String id;
@@ -28,6 +31,16 @@ public class Board
         this.width = request.getWidth();
         this.height = request.getHeight();
         this.food = request.getFood();
+    }
+
+    public int width()
+    {
+        return width;
+    }
+
+    public int height()
+    {
+        return height;
     }
 
     public SmartSnake mySnake()

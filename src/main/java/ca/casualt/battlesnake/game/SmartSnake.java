@@ -4,6 +4,9 @@ import ca.casualt.battlesnake.game.data.Move;
 import ca.casualt.battlesnake.http.response.MoveResponse;
 import ca.casualt.battlesnake.http.response.StartResponse;
 
+/**
+ * @author Jaxson Van Doorn
+ */
 public class SmartSnake
 {
     private static final String NAME = "SolidSnake";
