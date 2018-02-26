@@ -25,7 +25,7 @@ import ca.casualt.battlesnake.game.move.RandomMover;
  * This is the servlet that is hit when triggering the /move endpoint.
  *
  * @author Tony
- *
+ * @author Jaxson Van Doorn
  */
 @SuppressWarnings("serial")
 @WebServlet("/move")
@@ -57,20 +57,15 @@ public class MoveServlet extends HttpServlet {
         final String requestBody = new BufferedReader(
             new InputStreamReader(req.getInputStream())).lines()
                 .collect(Collectors.joining("\n"));
-
-        System.out.println("Move Request body: [" + requestBody + "]");
+        //System.out.println("Current Game Statey: [" + requestBody + "]");
 
         final MoveRequest moveRequest = parseToMoveRequest(requestBody);
-
         Board board = new Board(moveRequest);
         SmartSnake snake = board.mySnake();
 
         final MoveResponse moveResponse = snake.moveResponse();
+        //System.out.println("Next Move " + moveResponse.getMove());
 
-        //moveResponse.setMove(board.move());
-        //moveResponse.setTaunt("Walk the plank you scallywag!");
-
-        System.out.println("Move to do: " + moveResponse.getMove());
         final String responseBody = gson.toJson(moveResponse);
         resp.getWriter().println(responseBody);
     }

@@ -8,7 +8,6 @@ import com.google.gson.annotations.SerializedName;
  * A standard response to a start request.
  *
  * @author Tony
- *
  */
 public class StartResponse {
 
