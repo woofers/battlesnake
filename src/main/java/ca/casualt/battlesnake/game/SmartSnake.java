@@ -86,14 +86,20 @@ public class SmartSnake
         return snake.getBody();
     }
 
-    protected void grow()
+    protected void grow(Point point)
     {
-
+        body().add(point);
     }
 
     public Move move()
     {
         return Move.up;
+    }
+
+    protected void move(Move move)
+    {
+
+
     }
 
     public MoveResponse moveResponse()
