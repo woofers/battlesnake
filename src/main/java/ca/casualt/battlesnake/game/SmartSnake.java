@@ -5,7 +5,7 @@ import ca.casualt.battlesnake.http.response.MoveResponse;
 import ca.casualt.battlesnake.http.response.StartResponse;
 import java.util.List;
 import ca.casualt.battlesnake.game.math.Point;
-
+import java.util.Stack;
 
 /**
  * @author Jaxson Van Doorn
@@ -39,6 +39,11 @@ public class SmartSnake
     public String name()
     {
         return snake.getName();
+    }
+
+    public boolean isFriendly()
+    {
+        return name().equals(NAME);
     }
 
     public void setName(String name)
@@ -91,15 +96,14 @@ public class SmartSnake
         body().add(point);
     }
 
+    private Move findPath(Point point)
+    {
+
+    }
+
     public Move move()
     {
         return Move.up;
-    }
-
-    protected void move(Move move)
-    {
-
-
     }
 
     public MoveResponse moveResponse()

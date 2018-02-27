@@ -4,6 +4,7 @@ import ca.casualt.battlesnake.http.request.MoveRequest;
 import ca.casualt.battlesnake.game.data.Move;
 import ca.casualt.battlesnake.game.math.Point;
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author Jaxson Van Doorn
@@ -15,27 +16,29 @@ public class Board
 
     private SmartSnake you;
 
-    private List<Snake> snakes;
+    private List<SmartSnake> snakes;
 
     private int width;
     private int height;
 
     private List<Point> food;
 
+    private int[][] board;
+
     public Board(MoveRequest request)
     {
         this.id = request.getId();
         this.turn = request.getTurn();
         this.you = new SmartSnake(request.getYou());
-        this.snakes = request.getSnakes();
+        this.snakes = new ArrayList<SmartSnake>();
+        List<Snake> oldSnakes = request.getSnake();
+        for (Snake snake: oldSnakes)
+        {
+            this.snakes.add(new SmartSnake(snake));
+        }
         this.width = request.getWidth();
         this.height = request.getHeight();
         this.food = request.getFood();
-    }
-
-    public void undo()
-    {
-
     }
 
     private void playTurn(Move move)
