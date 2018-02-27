@@ -25,6 +25,12 @@ public class Board
 
     private int[][] board;
 
+    private static final int EMPTY = 0;
+    private static final int WALL = 1;
+    private static final int ME = 2;
+    private static final int HEADS = 3;
+    private static final int FOOD = 4;
+
     public Board(MoveRequest request)
     {
         this.id = request.getId();
