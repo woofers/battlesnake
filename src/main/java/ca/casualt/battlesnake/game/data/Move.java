@@ -32,4 +32,23 @@ public enum Move {
      * Move right.
      */
     right;
+
+    public Point translate(Point point)
+    {
+        Point newPoint = new Point(point);
+        switch (this)
+        {
+            case up:
+                newPoint.setY(point.getY() - 1);
+            case down:
+                newPoint.setY(point.getY() + 1);
+            case left:
+                newPoint.setX(point.getX() - 1);
+            case right:
+                newPoint.setX(point.getX() + 1);
+        }
+        if (newPoint.getX() < 0) return null;
+        if (newPoint.getY() < 0) return null;
+        return newPoint;
+    }
 }

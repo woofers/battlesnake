@@ -21,7 +21,7 @@ public class SmartSnake
         BAIT_STATE
     }
 
-    private static final String NAME = "SolidSnake";
+    private static final String NAME = "Solid Snake";
     private static final String COLOR = "#535F6B";
     private static final String IMAGE = "https://i.imgur.com/FX5ZLYE.png";
     private static final String MOVE_TAUNT = "Kept you waiting, huh?";
@@ -35,6 +35,7 @@ public class SmartSnake
     {
         this.snake = snake;
         setTaunt(MOVE_TAUNT);
+        System.out.println(name());
     }
 
     public boolean equals(Object other)
@@ -63,6 +64,7 @@ public class SmartSnake
         return snake.getName();
     }
 
+    // Fix me
     public boolean isFriendly()
     {
         return name().equals(NAME);
@@ -118,11 +120,11 @@ public class SmartSnake
         switch (mode(board))
         {
             case HUNGRY_STATE:
-                return board.findPath(board.findBestFood());
+                return board.findPath(board.findBestFood(), head());
             case ATTACK_STATE:
-                return board.findPath(board.findBestAttackPoint());
+                return board.findPath(board.findBestAttackPoint(), head());
             case PASSIVE_STATE:
-                return board.findPath(board.findSafestPoint());
+                return board.findPath(board.findSafestPoint(), head());
         }
         return Move.up;
     }

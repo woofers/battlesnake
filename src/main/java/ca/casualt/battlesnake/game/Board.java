@@ -5,6 +5,8 @@ import ca.casualt.battlesnake.game.data.Move;
 import ca.casualt.battlesnake.game.math.Point;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stack;
+import java.util.PriorityQueue;
 
 /**
  * @author Jaxson Van Doorn
@@ -32,6 +34,39 @@ public class Board
     private static final int HEADS = 3;
     private static final int FOOD = 4;
 
+    private static class MovePoint
+    {
+        private Point point;
+        private Move move;
+
+        public MovePoint(Move move, Point point)
+        {
+            this.move = move;
+            this.point = point;
+        }
+
+        public Point point()
+        {
+            return point;
+        }
+
+        public Move move()
+        {
+            return move;
+        }
+
+        public boolean equals(Object other)
+        {
+            if (other instanceof MovePoint) return equals((MovePoint)other);
+            return false;
+        }
+
+        public boolean equals(MovePoint other)
+        {
+            return point().equals(other);
+        }
+    }
+
     public Board(MoveRequest request)
     {
         this.id = request.getId();
@@ -46,10 +81,15 @@ public class Board
         this.width = request.getWidth();
         this.height = request.getHeight();
         this.food = request.getFood();
+
+        toGrid();
+        print();
     }
 
     private void toGrid()
     {
+        this.board = new int[width()][height()];
+
         for (Point snack: food)
         {
             board[snack.getX()][snack.getY()] = FOOD;
@@ -75,10 +115,62 @@ public class Board
         }
     }
 
-    protected Move findPath(Point point)
+    // 1, 1
+    // 1, 1
+    protected Move findPath(Point point, Point currentPoint)
     {
+        PriorityQueue<MovePoint> points = new PriorityQueue<MovePoint>();
+
+        Point loopPoint = currentPoint;
+        points.add(new MovePoint(null, loopPoint));
+        while (!points.isEmpty())
+        {
+            if (point.equals(currentPoint))
+            {
+                return null;
+            }
+            List<MovePoint> moves = getPossibleMoves(loopPoint);
+            for (MovePoint move: moves)
+            {
+                if (points.contains(move)) continue;
+                points.add(move);
+            }
+            loopPoint = points.poll().point();
+        }
+
         // BFS here
         return Move.down;
+    }
+
+    private List<MovePoint> getPossibleMoves(Point point)
+    {
+        ArrayList<MovePoint> list = new ArrayList<MovePoint>();
+        Point up = Move.up.translate(point);
+        Point down = Move.down.translate(point);
+        Point left = Move.left.translate(point);
+        Point right = Move.right.translate(point);
+        if (up != null && !isFilled(up))
+        {
+            list.add(new MovePoint(Move.up, up));
+        }
+        if (down != null && !isFilled(down))
+        {
+            list.add(new MovePoint(Move.down, down));
+        }
+        if (left != null && !isFilled(left))
+        {
+            list.add(new MovePoint(Move.left, left));
+        }
+        if (right != null && !isFilled(right))
+        {
+            list.add(new MovePoint(Move.right, right));
+        }
+        return list;
+    }
+
+    public boolean isFilled(Point point)
+    {
+        return board[point.getX()][point.getY()] == EMPTY;
     }
 
     protected Point findSafestPoint()
