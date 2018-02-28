@@ -131,7 +131,7 @@ public class Board
         }
     }
 
-    protected Move findPath(Point point, Point currentPoint)
+    protected Move findPath(List<Point> destinations, Point currentPoint)
     {
         LinkedList<MovePoint> points = new LinkedList<MovePoint>();
         ArrayList<MovePoint> list = new ArrayList<MovePoint>();
@@ -142,9 +142,12 @@ public class Board
         while (!points.isEmpty())
         {
             loopPoint = points.pollFirst();
-            if (loopPoint.point().equals(point))
+            for (Point destination: destinations)
             {
-                return loopPoint.initialMove();
+                if (loopPoint.point().equals(destination))
+                {
+                    return loopPoint.initialMove();
+                }
             }
             List<MovePoint> moves = getPossibleMoves(loopPoint);
             for (MovePoint move: moves)
@@ -221,19 +224,32 @@ public class Board
                board[point.getX()][point.getY()] != FOOD;
     }
 
-    protected Point findSafestPoint()
+    protected List<Point> findSafestPoint()
     {
-        return new Point(1, 1);
+        ArrayList<Point> list = new ArrayList<Point>();
+        list.add(new Point(1, 1));
+        return list;
     }
 
-    protected Point findBestAttackPoint()
+    protected List<Point> findBestAttackPoint()
     {
-        return new Point(1, 1);
+        ArrayList<Point> list = new ArrayList<Point>();
+        for (int y = 0; y < height(); y ++)
+        {
+            for (int x = 0; x < width(); x ++)
+            {
+                if (board[x][y] == HEADS)
+                {
+                    list.add(new Point(x, y));
+                }
+            }
+        }
+        return list;
     }
 
-    protected Point findBestFood()
+    protected List<Point> findBestFood()
     {
-        return food.get(0);
+        return food;
     }
 
     protected int longestSnakeLength()
@@ -272,9 +288,9 @@ public class Board
     public String toString()
     {
         String value = "";
-        for (int y = 0; y < height; y ++)
+        for (int y = 0; y < height(); y ++)
         {
-            for (int x = 0; x < width; x ++)
+            for (int x = 0; x < width(); x ++)
             {
                 value += board[x][y];
                 value += " ";
