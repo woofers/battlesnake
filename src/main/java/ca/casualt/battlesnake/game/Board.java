@@ -47,6 +47,23 @@ public class Board
         this.food = request.getFood();
     }
 
+    private void toGrid()
+    {
+        for (Point snack: food)
+        {
+            board[snack.getX()][snack.getY()] = FOOD;
+        }
+        for (SmartSnake snake: Snakes)
+        {
+            List<Point> body = snake.body();
+            for (Point bodyPart: body)
+            {
+                board[bodyPart.getX()][bodyPart.getY()] = WALL;
+            }
+        }
+
+    }
+
     private void playTurn(Move move)
     {
 
