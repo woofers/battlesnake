@@ -233,7 +233,7 @@ public class Board
 
     protected Point findBestFood()
     {
-        return new Point(1, 1);
+        return food.get(0);
     }
 
     protected int longestSnakeLength()
