@@ -60,7 +60,7 @@ public class MoveServlet extends HttpServlet {
         Board board = new Board(moveRequest);
         SmartSnake snake = board.mySnake();
 
-        final MoveResponse moveResponse = snake.moveResponse();
+        final MoveResponse moveResponse = snake.moveResponse(board);
         //System.out.println("Next Move " + moveResponse.getMove());
 
         final String responseBody = gson.toJson(moveResponse);

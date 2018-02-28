@@ -12,11 +12,22 @@ import java.util.Stack;
  */
 public class SmartSnake
 {
+    public static enum Mode
+    {
+        HUNGRY_STATE,
+        ATTACK_STATE,
+        PASSIVE_STATE,
+        NO_BEST_MOVE_STATE,
+        BAIT_STATE
+    }
+
     private static final String NAME = "SolidSnake";
     private static final String COLOR = "#535F6B";
     private static final String IMAGE = "https://i.imgur.com/FX5ZLYE.png";
     private static final String MOVE_TAUNT = "Kept you waiting, huh?";
     private static final String START_TAUNT = "Metal… Gear?!";
+
+    private static final int HUNGER_ZONE = 50;
 
     private Snake snake;
 
@@ -24,6 +35,17 @@ public class SmartSnake
     {
         this.snake = snake;
         setTaunt(MOVE_TAUNT);
+    }
+
+    public boolean equals(Object other)
+    {
+        if (other instanceof SmartSnake) return equals((SmartSnake)other);
+        return false;
+    }
+
+    public boolean equals(SmartSnake other)
+    {
+        return id().equals(other.id());
     }
 
     public String id()
@@ -91,25 +113,37 @@ public class SmartSnake
         return snake.getBody();
     }
 
-    protected void grow(Point point)
+    public Move move(Board board)
     {
-        body().add(point);
-    }
-
-    private Move findPath(Point point)
-    {
-
-    }
-
-    public Move move()
-    {
+        switch (mode(board))
+        {
+            case HUNGRY_STATE:
+                return board.findPath(board.findBestFood());
+            case ATTACK_STATE:
+                return board.findPath(board.findBestAttackPoint());
+            case PASSIVE_STATE:
+                return board.findPath(board.findSafestPoint());
+        }
         return Move.up;
     }
 
-    public MoveResponse moveResponse()
+    public Mode mode(Board board)
+    {
+        if (health() > HUNGER_ZONE)
+        {
+            return Mode.HUNGRY_STATE;
+        }
+        else if (length() > board.longestSnakeLength())
+        {
+            return Mode.ATTACK_STATE;
+        }
+        return Mode.PASSIVE_STATE;
+    }
+
+    public MoveResponse moveResponse(Board board)
     {
         MoveResponse moveResponse = new MoveResponse();
-        moveResponse.setMove(move());
+        moveResponse.setMove(move(board));
         moveResponse.setTaunt(taunt());
         return moveResponse;
     }

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 /**
  * @author Jaxson Van Doorn
+ * @author Ben Austin
  */
 public class Board
 {
@@ -37,7 +38,7 @@ public class Board
         this.turn = request.getTurn();
         this.you = new SmartSnake(request.getYou());
         this.snakes = new ArrayList<SmartSnake>();
-        List<Snake> oldSnakes = request.getSnake();
+        List<Snake> oldSnakes = request.getSnakes();
         for (Snake snake: oldSnakes)
         {
             this.snakes.add(new SmartSnake(snake));
@@ -53,20 +54,59 @@ public class Board
         {
             board[snack.getX()][snack.getY()] = FOOD;
         }
-        for (SmartSnake snake: Snakes)
+
+        for (SmartSnake snake: snakes)
         {
             List<Point> body = snake.body();
+            Point head = body.get(0);
             for (Point bodyPart: body)
             {
                 board[bodyPart.getX()][bodyPart.getY()] = WALL;
             }
-        }
 
+            if (snake.isFriendly())
+            {
+                board[head.getX()][head.getY()] = ME;
+            }
+            else
+            {
+                board[head.getX()][head.getY()] = HEADS;
+            }
+        }
     }
 
-    private void playTurn(Move move)
+    protected Move findPath(Point point)
     {
+        // BFS here
+        return Move.down;
+    }
 
+    protected Point findSafestPoint()
+    {
+        return new Point(1, 1);
+    }
+
+    protected Point findBestAttackPoint()
+    {
+        return new Point(1, 1);
+    }
+
+    protected Point findBestFood()
+    {
+        return new Point(1, 1);
+    }
+
+    protected int longestSnakeLength()
+    {
+        int max = Integer.MIN_VALUE;
+        for (SmartSnake snake: snakes)
+        {
+            if (!snake.isFriendly() && snake.length() > max)
+            {
+                max = snake.length();
+            }
+        }
+        return max;
     }
 
     public int width()
@@ -82,5 +122,25 @@ public class Board
     public SmartSnake mySnake()
     {
         return you;
+    }
+
+    public void print()
+    {
+        System.out.println(toString());
+    }
+
+    public String toString()
+    {
+        String value = "";
+        for (int y = 0; y < height; y ++)
+        {
+            for (int x = 0; x < width; x ++)
+            {
+                value += board[x][y];
+                value += " ";
+            }
+            value += "\n";
+        }
+        return value;
     }
 }
