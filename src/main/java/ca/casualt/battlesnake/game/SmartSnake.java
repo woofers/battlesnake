@@ -117,6 +117,7 @@ public class SmartSnake
 
     public Move move(Board board)
     {
+        if (true) return board.findPath(new Point(0, 0), head());
         switch (mode(board))
         {
             case HUNGRY_STATE:

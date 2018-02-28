@@ -6,7 +6,7 @@ import ca.casualt.battlesnake.game.math.Point;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Stack;
-import java.util.PriorityQueue;
+import java.util.LinkedList;
 
 /**
  * @author Jaxson Van Doorn
@@ -38,11 +38,13 @@ public class Board
     {
         private Point point;
         private Move move;
+        private Move initialMove;
 
-        public MovePoint(Move move, Point point)
+        public MovePoint(Move move, Point point, Move initialMove)
         {
             this.move = move;
             this.point = point;
+            this.initialMove = initialMove;
         }
 
         public Point point()
@@ -55,6 +57,11 @@ public class Board
             return move;
         }
 
+        public Move initialMove()
+        {
+            return initialMove;
+        }
+
         public boolean equals(Object other)
         {
             if (other instanceof MovePoint) return equals((MovePoint)other);
@@ -63,7 +70,16 @@ public class Board
 
         public boolean equals(MovePoint other)
         {
-            return point().equals(other);
+            return point().equals(other.point());
+        }
+
+        public String toString()
+        {
+            String value = "";
+            if (move() != null) value += move().toString() + " ";
+            if (point() != null) value += "X: " + point().getX() + " Y: " + point.getY() + " ";
+            if (initialMove() != null) value += initialMove().toString() + " ";
+            return value;
         }
     }
 
@@ -115,62 +131,94 @@ public class Board
         }
     }
 
-    // 1, 1
-    // 1, 1
     protected Move findPath(Point point, Point currentPoint)
     {
-        PriorityQueue<MovePoint> points = new PriorityQueue<MovePoint>();
+        LinkedList<MovePoint> points = new LinkedList<MovePoint>();
+        ArrayList<MovePoint> list = new ArrayList<MovePoint>();
 
-        Point loopPoint = currentPoint;
-        points.add(new MovePoint(null, loopPoint));
+        MovePoint loopPoint = new MovePoint(null, currentPoint, null);
+        points.add(loopPoint);
+        list.add(loopPoint);
         while (!points.isEmpty())
         {
-            if (point.equals(currentPoint))
+            loopPoint = points.pollFirst();
+            if (loopPoint.point().equals(point))
             {
-                return null;
+                return loopPoint.initialMove();
             }
             List<MovePoint> moves = getPossibleMoves(loopPoint);
             for (MovePoint move: moves)
             {
-                if (points.contains(move)) continue;
+                if (list.contains(move)) continue;
                 points.add(move);
+                list.add(move);
             }
-            loopPoint = points.poll().point();
         }
-
-        // BFS here
-        return Move.down;
+        return null;
     }
 
-    private List<MovePoint> getPossibleMoves(Point point)
+    private List<MovePoint> getPossibleMoves(MovePoint point)
     {
         ArrayList<MovePoint> list = new ArrayList<MovePoint>();
-        Point up = Move.up.translate(point);
-        Point down = Move.down.translate(point);
-        Point left = Move.left.translate(point);
-        Point right = Move.right.translate(point);
+        Point up = Move.up.translate(point.point());
+        Point down = Move.down.translate(point.point());
+        Point left = Move.left.translate(point.point());
+        Point right = Move.right.translate(point.point());
+        Move initial = point.initialMove();
+
         if (up != null && !isFilled(up))
         {
-            list.add(new MovePoint(Move.up, up));
+            if (initial == null)
+            {
+                 list.add(new MovePoint(Move.up, up, Move.up));
+            }
+            else
+            {
+                list.add(new MovePoint(Move.up, up, initial));
+            }
         }
         if (down != null && !isFilled(down))
         {
-            list.add(new MovePoint(Move.down, down));
+            if (initial == null)
+            {
+                 list.add(new MovePoint(Move.down, down, Move.down));
+            }
+            else
+            {
+                list.add(new MovePoint(Move.down, down, initial));
+            }
         }
         if (left != null && !isFilled(left))
         {
-            list.add(new MovePoint(Move.left, left));
+            if (initial == null)
+            {
+                 list.add(new MovePoint(Move.left, left, Move.left));
+            }
+            else
+            {
+                list.add(new MovePoint(Move.left, left, initial));
+            }
         }
         if (right != null && !isFilled(right))
         {
-            list.add(new MovePoint(Move.right, right));
+            if (initial == null)
+            {
+                 list.add(new MovePoint(Move.right, right, Move.right));
+            }
+            else
+            {
+                list.add(new MovePoint(Move.right, right, initial));
+            }
         }
         return list;
     }
 
     public boolean isFilled(Point point)
     {
-        return board[point.getX()][point.getY()] == EMPTY;
+        if (point.getX() > width() - 1) return true;
+        if (point.getY() > height() - 1) return true;
+        return board[point.getX()][point.getY()] != EMPTY &&
+               board[point.getX()][point.getY()] != FOOD;
     }
 
     protected Point findSafestPoint()

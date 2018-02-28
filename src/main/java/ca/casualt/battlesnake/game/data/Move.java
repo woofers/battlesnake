@@ -40,12 +40,16 @@ public enum Move {
         {
             case up:
                 newPoint.setY(point.getY() - 1);
+                break;
             case down:
                 newPoint.setY(point.getY() + 1);
+                break;
             case left:
                 newPoint.setX(point.getX() - 1);
+                break;
             case right:
                 newPoint.setX(point.getX() + 1);
+                break;
         }
         if (newPoint.getX() < 0) return null;
         if (newPoint.getY() < 0) return null;
