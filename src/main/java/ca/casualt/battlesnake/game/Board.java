@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Stack;
 import java.util.LinkedList;
+import java.util.Random ;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @author Jaxson Van Doorn
@@ -33,6 +35,7 @@ public class Board
     private static final int ME = 2;
     private static final int HEADS = 3;
     private static final int FOOD = 4;
+    private static final int MY_TAIL = 5;
 
     private static class MovePoint
     {
@@ -136,6 +139,15 @@ public class Board
         LinkedList<MovePoint> points = new LinkedList<MovePoint>();
         ArrayList<MovePoint> list = new ArrayList<MovePoint>();
 
+        for (int i = 0; i < destinations.size(); i ++)
+        {
+            if (destinations.get(i).equals(currentPoint))
+            {
+                destinations.remove(i);
+                i --;
+            }
+        }
+
         MovePoint loopPoint = new MovePoint(null, currentPoint, null);
         points.add(loopPoint);
         list.add(loopPoint);
@@ -157,7 +169,23 @@ public class Board
                 list.add(move);
             }
         }
-        return null;
+
+        ArrayList<Point> tail = new ArrayList<Point>();
+        Point tailPoint = mySnake().body().get(mySnake().body().size() - 1);
+        tail.add(new Point(tailPoint.getX() - 1, tailPoint.getY()));
+        tail.add(new Point(tailPoint.getX() + 1, tailPoint.getY()));
+        tail.add(new Point(tailPoint.getX(), tailPoint.getY() - 1));
+        tail.add(new Point(tailPoint.getX(), tailPoint.getY() + 1));
+
+        return findPath(tail, currentPoint);
+    }
+
+    private Move randomMove(List<MovePoint> moves)
+    {
+        if (moves.size() >= 2)
+        {
+        }
+        return moves.get(ThreadLocalRandom.current().nextInt(moves.size())).initialMove();
     }
 
     private List<MovePoint> getPossibleMoves(MovePoint point)
@@ -227,7 +255,10 @@ public class Board
     protected List<Point> findSafestPoint()
     {
         ArrayList<Point> list = new ArrayList<Point>();
-        list.add(new Point(1, 1));
+        for (SmartSnake snake: snakes)
+        {
+            list.add(snake.body().get(snake.body().size()));
+        }
         return list;
     }
 
