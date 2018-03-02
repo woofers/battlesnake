@@ -11,8 +11,9 @@ import java.util.Random ;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * @author Jaxson Van Doorn
  * @author Ben Austin
+ * @author Jaxson Van Doorn
+ * @author Zak White
  */
 public class Board
 {
@@ -134,6 +135,20 @@ public class Board
         }
     }
 
+    protected Move goToFood(Point currentPoint)
+    {
+        Move move = findPath(findBestFood(), currentPoint);
+        if (move == null) move = findPath(findOurTail(), currentPoint);
+        return move;
+    }
+
+    protected Move goToTail(Point currentPoint)
+    {
+        Move move = findPath(findOurTail(), currentPoint);
+        if (move == null) move = findPath(findBestFood(), currentPoint);
+        return move;
+    }
+
     protected Move findPath(List<Point> destinations, Point currentPoint)
     {
         LinkedList<MovePoint> points = new LinkedList<MovePoint>();
@@ -170,21 +185,22 @@ public class Board
             }
         }
 
+        return null;
+    }
+
+    private List<Point> findOurTail()
+    {
         ArrayList<Point> tail = new ArrayList<Point>();
         Point tailPoint = mySnake().body().get(mySnake().body().size() - 1);
         tail.add(new Point(tailPoint.getX() - 1, tailPoint.getY()));
         tail.add(new Point(tailPoint.getX() + 1, tailPoint.getY()));
         tail.add(new Point(tailPoint.getX(), tailPoint.getY() - 1));
         tail.add(new Point(tailPoint.getX(), tailPoint.getY() + 1));
-
-        return findPath(tail, currentPoint);
+        return tail;
     }
 
     private Move randomMove(List<MovePoint> moves)
     {
-        if (moves.size() >= 2)
-        {
-        }
         return moves.get(ThreadLocalRandom.current().nextInt(moves.size())).initialMove();
     }
 

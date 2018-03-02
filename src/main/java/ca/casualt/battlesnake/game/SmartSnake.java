@@ -8,7 +8,9 @@ import ca.casualt.battlesnake.game.math.Point;
 import java.util.Stack;
 
 /**
+ * @author Ben Austin
  * @author Jaxson Van Doorn
+ * @author Zak White
  */
 public class SmartSnake
 {
@@ -120,11 +122,10 @@ public class SmartSnake
         switch (mode(board))
         {
             case HUNGRY_STATE:
-                return board.findPath(board.findBestFood(), head());
+                return board.goToFood(head());
             case ATTACK_STATE:
-                return board.findPath(board.findBestAttackPoint(), head());
             case PASSIVE_STATE:
-                return board.findPath(board.findSafestPoint(), head());
+                return board.goToTail(head());
         }
         return Move.up;
     }
