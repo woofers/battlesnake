@@ -106,6 +106,9 @@ public class Board
 
         removeDead();
         toGrid();
+        fillInBoxes();
+
+        System.out.println(toRegionString());
     }
 
     private void removeDead()
@@ -162,7 +165,7 @@ public class Board
     {
         this.region = new int[width()][height()];
 
-        int startId = 7;
+        int startId = 10;
 
         for (int y = 0; y < height(); y ++)
         {
@@ -441,7 +444,7 @@ public class Board
         System.out.println(toString());
     }
 
-    public String toString()
+    public String toString(int[][] board)
     {
         String value = "";
         for (int y = 0; y < height(); y ++)
@@ -454,5 +457,15 @@ public class Board
             value += "\n";
         }
         return value;
+    }
+
+    public String toRegionString()
+    {
+        return toString(region);
+    }
+
+    public String toString()
+    {
+        return toString(board);
     }
 }
