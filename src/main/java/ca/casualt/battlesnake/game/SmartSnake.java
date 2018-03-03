@@ -71,6 +71,11 @@ public class SmartSnake
         snake.setName(name);
     }
 
+    public boolean justAte()
+    {
+        return health() == 100;
+    }
+
     public int health()
     {
         return snake.getHealth();

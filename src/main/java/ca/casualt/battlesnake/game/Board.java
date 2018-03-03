@@ -36,7 +36,7 @@ public class Board
     private static final int ME = 2;
     private static final int HEADS = 3;
     private static final int FOOD = 4;
-    private static final int MY_TAIL = 5;
+    private static final int FAKE_WALL = 5;
 
     private static class MovePoint
     {
@@ -135,6 +135,11 @@ public class Board
         }
     }
 
+    private void fillInBoxes()
+    {
+
+    }
+
     protected Move goToFood(Point currentPoint)
     {
         Move move = findPath(findBestFood(), currentPoint);
@@ -144,9 +149,13 @@ public class Board
 
     protected Move goToTail(Point currentPoint)
     {
-        Move move = findPath(findOurTail(), currentPoint);
-        if (move == null) move = findPath(findBestFood(), currentPoint);
-        return move;
+        Move move = null;
+        for (int i = mySnake().body().size() - 1; i > 0; i --)
+        {
+            move = findPath(findAdjacent(mySnake().body().get(i)), currentPoint);
+            if (move != null) return move;
+        }
+        return findPath(findBestFood(), currentPoint);
     }
 
     protected Move findPath(List<Point> destinations, Point currentPoint)
@@ -188,15 +197,24 @@ public class Board
         return null;
     }
 
+    private List<Point> findOurClosestTail()
+    {
+        return new ArrayList<Point>();
+    }
+
     private List<Point> findOurTail()
     {
-        ArrayList<Point> tail = new ArrayList<Point>();
-        Point tailPoint = mySnake().body().get(mySnake().body().size() - 1);
-        tail.add(new Point(tailPoint.getX() - 1, tailPoint.getY()));
-        tail.add(new Point(tailPoint.getX() + 1, tailPoint.getY()));
-        tail.add(new Point(tailPoint.getX(), tailPoint.getY() - 1));
-        tail.add(new Point(tailPoint.getX(), tailPoint.getY() + 1));
-        return tail;
+        return findAdjacent(mySnake().body().get(mySnake().body().size() - 1));
+    }
+
+    private List<Point> findAdjacent(Point point)
+    {
+        ArrayList<Point> list = new ArrayList<Point>();
+        list.add(new Point(point.getX() - 1, point.getY()));
+        list.add(new Point(point.getX() + 1, point.getY()));
+        list.add(new Point(point.getX(), point.getY() - 1));
+        list.add(new Point(point.getX(), point.getY() + 1));
+        return list;
     }
 
     private Move randomMove(List<MovePoint> moves)
