@@ -29,7 +29,7 @@ public class SmartSnake
     private static final String MOVE_TAUNT = "Kept you waiting, huh?";
     private static final String START_TAUNT = "Metal… Gear?!";
 
-    private static final int HUNGER_ZONE = 100;
+    private static final int HUNGER_ZONE = 50;
 
     private Snake snake;
 
@@ -117,15 +117,28 @@ public class SmartSnake
 
     public Move move(Board board)
     {
+        Move move = null;
         switch (mode(board))
         {
             case HUNGRY_STATE:
-                return board.goToFood(head());
-            case ATTACK_STATE:
+                move = board.goToFood(head());
+                if (move == null) move = board.goToAttack(head());
+                if (move == null) move = board.goToTail(head());
+                break;
             case PASSIVE_STATE:
-                return board.goToTail(head());
+                move = board.goToTail(head());
+                if (move == null) move = board.goToFood(head());
+                if (move == null) move = board.goToAttack(head());
+                break;
+            case ATTACK_STATE:
+                move = board.goToAttack(head());
+                System.out.println(move);
+                if (move == null) move = board.goToFood(head());
+                if (move == null) move = board.goToTail(head());
+                break;
         }
-        return Move.up;
+        if (move == null) move = Move.left;
+        return move;
     }
 
     public Mode mode(Board board)
@@ -138,12 +151,17 @@ public class SmartSnake
         {
             return Mode.ATTACK_STATE;
         }
-        return Mode.PASSIVE_STATE;
+        return Mode.HUNGRY_STATE;
     }
 
     public boolean isLongest(Board board)
     {
         return length() > board.longestSnakeLength();
+    }
+
+    public boolean longerThan(SmartSnake snake)
+    {
+        return length() > snake.length();
     }
 
     public MoveResponse moveResponse(Board board)

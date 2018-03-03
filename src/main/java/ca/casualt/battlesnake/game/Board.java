@@ -133,7 +133,7 @@ public class Board
             {
                 board[head.getX()][head.getY()] = HEADS;
 
-                if (!mySnake().isLongest(this))
+                if (!mySnake().longerThan(snake))
                 {
                     List<Point> around = findAdjacent(head);
                     for (Point point: around)
@@ -150,16 +150,14 @@ public class Board
 
     }
 
+    protected Move goToAttack(Point currentPoint)
+    {
+        return findPath(findHeads(), currentPoint);
+    }
+
     protected Move goToFood(Point currentPoint)
     {
-        Move move = findPath(findBestFood(), currentPoint);
-        if (move != null) return move;
-        for (int i = mySnake().body().size() - 1; i > 0; i --)
-        {
-            move = findPath(findAdjacent(mySnake().body().get(i)), currentPoint);
-            if (move != null) return move;
-        }
-        return null;
+        return findPath(findBestFood(), currentPoint);
     }
 
     protected Move goToTail(Point currentPoint)
@@ -170,7 +168,7 @@ public class Board
             move = findPath(findAdjacent(mySnake().body().get(i)), currentPoint);
             if (move != null) return move;
         }
-        return findPath(findBestFood(), currentPoint);
+        return null;
     }
 
     protected Move findPath(List<Point> destinations, Point currentPoint)
@@ -220,6 +218,20 @@ public class Board
     private List<Point> findOurTail()
     {
         return findAdjacent(mySnake().body().get(mySnake().body().size() - 1));
+    }
+
+    private List<Point> findHeads()
+    {
+        ArrayList<Point> list = new ArrayList<Point>();
+        for (SmartSnake snake: snakes)
+        {
+            if (!snake.equals(mySnake()))
+            {
+                list.addAll(findAdjacent(snake.body().get(0)));
+            }
+        }
+        return list;
+
     }
 
     private List<Point> findAdjacent(Point point)
