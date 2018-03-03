@@ -104,6 +104,7 @@ public class Board
 
         toGrid();
         print();
+        System.out.println(!mySnake().isLongest(this));
     }
 
     private void toGrid()
@@ -131,6 +132,15 @@ public class Board
             else
             {
                 board[head.getX()][head.getY()] = HEADS;
+
+                if (!mySnake().isLongest(this))
+                {
+                    List<Point> around = findAdjacent(head);
+                    for (Point point: around)
+                    {
+                        if (exists(point)) board[point.getX()][point.getY()] = WALL;
+                    }
+                }
             }
         }
     }
@@ -143,8 +153,13 @@ public class Board
     protected Move goToFood(Point currentPoint)
     {
         Move move = findPath(findBestFood(), currentPoint);
-        if (move == null) move = findPath(findOurTail(), currentPoint);
-        return move;
+        if (move != null) return move;
+        for (int i = mySnake().body().size() - 1; i > 0; i --)
+        {
+            move = findPath(findAdjacent(mySnake().body().get(i)), currentPoint);
+            if (move != null) return move;
+        }
+        return null;
     }
 
     protected Move goToTail(Point currentPoint)
@@ -278,10 +293,18 @@ public class Board
         return list;
     }
 
+    public boolean exists(Point point)
+    {
+        if (point.getX() < 0) return false;
+        if (point.getY() < 0) return false;
+        if (point.getX() > width() - 1) return false;
+        if (point.getY() > height() - 1) return false;
+        return true;
+    }
+
     public boolean isFilled(Point point)
     {
-        if (point.getX() > width() - 1) return true;
-        if (point.getY() > height() - 1) return true;
+        if (!exists(point)) return true;
         return board[point.getX()][point.getY()] != EMPTY &&
                board[point.getX()][point.getY()] != FOOD;
     }

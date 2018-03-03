@@ -29,7 +29,7 @@ public class SmartSnake
     private static final String MOVE_TAUNT = "Kept you waiting, huh?";
     private static final String START_TAUNT = "Metal… Gear?!";
 
-    private static final int HUNGER_ZONE = 50;
+    private static final int HUNGER_ZONE = 100;
 
     private Snake snake;
 
@@ -37,7 +37,6 @@ public class SmartSnake
     {
         this.snake = snake;
         setTaunt(MOVE_TAUNT);
-        System.out.println(name());
     }
 
     public boolean equals(Object other)
@@ -131,7 +130,7 @@ public class SmartSnake
 
     public Mode mode(Board board)
     {
-        if (health() < HUNGER_ZONE)
+        if (health() <= HUNGER_ZONE)
         {
             return Mode.HUNGRY_STATE;
         }
@@ -140,6 +139,11 @@ public class SmartSnake
             return Mode.ATTACK_STATE;
         }
         return Mode.PASSIVE_STATE;
+    }
+
+    public boolean isLongest(Board board)
+    {
+        return length() > board.longestSnakeLength();
     }
 
     public MoveResponse moveResponse(Board board)
