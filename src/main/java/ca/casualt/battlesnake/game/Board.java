@@ -31,6 +31,8 @@ public class Board
 
     private int[][] board;
 
+    private int[][] region;
+
     private static final int EMPTY = 0;
     private static final int WALL = 1;
     private static final int ME = 2;
@@ -102,7 +104,20 @@ public class Board
         this.height = request.getHeight();
         this.food = request.getFood();
 
+        removeDead();
         toGrid();
+    }
+
+    private void removeDead()
+    {
+        for (int i = 0; i < snakes.size(); i ++)
+        {
+            if (snakes.get(0).isDead())
+            {
+                snakes.remove(i);
+                i --;
+            }
+        }
     }
 
     private void toGrid()
@@ -145,7 +160,39 @@ public class Board
 
     private void fillInBoxes()
     {
+        this.region = new int[width()][height()];
 
+        int startId = 7;
+
+        for (int y = 0; y < height(); y ++)
+        {
+            for (int x = 0; x < width(); x ++)
+            {
+                Point currentPoint = new Point(x, y);
+                if (!isRegionFilled(currentPoint))
+                {
+                    LinkedList<MovePoint> points = new LinkedList<MovePoint>();
+                    ArrayList<MovePoint> list = new ArrayList<MovePoint>();
+
+                    MovePoint loopPoint = new MovePoint(null, currentPoint, null);
+                    points.add(loopPoint);
+                    list.add(loopPoint);
+                    while (!points.isEmpty())
+                    {
+                        loopPoint = points.pollFirst();
+                        List<MovePoint> moves = getPossibleMoves(loopPoint);
+                        for (MovePoint move: moves)
+                        {
+                            if (list.contains(move)) continue;
+                            points.add(move);
+                            list.add(move);
+                            region[move.point().getX()][move.point().getY()] = startId;
+                        }
+                    }
+                    startId ++;
+                }
+            }
+        }
     }
 
     protected Move goToAttack(Point currentPoint)
@@ -226,6 +273,7 @@ public class Board
             if (!snake.equals(mySnake()))
             {
                 list.addAll(findAdjacent(snake.body().get(0)));
+                list.add(snake.body().get(0));
             }
         }
         return list;
@@ -312,7 +360,17 @@ public class Board
         return true;
     }
 
+    public boolean isRegionFilled(Point point)
+    {
+        return isFilled(point, region);
+    }
+
     public boolean isFilled(Point point)
+    {
+        return isFilled(point, board);
+    }
+
+    private boolean isFilled(Point point, int[][] board)
     {
         if (!exists(point)) return true;
         return board[point.getX()][point.getY()] != EMPTY &&

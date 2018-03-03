@@ -153,6 +153,11 @@ public class SmartSnake
         return Mode.HUNGRY_STATE;
     }
 
+    public boolean isDead()
+    {
+        return health() <= 0;
+    }
+
     public boolean isLongest(Board board)
     {
         return length() > board.longestSnakeLength();
