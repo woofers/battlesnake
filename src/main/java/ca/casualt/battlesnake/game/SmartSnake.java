@@ -122,17 +122,18 @@ public class SmartSnake
         {
             case HUNGRY_STATE:
                 move = board.goToFood(head());
-                if (move == null) move = board.goToAttack(head());
+                if (move == null) move = board.goToCenter(head());
                 if (move == null) move = board.goToTail(head());
                 break;
-            case PASSIVE_STATE:
-                move = board.goToTail(head());
-                if (move == null) move = board.goToFood(head());
-                if (move == null) move = board.goToAttack(head());
-                break;
+            //case PASSIVE_STATE:
+            //    move = board.goToTail(head());
+            //    if (move == null) move = board.goToFood(head());
+            //    if (move == null) move = board.goToAttack(head());
+            //    break;
             case ATTACK_STATE:
                 move = board.goToAttack(head());
                 if (move == null) move = board.goToFood(head());
+                if (move == null) move = board.goToCenter(head());
                 if (move == null) move = board.goToTail(head());
                 break;
         }

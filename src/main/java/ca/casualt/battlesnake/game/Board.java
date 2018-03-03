@@ -172,7 +172,12 @@ public class Board
             for (int x = 0; x < width(); x ++)
             {
                 Point currentPoint = new Point(x, y);
-                if (!isRegionFilled(currentPoint))
+
+                if (board[x][y] == WALL)
+                {
+                    region[x][y] = WALL;
+                }
+                else if (!isRegionFilled(currentPoint))
                 {
                     LinkedList<MovePoint> points = new LinkedList<MovePoint>();
                     ArrayList<MovePoint> list = new ArrayList<MovePoint>();
@@ -206,6 +211,11 @@ public class Board
     protected Move goToFood(Point currentPoint)
     {
         return findPath(findBestFood(), currentPoint);
+    }
+
+    protected Move goToCenter(Point currentPoint)
+    {
+        return findPath(findCenter(), currentPoint);
     }
 
     protected Move goToTail(Point currentPoint)
@@ -276,7 +286,6 @@ public class Board
             if (!snake.equals(mySnake()))
             {
                 list.addAll(findAdjacent(snake.body().get(0)));
-                list.add(snake.body().get(0));
             }
         }
         return list;
@@ -467,5 +476,14 @@ public class Board
     public String toString()
     {
         return toString(board);
+    }
+
+    public List<Point> findCenter()
+    {
+        List<Point> nearCenter = new ArrayList<Point>();
+        Point center = new Point(width() / 2, height() / 2);
+        nearCenter.add(center);
+        nearCenter.addAll(findAdjacent(center));
+        return nearCenter;
     }
 }
