@@ -66,12 +66,6 @@ public class SmartSnake
         return snake.getName();
     }
 
-    // Fix me
-    public boolean isFriendly()
-    {
-        return name().equals(NAME);
-    }
-
     public void setName(String name)
     {
         snake.setName(name);

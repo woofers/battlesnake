@@ -124,7 +124,7 @@ public class Board
                 board[bodyPart.getX()][bodyPart.getY()] = WALL;
             }
 
-            if (snake.isFriendly())
+            if (snake.equals(mySnake()))
             {
                 board[head.getX()][head.getY()] = ME;
             }
@@ -304,7 +304,7 @@ public class Board
         int max = Integer.MIN_VALUE;
         for (SmartSnake snake: snakes)
         {
-            if (!snake.isFriendly() && snake.length() > max)
+            if (!snake.equals(mySnake()) && snake.length() > max)
             {
                 max = snake.length();
             }
