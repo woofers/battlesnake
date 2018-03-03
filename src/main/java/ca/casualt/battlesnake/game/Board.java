@@ -165,6 +165,17 @@ public class Board
     {
         this.region = new int[width()][height()];
 
+        for (int y = 0; y < height(); y ++)
+        {
+            for (int x = 0; x < width(); x ++)
+            {
+                if (board[x][y] != FOOD)
+                {
+                    region[x][y] = board[x][y];
+                }
+            }
+        }
+
         int startId = 10;
 
         for (int y = 0; y < height(); y ++)
@@ -173,11 +184,7 @@ public class Board
             {
                 Point currentPoint = new Point(x, y);
 
-                if (board[x][y] == WALL)
-                {
-                    region[x][y] = WALL;
-                }
-                else if (!isRegionFilled(currentPoint))
+                if (!isRegionFilled(currentPoint))
                 {
                     LinkedList<MovePoint> points = new LinkedList<MovePoint>();
                     ArrayList<MovePoint> list = new ArrayList<MovePoint>();
