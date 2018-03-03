@@ -132,7 +132,6 @@ public class SmartSnake
                 break;
             case ATTACK_STATE:
                 move = board.goToAttack(head());
-                System.out.println(move);
                 if (move == null) move = board.goToFood(head());
                 if (move == null) move = board.goToTail(head());
                 break;

@@ -103,8 +103,6 @@ public class Board
         this.food = request.getFood();
 
         toGrid();
-        print();
-        System.out.println(!mySnake().isLongest(this));
     }
 
     private void toGrid()
