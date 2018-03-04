@@ -31,7 +31,7 @@ Our snake's strategy was aggresive. For each turn, if the snake wasn't the large
 The snake's biggest drawback was trapping itself in its own tail. We didn't implement an effective algorithm to calculate dangerous regions of the board, and ultimately the snake only died by running out of moves.
 
 ## Battle History<a id="sec-2" name="sec-2"></a>
-Bounty Snakes
+Bounty Snakes:
 * Beat [Bambora](https://www.bambora.com/en/ca/)'s bounty snake
 * Beat [Rooof](https://www.rooof.com/)'s bounty snake
 * Beat [Giftbit](https://www.giftbit.com/)'s bounty snake
@@ -53,6 +53,6 @@ The snake came third in our round of the battle. There were 57 competitors in th
 ![Screenshot #4](./screenshots/snake-3.png "Attack State")
 
 ## Acknowledgments<a id="sec-4" name="sec-4"></a>
-* __Built in collaboration with__ [Ben Austin](https://github.com/austin.ben) and [Jaxson Van Doorn](https://github.com/woofers), 2018-03-03
+* __Built in collaboration with__ [Ben Austin](https://github.com/austinben) and [Jaxson Van Doorn](https://github.com/woofers), 2018-03-03
 * __Designed for__ [Sendwithus](https://github.com/sendwithus)' BattleSnake competition, 2018-03-03
 <img align="left" height="120" width="120" src="https://github.com/zakwht/battlesnake-2018/blob/master/screenshots/intermediate.png?raw=true" />
