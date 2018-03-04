@@ -20,6 +20,8 @@
 
 # Battle Snake 2018<a id="sec-0" name="sec-0"></a>
 
+<img align="left" height="120" width="120" src="https://github.com/woofers/battlesnake-2018/blob/master/screenshots/intermediate.png?raw=true" />
+
 A simple [BattleSnake](https://www.battlesnake.io) written in Java. Entered in the 2018 Intermediate competition.
 
 ## Strategy<a id="sec-1" name="sec-1"></a>
@@ -62,6 +64,6 @@ Timestamp on [Sendwithus' Twitch stream](https://www.twitch.tv/videos/234961139)
 ![Screenshot #4](./screenshots/snake-3.png "Attack State")
 
 ## Acknowledgments<a id="sec-4" name="sec-4"></a>
-* __Built in collaboration with__ [Ben Austin](https://github.com/austinben) and [Jaxson Van Doorn](https://github.com/woofers), 2018-03-03
-* __Designed for__ [Sendwithus](https://github.com/sendwithus)' BattleSnake competition, 2018-03-03
-<img align="left" height="120" width="120" src="https://github.com/zakwht/battlesnake-2018/blob/master/screenshots/intermediate.png?raw=true" />
+* __Built in by__ [Ben Austin](https://github.com/austinben), [Jaxson Van Doorn](https://github.com/woofers), and [Zak White](https://github.com/zakwht) March 3, 2018
+* __Designed for__ [Sendwithus](https://github.com/sendwithus)' BattleSnake competition, March 3, 2018
+<img align="left" height="120" width="120" src="https://github.com/woofers/battlesnake-2018/blob/master/screenshots/intermediate.png?raw=true" />
