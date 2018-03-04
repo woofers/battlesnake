@@ -28,7 +28,7 @@ Deployed to `https://battlesnake-solid.herokuapp.com/`
 
 ## Strategy<a id="sec-1" name="sec-1"></a>
 
-Our snake's strategy was aggresive. For each turn, if the snake wasn't the largest on the board, or if the health was below a specific threshold, the snake would navigate towards the safest food. Otherwise, she would try to target other snakes' heads to either eliminate the opponent in a head-on collision or trap them by cutting off their path. The snake also included an unimplemented passive state, where she would try to loop back around to her tail to avoid collisions.
+Our snake's strategy was aggresive. For each turn, if the snake wasn't the largest on the board, or if the health was below a specific threshold, the snake would navigate towards the closest food. Otherwise, it would try to target the other snakes' heads to either eliminate the opponent in a head-on collision or trap them by cutting off their path. The snake also included an unused passive state, where she would try to loop back around to her tail to avoid collisions.
 
 ### Drawbacks<a id="sec-1-1" name="sec-1-1"></a>
 
