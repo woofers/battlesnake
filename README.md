@@ -20,7 +20,7 @@
 
 # Battle Snake 2018<a id="sec-0" name="sec-0"></a>
 
-<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />
+<img height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />
 
 A simple [BattleSnake](https://www.battlesnake.io) written in Java. Entered in the 2018 Intermediate competition.
 
