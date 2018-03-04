@@ -22,7 +22,7 @@
 
 <img height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />
 
-A simple [BattleSnake](https://www.battlesnake.io) written in Java. Entered in the 2018 Intermediate competition.
+A simple [BattleSnake](https://www.battlesnake.io) written in Java. Entered in the 2018 Intermediate competition as **Solid Snake**.
 
 ## Strategy<a id="sec-1" name="sec-1"></a>
 
