@@ -45,6 +45,7 @@ Bounty Snakes:
 * Lost to [CheckFront](https://www.checkfront.com/)'s two bounty snakes
 
 The snake came third in our round of the battle. There were 57 competitors in the intermediate tier.
+Timestamp on [Sendwithus' Twitch stream](https://www.twitch.tv/videos/234961139) is 1:56:44-1:58:24.
 
 ## Screenshots<a id="sec-3" name="sec-3"></a>
 ![Screenshot #1](./screenshots/snake-0.png "Round Start")
