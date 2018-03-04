@@ -24,7 +24,7 @@ A simple [BattleSnake](https://www.battlesnake.io) written in Java. Entered in t
 
 ## Strategy<a id="sec-1" name="sec-1"></a>
 
-Our snake's strategy was aggresive. For each turn, if the snake wasn't the largest on the board, or if the health was below a specific threshold, the snake would navigate towards the safest food. Otherwise, she would try to target other snakes' heads to either eliminate the opponent in a head on collision or trap them by cutting of their path. The snake also included an unimplemented passive state, where she would try to loop back around to her tail to avoid collisions.
+Our snake's strategy was aggresive. For each turn, if the snake wasn't the largest on the board, or if the health was below a specific threshold, the snake would navigate towards the safest food. Otherwise, she would try to target other snakes' heads to either eliminate the opponent in a head-on collision or trap them by cutting off their path. The snake also included an unimplemented passive state, where she would try to loop back around to her tail to avoid collisions.
 
 ### Drawbacks<a id="sec-1-1" name="sec-1-1"></a>
 
@@ -36,13 +36,13 @@ Bounty Snakes:
 * Beat [Rooof](https://www.rooof.com/)'s bounty snake
 * Beat [Giftbit](https://www.giftbit.com/)'s bounty snake
 * Beat [GitHub](https://github.com)'s two snakes in only 67 moves
-* Beat [sendwithus](https://www.sendwithus.com/)' three bounty snakes
+* Beat [Sendwithus](https://www.sendwithus.com/)' three bounty snakes
 * Beat [Semaphore](https://semaphoresolutions.com/)'s zombie snakes and hungry snake
 * Lost to [Accio](https://myaccio.com/)'s defensive snake
 * Lost to [AppColony](http://www.appcolony.ca/)'s tron snake
 * Lost to [Redbrick](https://rdbrck.com/)'s champion snake
 * Lost to [Workday](https://www.workday.com/)'s bounty snake
-* Lost to [CheckFront](https://www.checkfront.com/)'s two bounty snake
+* Lost to [CheckFront](https://www.checkfront.com/)'s two bounty snakes
 
 The snake came third in our round of the battle. There were 57 competitors in the intermediate tier.
 
