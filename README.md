@@ -31,7 +31,7 @@ Our snake's strategy was aggresive. For each turn, if the snake wasn't the large
 The snake's biggest drawback was trapping itself in its own tail. We didn't implement an effective algorithm to calculate dangerous regions of the board, and ultimately the snake only died by running out of moves.
 
 ## Battle History<a id="sec-2" name="sec-2"></a>
-Bounty Snakes:
+**Bounty Snakes:**
 * Beat 2 of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
 * Beat [Rooof](https://www.rooof.com/)'s bounty snakes
 * Beat [Giftbit](https://www.giftbit.com/)'s bounty snakes
@@ -45,15 +45,15 @@ Bounty Snakes:
 * Lost to [Workday](https://www.workday.com/)'s bounty snake
 * Lost to [CheckFront](https://www.checkfront.com/)'s two bounty snakes
 
-Tournament:
+**Tournament:**
 
 The snake came third in both our rounds of the battle. There were 57 competitors in the intermediate tier.
 
 Timestamp on [Sendwithus' Twitch stream](https://www.twitch.tv/videos/234961139) is [1:56:44-1:58:24](https://www.twitch.tv/videos/234961139?t=01h56m44s).
 
-[Game 1](https://clips.twitch.tv/SplendidNiceKoalaTwitchRPG)
+**[Game 1](https://clips.twitch.tv/SplendidNiceKoalaTwitchRPG)**
 
-[Game 2](https://clips.twitch.tv/GentleCrispyReubenCorgiDerp)
+**[Game 2](https://clips.twitch.tv/GentleCrispyReubenCorgiDerp)**
 
 ## Screenshots<a id="sec-3" name="sec-3"></a>
 ![Screenshot #1](./screenshots/snake-0.png "Round Start")
