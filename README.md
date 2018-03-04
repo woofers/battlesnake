@@ -32,12 +32,13 @@ The snake's biggest drawback was trapping itself in its own tail. We didn't impl
 
 ## Battle History<a id="sec-2" name="sec-2"></a>
 Bounty Snakes:
-* Beat [Bambora](https://www.bambora.com/en/ca/)'s bounty snake
-* Beat [Rooof](https://www.rooof.com/)'s bounty snake
-* Beat [Giftbit](https://www.giftbit.com/)'s bounty snake
+* Beat 2 of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
+* Beat [Rooof](https://www.rooof.com/)'s bounty snakes
+* Beat [Giftbit](https://www.giftbit.com/)'s bounty snakes
 * Beat [GitHub](https://github.com)'s two snakes in only 67 moves
 * Beat [Sendwithus](https://www.sendwithus.com/)' three bounty snakes
 * Beat [Semaphore](https://semaphoresolutions.com/)'s zombie snakes and hungry snake
+* Lost to 1 of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
 * Lost to [Accio](https://myaccio.com/)'s defensive snake
 * Lost to [AppColony](http://www.appcolony.ca/)'s tron snake
 * Lost to [Redbrick](https://rdbrck.com/)'s champion snake
