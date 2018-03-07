@@ -73,4 +73,5 @@ Twitch stream]] is
    [[https://github.com/tflinz/BasicBattleSnake2018][here]]
 -  *Designed for* [[https://github.com/sendwithus][Sendwithus]]'
    BattleSnake competition, March 3, 2018
-   @@html:<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />@@
+
+@@html:<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />@@
