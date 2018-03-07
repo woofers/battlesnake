@@ -84,7 +84,7 @@ Twitch stream]] is
 3. Use ~https://[name].herokuapp.com/~ as snake URL.
 ** Acknowledgments
 
--  *Built in by* [[https://github.com/austinben][Ben Austin]],
+-  *Built by* [[https://github.com/austinben][Ben Austin]],
    [[https://github.com/woofers][Jaxson Van Doorn]], and
    [[https://github.com/zakwht][Zak White]], March 3, 2018
 -  *Template Forked from*

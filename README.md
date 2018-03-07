@@ -116,7 +116,7 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 
 ## Acknowledgments<a id="sec-1-5" name="sec-1-5"></a>
 
--   **Built in by** [Ben Austin](https://github.com/austinben),
+-   **Built by** [Ben Austin](https://github.com/austinben),
     [Jaxson Van Doorn](https://github.com/woofers), and
     [Zak White](https://github.com/zakwht), March 3, 2018
 -   **Template Forked from**
