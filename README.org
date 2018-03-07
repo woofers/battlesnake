@@ -32,20 +32,19 @@ boxing itself in.
 
 ** Battle History
 
-*Bounty Snakes:* * Beat two of
-[[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes * Beat
-[[https://www.rooof.com/][Rooof]]'s bounty snakes * Beat
-[[https://www.giftbit.com/][Giftbit]]'s bounty snakes * Beat
-[[https://github.com][GitHub]]'s two snakes in only 67 moves * Beat
-[[https://www.sendwithus.com/][Sendwithus]]' three bounty snakes * Beat
-[[https://semaphoresolutions.com/][Semaphore]]'s zombie snakes and
-hungry snake * Lost to one of
-[[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes * Lost to
-[[https://myaccio.com/][Accio]]'s defensive snake * Lost to
-[[http://www.appcolony.ca/][AppColony]]'s tron snake * Lost to
-[[https://rdbrck.com/][Redbrick]]'s champion snake * Lost to
-[[https://www.workday.com/][Workday]]'s bounty snake * Lost to
-[[https://www.checkfront.com/][CheckFront]]'s two bounty snakes
+*Bounty Snakes:*
+- Beat two of [[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes
+- Beat [[https://www.rooof.com/][Rooof]]'s bounty snakes
+- Beat [[https://www.giftbit.com/][Giftbit]]'s bounty snakes
+- Beat [[https://github.com][GitHub]]'s two snakes in only 67 moves
+- Beat [[https://www.sendwithus.com/][Sendwithus]]' three bounty snakes
+- Beat [[https://semaphoresolutions.com/][Semaphore]]'s zombie snakes and hungry snake
+- Lost to one of [[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes
+- Lost to [[https://myaccio.com/][Accio]]'s defensive snake
+- Lost to [[http://www.appcolony.ca/][AppColony]]'s tron snake
+- Lost to [[https://rdbrck.com/][Redbrick]]'s champion snake
+- Lost to [[https://www.workday.com/][Workday]]'s bounty snake
+- Lost to [[https://www.checkfront.com/][CheckFront]]'s two bounty snakes
 
 *Tournament:*
 
@@ -70,10 +69,8 @@ Twitch stream]] is
 -  *Built in by* [[https://github.com/austinben][Ben Austin]],
    [[https://github.com/woofers][Jaxson Van Doorn]], and
    [[https://github.com/zakwht][Zak White]], March 3, 2018
-
 -  *Template Forked from*
    [[https://github.com/tflinz/BasicBattleSnake2018][here]]
-
 -  *Designed for* [[https://github.com/sendwithus][Sendwithus]]'
    BattleSnake competition, March 3, 2018
    @@html:<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />@@
