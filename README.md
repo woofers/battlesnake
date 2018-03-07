@@ -91,22 +91,22 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 
 ### Prerequisites<a id="sec-1-4-1" name="sec-1-4-1"></a>
 
-\*1. Install Maven
-\*2. Install Heroku
-\*3. Install Jetty (To Run Locally)
-\*4. Install Docker (To Run Test Server)
-\*5. Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy`
-\*6. Create a Heroku App `heroku create <name>`
+1.  Install Maven
+2.  Install Heroku
+3.  Install Jetty (To Run Locally)
+4.  Install Docker (To Run Test Server)
+5.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy`
+6.  Create a Heroku App `heroku create <name>`
 
 ### Test Server<a id="sec-1-4-2" name="sec-1-4-2"></a>
 
-\*1. Run `docker run -it --rm -p 3000:3000 sendwithus/battlesnake-server`
-\*2. Goto `localhost:3000` in a browser.
+1.  Run `docker run -it --rm -p 3000:3000 sendwithus/battlesnake-server`
+2.  Goto `localhost:3000` in a browser.
 
 ### Run Locally<a id="sec-1-4-3" name="sec-1-4-3"></a>
 
-\*1. Run `mvn jetty:run`
-\*2. Use `http://[local-ip]:8080` as snake URL.
+1.  Run `mvn jetty:run`
+2.  Use `http://[local-ip]:8080` as snake URL.
 
 ### Deployment<a id="sec-1-4-4" name="sec-1-4-4"></a>
 
