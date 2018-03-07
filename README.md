@@ -36,13 +36,13 @@ The snake's biggest drawback was trapping itself in its own tail. We didn't impl
 
 ## Battle History<a id="sec-2" name="sec-2"></a>
 **Bounty Snakes:**
-* Beat 2 of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
+* Beat two of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
 * Beat [Rooof](https://www.rooof.com/)'s bounty snakes
 * Beat [Giftbit](https://www.giftbit.com/)'s bounty snakes
 * Beat [GitHub](https://github.com)'s two snakes in only 67 moves
 * Beat [Sendwithus](https://www.sendwithus.com/)' three bounty snakes
 * Beat [Semaphore](https://semaphoresolutions.com/)'s zombie snakes and hungry snake
-* Lost to 1 of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
+* Lost to one of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
 * Lost to [Accio](https://myaccio.com/)'s defensive snake
 * Lost to [AppColony](http://www.appcolony.ca/)'s tron snake
 * Lost to [Redbrick](https://rdbrck.com/)'s champion snake
@@ -66,6 +66,7 @@ Timestamp on [Sendwithus' Twitch stream](https://www.twitch.tv/videos/234961139)
 ![Screenshot #4](./screenshots/snake-3.png "Attack State")
 
 ## Acknowledgments<a id="sec-4" name="sec-4"></a>
-* __Built by__ [Ben Austin](https://github.com/austinben), [Jaxson Van Doorn](https://github.com/woofers), and [Zak White](https://github.com/zakwht), March 3, 2018
+* __Built in by__ [Ben Austin](https://github.com/austinben), [Jaxson Van Doorn](https://github.com/woofers), and [Zak White](https://github.com/zakwht), March 3, 2018
+* __Template Forked from__ [here](https://github.com/tflinz/BasicBattleSnake2018)
 * __Designed for__ [Sendwithus](https://github.com/sendwithus)' BattleSnake competition, March 3, 2018
 <img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />
