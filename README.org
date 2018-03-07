@@ -5,21 +5,75 @@
 #+OPTIONS:  num:nil
 
 * Battle Snake 2018
-A simple Java Battle Snake.
-** Prerequisites
-1. Install Maven
-2. Install Heroku
-3. Install Jetty (To Run Locally)
-4. Install Docker (To Run Test Server)
-5. Install .war Heroku deployment plug-in ~heroku plugins:install heroku-cli-deploy~
-6. Create a Heroku App ~heroku create <name>~
-** Test Server
-1. Run ~docker run -it --rm -p 3000:3000 sendwithus/battlesnake-server~
-2. Goto ~localhost:3000~ in a browser.
-** Run Locally
-1. Run ~mvn jetty:run~
-2. Use ~http://[local-ip]:8080~ as snake URL.
-** Deployment
-1. Build .war file ~mvn install~
-2. Deploy to Heroku ~heroku war:deploy target/BattleSnake.war --app <name>~
-3. Use ~https://[name].herokuapp.com/~ as snake URL.
+
+@@html:<img height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />@@
+
+A simple [[https://www.battlesnake.io][BattleSnake]] written in Java.
+Entered in the 2018 Intermediate competition as *Solid Snake*.
+
+Deployed to =https://battlesnake-solid.herokuapp.com/=
+
+** Strategy
+
+Our snake's strategy was aggresive. For each turn, if the snake wasn't
+the largest on the board, or if the health was below a specific
+threshold, the snake would navigate towards the closest food. Otherwise,
+it would try to target the other snakes' heads to either eliminate the
+opponent in a head-on collision or trap them by cutting off their path.
+The snake also included an unused passive state, where she would try to
+loop back around to her tail to avoid collisions.
+
+*** Drawbacks
+
+The snake's biggest drawback was trapping itself in its own tail. We
+didn't implement an effective algorithm to calculate dangerous regions
+of the board, and ultimately the snake died by going for takedowns and
+boxing itself in.
+
+** Battle History
+
+*Bounty Snakes:* * Beat two of
+[[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes * Beat
+[[https://www.rooof.com/][Rooof]]'s bounty snakes * Beat
+[[https://www.giftbit.com/][Giftbit]]'s bounty snakes * Beat
+[[https://github.com][GitHub]]'s two snakes in only 67 moves * Beat
+[[https://www.sendwithus.com/][Sendwithus]]' three bounty snakes * Beat
+[[https://semaphoresolutions.com/][Semaphore]]'s zombie snakes and
+hungry snake * Lost to one of
+[[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes * Lost to
+[[https://myaccio.com/][Accio]]'s defensive snake * Lost to
+[[http://www.appcolony.ca/][AppColony]]'s tron snake * Lost to
+[[https://rdbrck.com/][Redbrick]]'s champion snake * Lost to
+[[https://www.workday.com/][Workday]]'s bounty snake * Lost to
+[[https://www.checkfront.com/][CheckFront]]'s two bounty snakes
+
+*Tournament:*
+
+The snake came third in both our rounds of the battle. There were 57
+competitors in the intermediate tier.
+
+Timestamp on [[https://www.twitch.tv/videos/234961139][Sendwithus'
+Twitch stream]] is
+[[https://www.twitch.tv/videos/234961139?t=01h56m44s][1:56:44-1:58:24]].
+
+*[[https://clips.twitch.tv/SplendidNiceKoalaTwitchRPG][Game 1]]*
+
+*[[https://clips.twitch.tv/GentleCrispyReubenCorgiDerp][Game 2]]*
+
+** Screenshots
+
+[[./screenshots/snake-0.png]] [[./screenshots/snake-1.png]]
+[[./screenshots/snake-2.png]] [[./screenshots/snake-3.png]]
+
+** Acknowledgments
+
+-  *Built in by* [[https://github.com/austinben][Ben Austin]],
+   [[https://github.com/woofers][Jaxson Van Doorn]], and
+   [[https://github.com/zakwht][Zak White]], March 3, 2018
+
+-  *Template Forked from*
+   [[https://github.com/tflinz/BasicBattleSnake2018][here]]
+
+-  *Designed for* [[https://github.com/sendwithus][Sendwithus]]'
+   BattleSnake competition, March 3, 2018
+   @@html:<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />@@
