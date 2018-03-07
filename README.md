@@ -32,7 +32,7 @@ Our snake's strategy was aggresive. For each turn, if the snake wasn't the large
 
 ### Drawbacks<a id="sec-1-1" name="sec-1-1"></a>
 
-The snake's biggest drawback was trapping itself in its own tail. We didn't implement an effective algorithm to calculate dangerous regions of the board, and ultimately the snake only died by running out of moves.
+The snake's biggest drawback was trapping itself in its own tail. We didn't implement an effective algorithm to calculate dangerous regions of the board, and ultimately the snake died by going for takedowns and boxing itself in.
 
 ## Battle History<a id="sec-2" name="sec-2"></a>
 **Bounty Snakes:**
