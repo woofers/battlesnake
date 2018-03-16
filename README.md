@@ -2,7 +2,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Battle Snake 2018</a>
+<li><a href="#sec-1">Battle Snake 2019</a>
 <ul>
 <li><a href="#sec-1-1">Strategy</a>
 <ul>
@@ -27,14 +27,14 @@
 </div>
 
 
-# Battle Snake 2018<a id="sec-1" name="sec-1"></a>
+# Battle Snake 2019<a id="sec-1" name="sec-1"></a>
 
-<img height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />
+<img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />
 
 A simple [BattleSnake](https://www.battlesnake.io) written in Java.
-Entered in the 2018 Intermediate competition as **Solid Snake**.
+Entered in the 2018 Intermediate competition as **Liquid Snake**.
 
-Deployed to `https://battlesnake-solid.herokuapp.com/`
+Deployed to `https://battlesnake-liquid.herokuapp.com/`
 
 ## Strategy<a id="sec-1-1" name="sec-1-1"></a>
 
@@ -124,4 +124,4 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 -   **Designed for** [Sendwithus](https://github.com/sendwithus)'
     BattleSnake competition, March 3, 2018
 
-<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2018/blob/master/screenshots/intermediate.png?raw=true" />
+<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />

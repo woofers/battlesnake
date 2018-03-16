@@ -23,7 +23,7 @@ public class SmartSnake
         BAIT_STATE
     }
 
-    private static final String NAME = "Solid Snake";
+    private static final String NAME = "Liquid Snake";
     private static final String COLOR = "#f2c55c";
     private static final String IMAGE = "https://i.imgur.com/FX5ZLYE.png";
     private static final String MOVE_TAUNT = "Kept you waiting, huh?";
