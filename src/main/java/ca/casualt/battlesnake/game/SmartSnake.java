@@ -155,7 +155,7 @@ public class SmartSnake
 
     public boolean isDead()
     {
-        return health() <= 0;
+        return health() < 0;
     }
 
     public boolean isLongest(Board board)
