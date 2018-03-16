@@ -32,7 +32,7 @@
 <img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />
 
 A simple [BattleSnake](https://www.battlesnake.io) written in Java.
-Entered in the 2018 Intermediate competition as **Liquid Snake**.
+Will be entered in the 2019 Intermediate competition as **Liquid Snake**.
 
 Deployed to `https://battlesnake-liquid.herokuapp.com/`
 
