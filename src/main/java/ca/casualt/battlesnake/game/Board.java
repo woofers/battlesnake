@@ -33,11 +33,12 @@ public class Board
 
     private int[][] region;
 
-    private static final int EMPTY = 10;
-    private static final int WALL = 11;
-    private static final int ME = 12;
-    private static final int HEADS = 13;
-    private static final int FOOD = 14;
+    private static final int EMPTY = 0;
+    private static final int WALL = 1;
+    private static final int ME = 2;
+    private static final int HEADS = 3;
+    private static final int FOOD = 4;
+    private static final int FAKE_WALL = 5;
 
     private static class MovePoint
     {
@@ -169,7 +170,7 @@ public class Board
             System.arraycopy(board[i], 0, region[i], 0, board[i].length);
         }
 
-        int startId = 20;
+        int startId = 10;
 
         for (int y = 0; y < height(); y ++)
         {
