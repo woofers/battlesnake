@@ -33,6 +33,9 @@ public class Board
 
     private int[][] region;
 
+
+    private final int INFINITY = Integer.MAX_VALUE;
+
     private static final int EMPTY = 0;
     private static final int WALL = 1;
     private static final int ME = 2;
@@ -462,6 +465,126 @@ public class Board
             value += "\n";
         }
         return value;
+    }
+
+    public int miniMax(int depth)
+    {
+        //swapColors();
+        if (depth % 2 == 0 || depth == 0)
+        {
+            return max(depth, depth, -INFINITY, INFINITY);
+        }
+        return min(depth, depth, -INFINITY, INFINITY);
+    }
+
+    private int max(int depth, int maxDepth, int alpha, int beta)
+    {
+        int value;
+        int newValue = -1;
+        int xSpot = -1;
+        int turnsLeft = 0;
+
+        //swapColors();
+        value = alpha;
+        for (int x = 0; x < width; x ++)
+        {
+            if (!rowIsFull(x))
+            {
+                //placeOval(x, placableLocations(x));
+
+                if (isWin())
+                {
+                    newValue = INFINITY - maxDepth + depth;
+                }
+                else if (depth <= 0 || turnsLeft <= 0)
+                {
+                    //newValue = evaluateGrid();
+                }
+                else
+                {
+                    newValue = min(depth - 1, maxDepth, alpha, beta);
+                    //swapColors();
+                }
+
+                //undoMove(x);
+
+                if (xSpot == -1)
+                {
+                    xSpot = x;
+                }
+
+                if (newValue > value)
+                {
+                    value = newValue;
+                    xSpot = x;
+                }
+                alpha = Math.max(alpha, value);
+                if (alpha >= beta) break;
+            }
+        }
+
+        if (depth == maxDepth) return xSpot;
+        return value;
+    }
+
+    private int min(int depth, int maxDepth, int alpha, int beta)
+    {
+        int value;
+        int newValue = -1;
+        int xSpot = -1;
+        int turnsLeft = 0;
+
+        //swapColors();
+        value = beta;
+        for(int x = 0; x < width; x ++)
+        {
+            if (!rowIsFull(x))
+            {
+                //placeOval(x, placableLocations(x));
+
+                if (isWin())
+                {
+                    newValue = -INFINITY + maxDepth - depth;
+                }
+                else if (depth <= 0 || turnsLeft <= 0)
+                {
+                    //newValue = evaluateGrid();
+                }
+                else
+                {
+                    newValue = max(depth - 1, maxDepth, alpha, beta);
+                    //swapColors();
+                }
+
+                //undoMove(x);
+
+                if (xSpot == -1)
+                {
+                    xSpot = x;
+                }
+
+                if (newValue < value)
+                {
+                    value = newValue;
+                    xSpot = x;
+                }
+                beta = Math.min(beta, value);
+                if (alpha >= beta) break;
+            }
+        }
+
+        if (depth == maxDepth) return xSpot;
+        return value;
+    }
+
+    private boolean rowIsFull(int x)
+    {
+        return false;
+    }
+
+    private boolean isWin()
+    {
+        return false;
     }
 
     public String toRegionString()
