@@ -93,12 +93,12 @@ public class Board
     {
         this.id = request.getId();
         this.turn = request.getTurn();
-        this.you = new SmartSnake(request.getYou());
+        this.you = new SmartSnake(request.getYou(), turn);
         this.snakes = new ArrayList<SmartSnake>();
         List<Snake> oldSnakes = request.getSnakes();
         for (Snake snake: oldSnakes)
         {
-            this.snakes.add(new SmartSnake(snake));
+            this.snakes.add(new SmartSnake(snake, turn));
         }
         this.width = request.getWidth();
         this.height = request.getHeight();

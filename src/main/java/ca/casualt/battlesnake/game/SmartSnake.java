@@ -28,15 +28,18 @@ public class SmartSnake
     private static final String IMAGE = "https://i.imgur.com/FX5ZLYE.png";
     private static final String MOVE_TAUNT = "Kept you waiting, huh?";
     private static final String START_TAUNT = "Metal… Gear?!";
+    private static final String HOLE_TAUNT = "So, the Snake's finally come out of his hole! Are you ready now, my brother!";
 
     private static final int HUNGER_ZONE = 50;
 
     private Snake snake;
+    private int turn;
 
-    public SmartSnake(Snake snake)
+    public SmartSnake(Snake snake, int turn)
     {
         this.snake = snake;
-        setTaunt(MOVE_TAUNT);
+        this.turn = turn;
+        setTaunt(HOLE_TAUNT);
     }
 
     public boolean equals(Object other)
@@ -172,7 +175,7 @@ public class SmartSnake
     {
         MoveResponse moveResponse = new MoveResponse();
         moveResponse.setMove(move(board));
-        moveResponse.setTaunt(taunt());
+        moveResponse.setTaunt(new Taunt(taunt(), turn).toString());
         return moveResponse;
     }
 
