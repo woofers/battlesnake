@@ -1,5 +1,8 @@
 package ca.casualt.battlesnake.game;
 
+/**
+ * @author Jaxson Van Doorn
+ */
 public class Taunt
 {
     private static final int MAX_LENGTH = 32;
