@@ -26,9 +26,10 @@ public class SmartSnake
     private static final String NAME = "Liquid Snake";
     private static final String COLOR = "#f2c55c";
     private static final String IMAGE = "https://i.imgur.com/FX5ZLYE.png";
-    private static final String MOVE_TAUNT = "Kept you waiting, huh?";
-    private static final String START_TAUNT = "Metal… Gear?!";
+    private static final String START_TAUNT = "Sleeping late as usual, ...eh Snake?";
     private static final String HOLE_TAUNT = "So, the Snake's finally come out of his hole! Are you ready now, my brother!";
+    private static final String DUST_TAUNT = "Snake, I'll crush you into dust!";
+    private static final String DUST_GEAR = "Good. Then no one can stop Metal Gear now.";
 
     private static final int HUNGER_ZONE = 50;
 
