@@ -115,7 +115,7 @@ public class Board
     {
         for (int i = 0; i < snakes.size(); i ++)
         {
-            if (snakes.get(0).isDead())
+            if (snakes.get(i).isDead())
             {
                 snakes.remove(i);
                 i --;
