@@ -1,33 +1,23 @@
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Battle Snake 2019</a>
-<ul>
-<li><a href="#sec-1-1">Strategy</a>
-<ul>
-<li><a href="#sec-1-1-1">Drawbacks</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-2">Battle History</a></li>
-<li><a href="#sec-1-3">Screenshots</a></li>
-<li><a href="#sec-1-4">Usage</a>
-<ul>
-<li><a href="#sec-1-4-1">Prerequisites</a></li>
-<li><a href="#sec-1-4-2">Test Server</a></li>
-<li><a href="#sec-1-4-3">Run Locally</a></li>
-<li><a href="#sec-1-4-4">Deployment</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-5">Acknowledgments</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+
+# Table of Contents
+
+-   [Battle Snake 2019](#orgf9ab559)
+    -   [Strategy](#org889b147)
+        -   [Drawbacks](#orgfb85c54)
+    -   [Battle History](#orgcfa9a90)
+    -   [Screenshots](#orgc2991ca)
+    -   [Usage](#org7bfc615)
+        -   [Prerequisites](#orge6d4f36)
+        -   [Test Server](#orgf8ef52a)
+        -   [Run Locally](#org73d091b)
+        -   [Deployment](#org3a27619)
+    -   [Acknowledgments](#org4a0f7fb)
 
 
-# Battle Snake 2019<a id="sec-1" name="sec-1"></a>
+
+<a id="orgf9ab559"></a>
+
+# Battle Snake 2019
 
 <img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />
 
@@ -36,7 +26,10 @@ Will be entered in the 2019 Intermediate competition as **Liquid Snake**.
 
 Deployed to `https://battlesnake-liquid.herokuapp.com/`
 
-## Strategy<a id="sec-1-1" name="sec-1-1"></a>
+
+<a id="org889b147"></a>
+
+## Strategy
 
 Our snake's strategy was aggresive. For each turn, if the snake wasn't
 the largest on the board, or if the health was below a specific
@@ -46,16 +39,23 @@ opponent in a head-on collision or trap them by cutting off their path.
 The snake also included an unused passive state, where she would try to
 loop back around to her tail to avoid collisions.
 
-### Drawbacks<a id="sec-1-1-1" name="sec-1-1-1"></a>
+
+<a id="orgfb85c54"></a>
+
+### Drawbacks
 
 The snake's biggest drawback was trapping itself in its own tail. We
 didn't implement an effective algorithm to calculate dangerous regions
 of the board, and ultimately the snake died by going for takedowns and
 boxing itself in.
 
-## Battle History<a id="sec-1-2" name="sec-1-2"></a>
+
+<a id="orgcfa9a90"></a>
+
+## Battle History
 
 **Bounty Snakes:**
+
 -   Beat two of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
 -   Beat [Rooof](https://www.rooof.com/)'s bounty snakes
 -   Beat [Giftbit](https://www.giftbit.com/)'s bounty snakes
@@ -82,45 +82,67 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 
 **[Game 2](https://clips.twitch.tv/GentleCrispyReubenCorgiDerp)**
 
-## Screenshots<a id="sec-1-3" name="sec-1-3"></a>
+
+<a id="orgc2991ca"></a>
+
+## Screenshots
 
 ![img](./screenshots/snake-0.png) ![img](./screenshots/snake-1.png)
 ![img](./screenshots/snake-2.png) ![img](./screenshots/snake-3.png)
 
-## Usage<a id="sec-1-4" name="sec-1-4"></a>
 
-### Prerequisites<a id="sec-1-4-1" name="sec-1-4-1"></a>
+<a id="org7bfc615"></a>
 
-1.  Install Maven
-2.  Install Heroku
-3.  Install Jetty (To Run Locally)
-4.  Install Docker (To Run Test Server)
-5.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy`
-6.  Create a Heroku App `heroku create <name>`
+## Usage
 
-### Test Server<a id="sec-1-4-2" name="sec-1-4-2"></a>
+
+<a id="orge6d4f36"></a>
+
+### Prerequisites
+
+1.  Install Heroku
+2.  Install Tomcat (To Run Locally)
+3.  Install Docker (To Run Test Server)
+4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy`
+5.  Create a Heroku App `heroku create <name>`
+
+
+<a id="orgf8ef52a"></a>
+
+### Test Server
 
 1.  Run `docker run -it --rm -p 3000:3000 sendwithus/battlesnake-server`
 2.  Goto `localhost:3000` in a browser.
 
-### Run Locally<a id="sec-1-4-3" name="sec-1-4-3"></a>
 
-1.  Run `mvn jetty:run`
-2.  Use `http://[local-ip]:8080` as snake URL.
+<a id="org73d091b"></a>
 
-### Deployment<a id="sec-1-4-4" name="sec-1-4-4"></a>
+### Run Locally
 
-1.  Build .war file `mvn install`
-2.  Deploy to Heroku `heroku war:deploy target/BattleSnake.war --app <name>`
+1.  Build .war file `./gradlew build`
+2.  Copy .war into `$CATALINA_HOME/webapps`
+3.  Start Tomcat using `sudo service tomcat[version] start`
+4.  Use `http://[local-ip]:8080` as snake URL.
+
+
+<a id="org3a27619"></a>
+
+### Deployment
+
+1.  Build .war file `./gradlew build`
+2.  Deploy to Heroku `heroku war:deploy build/libs/BattleSnake-[version].war --app <name>`
 3.  Use `https://[name].herokuapp.com/` as snake URL.
 
-## Acknowledgments<a id="sec-1-5" name="sec-1-5"></a>
+
+<a id="org4a0f7fb"></a>
+
+## Acknowledgments
 
 -   **Built by** [Ben Austin](https://github.com/austinben),
     [Jaxson Van Doorn](https://github.com/woofers), and
     [Zak White](https://github.com/zakwht), March 3, 2018
 -   **Template Forked from**
-       [here](https://github.com/tflinz/BasicBattleSnake2018)
+    [here](https://github.com/tflinz/BasicBattleSnake2018)
 -   **Designed for** [Sendwithus](https://github.com/sendwithus)'
     BattleSnake competition, March 3, 2018
 
