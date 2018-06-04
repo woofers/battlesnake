@@ -1,12 +1,9 @@
 package com.battlesnake.game;
 
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Stack;
 import java.util.LinkedList;
-import java.util.Random ;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-
 import com.battlesnake.game.data.Move;
 import com.battlesnake.game.math.Point;
 import com.battlesnake.http.request.MoveRequest;
@@ -18,7 +15,18 @@ import com.battlesnake.http.request.MoveRequest;
  */
 public class Board
 {
+    private static final int EMPTY = 0;
+    private static final int WALL = 1;
+
+    private static final int ME = 2;
+
+    private static final int HEADS = 3;
+
+    private static final int FOOD = 4;
+    private static final int FAKE_WALL = 5;
+
     private String id;
+
     private int turn;
 
     private SmartSnake you;
@@ -27,28 +35,17 @@ public class Board
 
     private int width;
     private int height;
-
     private List<Point> food;
-
     private int[][] board;
-
     private int[][] region;
-
     private final int INFINITY = Integer.MAX_VALUE;
-
-    private static final int EMPTY = 0;
-    private static final int WALL = 1;
-    private static final int ME = 2;
-    private static final int HEADS = 3;
-    private static final int FOOD = 4;
-    private static final int FAKE_WALL = 5;
 
     public Board(MoveRequest request)
     {
         this.id = request.getId();
         this.turn = request.getTurn();
         this.you = new SmartSnake(request.getYou(), turn);
-        this.snakes = new ArrayList<SmartSnake>();
+        this.snakes = new ArrayList<>();
         List<Snake> oldSnakes = request.getSnakes();
         for (Snake snake: oldSnakes)
         {
@@ -65,61 +62,20 @@ public class Board
         System.out.println(toRegionString());
     }
 
-    private void removeDead()
+    public boolean exists(Point point)
     {
-        for (int i = 0; i < snakes.size(); i ++)
-        {
-            if (snakes.get(i).isDead())
-            {
-                snakes.remove(i);
-                i --;
-            }
-        }
-    }
-
-    private void toGrid()
-    {
-        this.board = new int[width()][height()];
-
-        for (Point snack: food)
-        {
-            board[snack.getX()][snack.getY()] = FOOD;
-        }
-
-        for (SmartSnake snake: snakes)
-        {
-            List<Point> body = snake.body();
-            Point head = body.get(0);
-            for (Point bodyPart: body)
-            {
-                board[bodyPart.getX()][bodyPart.getY()] = WALL;
-            }
-
-            if (snake.equals(mySnake()))
-            {
-                board[head.getX()][head.getY()] = ME;
-            }
-            else
-            {
-                board[head.getX()][head.getY()] = HEADS;
-
-                if (!mySnake().longerThan(snake))
-                {
-                    List<Point> around = findAdjacent(head);
-                    for (Point point: around)
-                    {
-                        if (exists(point)) board[point.getX()][point.getY()] = WALL;
-                    }
-                }
-            }
-        }
+        if (point.getX() < 0) return false;
+        if (point.getY() < 0) return false;
+        if (point.getX() > width() - 1) return false;
+        if (point.getY() > height() - 1) return false;
+        return true;
     }
 
     private void fillInBoxes()
     {
         this.region = new int[width()][height()];
 
-        for (int i = 0; i < board.length; i++)
+        for (int i = 0; i < board.length; i ++)
         {
             System.arraycopy(board[i], 0, region[i], 0, board[i].length);
         }
@@ -133,10 +89,11 @@ public class Board
                 Point currentPoint = new Point(x, y);
                 if (!isRegionFilled(currentPoint))
                 {
-                    LinkedList<MovePoint> points = new LinkedList<MovePoint>();
-                    ArrayList<MovePoint> list = new ArrayList<MovePoint>();
+                    LinkedList<MovePoint> points = new LinkedList<>();
+                    ArrayList<MovePoint> list = new ArrayList<>();
 
-                    MovePoint loopPoint = new MovePoint(null, currentPoint, null);
+                    MovePoint loopPoint
+                            = new MovePoint(null, currentPoint, null);
                     points.add(loopPoint);
                     list.add(loopPoint);
                     while (!points.isEmpty())
@@ -148,7 +105,8 @@ public class Board
                             if (list.contains(move)) continue;
                             points.add(move);
                             list.add(move);
-                            region[move.point().getX()][move.point().getY()] = startId;
+                            region[move.point().getX()][move.point().getY()]
+                                    = startId;
                         }
                     }
                     startId ++;
@@ -157,31 +115,66 @@ public class Board
         }
     }
 
-    protected Move goToAttack(Point currentPoint)
+    private List<Point> findAdjacent(Point point)
     {
-        return findPath(findHeads(), currentPoint);
+        ArrayList<Point> list = new ArrayList<>();
+        list.add(new Point(point.getX() - 1, point.getY()));
+        list.add(new Point(point.getX() + 1, point.getY()));
+        list.add(new Point(point.getX(), point.getY() - 1));
+        list.add(new Point(point.getX(), point.getY() + 1));
+        return list;
     }
 
-    protected Move goToFood(Point currentPoint)
+    protected List<Point> findBestAttackPoint()
     {
-        return findPath(findBestFood(), currentPoint);
-    }
-
-    protected Move goToTail(Point currentPoint)
-    {
-        Move move = null;
-        for (int i = mySnake().body().size() - 1; i > 0; i --)
+        ArrayList<Point> list = new ArrayList<>();
+        for (int y = 0; y < height(); y ++)
         {
-            move = findPath(findAdjacent(mySnake().body().get(i)), currentPoint);
-            if (move != null) return move;
+            for (int x = 0; x < width(); x ++)
+            {
+                if (board[x][y] == HEADS)
+                {
+                    list.add(new Point(x, y));
+                }
+            }
         }
-        return null;
+        return list;
+    }
+
+    protected List<Point> findBestFood()
+    {
+        return food;
+    }
+
+    private List<Point> findHeads()
+    {
+        ArrayList<Point> list = new ArrayList<>();
+        for (SmartSnake snake: snakes)
+        {
+            if (!snake.equals(mySnake()))
+            {
+                list.addAll(findAdjacent(snake.body().get(0)));
+                list.add(snake.body().get(0));
+            }
+        }
+        return list;
+
+    }
+
+    private List<Point> findOurClosestTail()
+    {
+        return new ArrayList<>();
+    }
+
+    private List<Point> findOurTail()
+    {
+        return findAdjacent(mySnake().body().get(mySnake().body().size() - 1));
     }
 
     protected Move findPath(List<Point> destinations, Point currentPoint)
     {
-        LinkedList<MovePoint> points = new LinkedList<MovePoint>();
-        ArrayList<MovePoint> list = new ArrayList<MovePoint>();
+        LinkedList<MovePoint> points = new LinkedList<>();
+        ArrayList<MovePoint> list = new ArrayList<>();
 
         for (int i = 0; i < destinations.size(); i ++)
         {
@@ -217,49 +210,19 @@ public class Board
         return null;
     }
 
-    private List<Point> findOurClosestTail()
+    protected List<Point> findSafestPoint()
     {
-        return new ArrayList<Point>();
-    }
-
-    private List<Point> findOurTail()
-    {
-        return findAdjacent(mySnake().body().get(mySnake().body().size() - 1));
-    }
-
-    private List<Point> findHeads()
-    {
-        ArrayList<Point> list = new ArrayList<Point>();
+        ArrayList<Point> list = new ArrayList<>();
         for (SmartSnake snake: snakes)
         {
-            if (!snake.equals(mySnake()))
-            {
-                list.addAll(findAdjacent(snake.body().get(0)));
-                list.add(snake.body().get(0));
-            }
+            list.add(snake.body().get(snake.body().size()));
         }
         return list;
-
-    }
-
-    private List<Point> findAdjacent(Point point)
-    {
-        ArrayList<Point> list = new ArrayList<Point>();
-        list.add(new Point(point.getX() - 1, point.getY()));
-        list.add(new Point(point.getX() + 1, point.getY()));
-        list.add(new Point(point.getX(), point.getY() - 1));
-        list.add(new Point(point.getX(), point.getY() + 1));
-        return list;
-    }
-
-    private Move randomMove(List<MovePoint> moves)
-    {
-        return moves.get(ThreadLocalRandom.current().nextInt(moves.size())).initialMove();
     }
 
     private List<MovePoint> getPossibleMoves(MovePoint point)
     {
-        ArrayList<MovePoint> list = new ArrayList<MovePoint>();
+        ArrayList<MovePoint> list = new ArrayList<>();
         Point up = Move.up.translate(point.point());
         Point down = Move.down.translate(point.point());
         Point left = Move.left.translate(point.point());
@@ -270,7 +233,7 @@ public class Board
         {
             if (initial == null)
             {
-                 list.add(new MovePoint(Move.up, up, Move.up));
+                list.add(new MovePoint(Move.up, up, Move.up));
             }
             else
             {
@@ -281,7 +244,7 @@ public class Board
         {
             if (initial == null)
             {
-                 list.add(new MovePoint(Move.down, down, Move.down));
+                list.add(new MovePoint(Move.down, down, Move.down));
             }
             else
             {
@@ -292,7 +255,7 @@ public class Board
         {
             if (initial == null)
             {
-                 list.add(new MovePoint(Move.left, left, Move.left));
+                list.add(new MovePoint(Move.left, left, Move.left));
             }
             else
             {
@@ -303,7 +266,7 @@ public class Board
         {
             if (initial == null)
             {
-                 list.add(new MovePoint(Move.right, right, Move.right));
+                list.add(new MovePoint(Move.right, right, Move.right));
             }
             else
             {
@@ -313,18 +276,31 @@ public class Board
         return list;
     }
 
-    public boolean exists(Point point)
+    protected Move goToAttack(Point currentPoint)
     {
-        if (point.getX() < 0) return false;
-        if (point.getY() < 0) return false;
-        if (point.getX() > width() - 1) return false;
-        if (point.getY() > height() - 1) return false;
-        return true;
+        return findPath(findHeads(), currentPoint);
     }
 
-    public boolean isRegionFilled(Point point)
+    protected Move goToFood(Point currentPoint)
     {
-        return isFilled(point, region);
+        return findPath(findBestFood(), currentPoint);
+    }
+
+    protected Move goToTail(Point currentPoint)
+    {
+        Move move = null;
+        for (int i = mySnake().body().size() - 1; i > 0; i --)
+        {
+            move = findPath(
+                    findAdjacent(mySnake().body().get(i)), currentPoint);
+            if (move != null) return move;
+        }
+        return null;
+    }
+
+    public int height()
+    {
+        return height;
     }
 
     public boolean isFilled(Point point)
@@ -335,39 +311,19 @@ public class Board
     private boolean isFilled(Point point, int[][] board)
     {
         if (!exists(point)) return true;
-        return board[point.getX()][point.getY()] != EMPTY &&
-               board[point.getX()][point.getY()] != FOOD;
+        return board[point.getX()][point.getY()] != EMPTY
+                &&
+                board[point.getX()][point.getY()] != FOOD;
     }
 
-    protected List<Point> findSafestPoint()
+    public boolean isRegionFilled(Point point)
     {
-        ArrayList<Point> list = new ArrayList<Point>();
-        for (SmartSnake snake: snakes)
-        {
-            list.add(snake.body().get(snake.body().size()));
-        }
-        return list;
+        return isFilled(point, region);
     }
 
-    protected List<Point> findBestAttackPoint()
+    private boolean isWin()
     {
-        ArrayList<Point> list = new ArrayList<Point>();
-        for (int y = 0; y < height(); y ++)
-        {
-            for (int x = 0; x < width(); x ++)
-            {
-                if (board[x][y] == HEADS)
-                {
-                    list.add(new Point(x, y));
-                }
-            }
-        }
-        return list;
-    }
-
-    protected List<Point> findBestFood()
-    {
-        return food;
+        return false;
     }
 
     protected int longestSnakeLength()
@@ -383,51 +339,6 @@ public class Board
         return max;
     }
 
-    public int width()
-    {
-        return width;
-    }
-
-    public int height()
-    {
-        return height;
-    }
-
-    public SmartSnake mySnake()
-    {
-        return you;
-    }
-
-    public void print()
-    {
-        System.out.println(toString());
-    }
-
-    public String toString(int[][] board)
-    {
-        String value = "";
-        for (int y = 0; y < height(); y ++)
-        {
-            for (int x = 0; x < width(); x ++)
-            {
-                value += board[x][y];
-                value += " ";
-            }
-            value += "\n";
-        }
-        return value;
-    }
-
-    public int miniMax(int depth)
-    {
-        //swapColors();
-        if (depth % 2 == 0 || depth == 0)
-        {
-            return max(depth, depth, -INFINITY, INFINITY);
-        }
-        return min(depth, depth, -INFINITY, INFINITY);
-    }
-
     private int max(int depth, int maxDepth, int alpha, int beta)
     {
         int value;
@@ -435,13 +346,13 @@ public class Board
         int xSpot = -1;
         int turnsLeft = 0;
 
-        //swapColors();
+        // swapColors();
         value = alpha;
         for (int x = 0; x < width; x ++)
         {
             if (!rowIsFull(x))
             {
-                //placeOval(x, placableLocations(x));
+                // placeOval(x, placableLocations(x));
 
                 if (isWin())
                 {
@@ -449,15 +360,15 @@ public class Board
                 }
                 else if (depth <= 0 || turnsLeft <= 0)
                 {
-                    //newValue = evaluateGrid();
+                    // newValue = evaluateGrid();
                 }
                 else
                 {
                     newValue = min(depth - 1, maxDepth, alpha, beta);
-                    //swapColors();
+                    // swapColors();
                 }
 
-                //undoMove(x);
+                // undoMove(x);
 
                 if (xSpot == -1)
                 {
@@ -485,13 +396,13 @@ public class Board
         int xSpot = -1;
         int turnsLeft = 0;
 
-        //swapColors();
+        // swapColors();
         value = beta;
-        for(int x = 0; x < width; x ++)
+        for (int x = 0; x < width; x ++)
         {
             if (!rowIsFull(x))
             {
-                //placeOval(x, placableLocations(x));
+                // placeOval(x, placableLocations(x));
 
                 if (isWin())
                 {
@@ -499,15 +410,15 @@ public class Board
                 }
                 else if (depth <= 0 || turnsLeft <= 0)
                 {
-                    //newValue = evaluateGrid();
+                    // newValue = evaluateGrid();
                 }
                 else
                 {
                     newValue = max(depth - 1, maxDepth, alpha, beta);
-                    //swapColors();
+                    // swapColors();
                 }
 
-                //undoMove(x);
+                // undoMove(x);
 
                 if (xSpot == -1)
                 {
@@ -528,14 +439,86 @@ public class Board
         return value;
     }
 
+    public int miniMax(int depth)
+    {
+        // swapColors();
+        if (depth % 2 == 0 || depth == 0)
+        {
+            return max(depth, depth, -INFINITY, INFINITY);
+        }
+        return min(depth, depth, -INFINITY, INFINITY);
+    }
+
+    public SmartSnake mySnake()
+    {
+        return you;
+    }
+
+    public void print()
+    {
+        System.out.println(toString());
+    }
+
+    private Move randomMove(List<MovePoint> moves)
+    {
+        return moves.get(ThreadLocalRandom.current().nextInt(moves.size()))
+                .initialMove();
+    }
+
+    private void removeDead()
+    {
+        for (int i = 0; i < snakes.size(); i ++)
+        {
+            if (snakes.get(i).isDead())
+            {
+                snakes.remove(i);
+                i --;
+            }
+        }
+    }
+
     private boolean rowIsFull(int x)
     {
         return false;
     }
 
-    private boolean isWin()
+    private void toGrid()
     {
-        return false;
+        this.board = new int[width()][height()];
+
+        for (Point snack: food)
+        {
+            board[snack.getX()][snack.getY()] = FOOD;
+        }
+
+        for (SmartSnake snake: snakes)
+        {
+            List<Point> body = snake.body();
+            Point head = body.get(0);
+            for (Point bodyPart: body)
+            {
+                board[bodyPart.getX()][bodyPart.getY()] = WALL;
+            }
+
+            if (snake.equals(mySnake()))
+            {
+                board[head.getX()][head.getY()] = ME;
+            }
+            else
+            {
+                board[head.getX()][head.getY()] = HEADS;
+
+                if (!mySnake().longerThan(snake))
+                {
+                    List<Point> around = findAdjacent(head);
+                    for (Point point: around)
+                    {
+                        if (exists(point))
+                            board[point.getX()][point.getY()] = WALL;
+                    }
+                }
+            }
+        }
     }
 
     public String toRegionString()
@@ -543,8 +526,29 @@ public class Board
         return toString(region);
     }
 
+    @Override
     public String toString()
     {
         return toString(board);
+    }
+
+    public String toString(int[][] board)
+    {
+        String value = "";
+        for (int y = 0; y < height(); y ++)
+        {
+            for (int x = 0; x < width(); x ++)
+            {
+                value += board[x][y];
+                value += " ";
+            }
+            value += "\n";
+        }
+        return value;
+    }
+
+    public int width()
+    {
+        return width;
     }
 }

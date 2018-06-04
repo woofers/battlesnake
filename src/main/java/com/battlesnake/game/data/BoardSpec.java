@@ -2,14 +2,13 @@ package com.battlesnake.game.data;
 
 /**
  * Specifics of a board.
- *
  * @author Tony
- *
  */
-public interface BoardSpec {
-	String getId();
+public interface BoardSpec
+{
+    int getHeight();
 
-	int getWidth();
+    String getId();
 
-	int getHeight();
+    int getWidth();
 }

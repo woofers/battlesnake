@@ -4,11 +4,10 @@ import com.battlesnake.game.data.Move;
 
 /**
  * A response to a move request.
- *
  * @author Tony
- *
  */
-public final class MoveResponse {
+public final class MoveResponse
+{
 
     private Move move;
     private String taunt;
@@ -16,46 +15,51 @@ public final class MoveResponse {
     /**
      * Default constructor.
      */
-    public MoveResponse() {
+    public MoveResponse()
+    {
     }
 
     /**
      * @return the move
      */
-    public final Move getMove() {
+    public final Move getMove()
+    {
         return move;
-    }
-
-    /**
-     * @param move
-     *            the move to set
-     */
-    public final void setMove(final Move move) {
-        this.move = move;
     }
 
     /**
      * @return the taunt
      */
-    public final String getTaunt() {
+    public final String getTaunt()
+    {
         return taunt;
     }
 
     /**
-     * @param taunt
-     *            the taunt to set
+     * @param move
+     * the move to set
      */
-    public final void setTaunt(final String taunt) {
+    public final void setMove(final Move move)
+    {
+        this.move = move;
+    }
+
+    /**
+     * @param taunt
+     * the taunt to set
+     */
+    public final void setTaunt(final String taunt)
+    {
         this.taunt = taunt;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "MoveResponse [move=" + move + ", taunt=" + taunt + "]";
     }
 }

@@ -10,11 +10,10 @@ import com.battlesnake.game.math.Point;
  * <li>{@link #down}</li>
  * <li>{@link #right}</li>
  * </ul>
- *
  * @author Tony
- *
  */
-public enum Move {
+public enum Move
+{
 
     /**
      * Move up.

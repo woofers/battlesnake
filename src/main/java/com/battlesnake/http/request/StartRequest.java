@@ -4,11 +4,10 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * A start request.
- *
  * @author Tony
- *
  */
-public final class StartRequest {
+public final class StartRequest
+{
 
     @SerializedName("game_id")
     private String gameId;
@@ -16,31 +15,34 @@ public final class StartRequest {
     /**
      * Default constructor.
      */
-    public StartRequest() {
+    public StartRequest()
+    {
     }
 
     /**
      * @return the gameId
      */
-    public final String getId() {
+    public final String getId()
+    {
         return gameId;
     }
 
     /**
      * @param gameId
-     *            the gameId to set
+     * the gameId to set
      */
-    public final void setGameId(final String gameId) {
+    public final void setGameId(final String gameId)
+    {
         this.gameId = gameId;
     }
 
     /*
      * (non-Javadoc)
-     *
      * @see java.lang.Object#toString()
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "StartRequest [gameId=" + gameId + "]";
     }
 }

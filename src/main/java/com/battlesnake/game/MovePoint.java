@@ -1,7 +1,5 @@
 package com.battlesnake.game;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import com.battlesnake.game.data.Move;
 import com.battlesnake.game.math.Point;
 
@@ -18,14 +16,16 @@ public class MovePoint
         this.initialMove = initialMove;
     }
 
-    public Point point()
+    public boolean equals(MovePoint other)
     {
-        return point;
+        return point().equals(other.point());
     }
 
-    public Move move()
+    @Override
+    public boolean equals(Object other)
     {
-        return move;
+        if (other instanceof MovePoint) return equals((MovePoint) other);
+        return false;
     }
 
     public Move initialMove()
@@ -33,22 +33,23 @@ public class MovePoint
         return initialMove;
     }
 
-    public boolean equals(Object other)
+    public Move move()
     {
-        if (other instanceof MovePoint) return equals((MovePoint)other);
-        return false;
+        return move;
     }
 
-    public boolean equals(MovePoint other)
+    public Point point()
     {
-        return point().equals(other.point());
+        return point;
     }
 
+    @Override
     public String toString()
     {
         String value = "";
         if (move() != null) value += move().toString() + " ";
-        if (point() != null) value += "X: " + point().getX() + " Y: " + point.getY() + " ";
+        if (point() != null)
+            value += "X: " + point().getX() + " Y: " + point.getY() + " ";
         if (initialMove() != null) value += initialMove().toString() + " ";
         return value;
     }

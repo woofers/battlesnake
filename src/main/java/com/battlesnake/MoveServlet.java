@@ -4,13 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.stream.Collectors;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.battlesnake.game.Board;
 import com.battlesnake.game.SmartSnake;
 import com.battlesnake.http.request.MoveRequest;
@@ -20,13 +18,13 @@ import com.google.gson.Gson;
 
 /**
  * This is the servlet that is hit when triggering the /move endpoint.
- *
  * @author Tony
  * @author Jaxson Van Doorn
  */
 @SuppressWarnings("serial")
 @WebServlet("/move")
-public class MoveServlet extends HttpServlet {
+public class MoveServlet extends HttpServlet
+{
 
     /**
      * Used for json serialization/deserialization.
@@ -40,12 +38,13 @@ public class MoveServlet extends HttpServlet {
      * @param resp The http response.
      */
     @Override
-    protected void doPost(final HttpServletRequest req, final HttpServletResponse resp)
-                          throws ServletException, IOException
+    protected void doPost(final HttpServletRequest req,
+            final HttpServletResponse resp)
+            throws ServletException, IOException
     {
         final String requestBody = new BufferedReader(
-            new InputStreamReader(req.getInputStream())).lines()
-                .collect(Collectors.joining("\n"));
+                new InputStreamReader(req.getInputStream())).lines()
+                        .collect(Collectors.joining("\n"));
 
         final MoveRequest moveRequest = parseToMoveRequest(requestBody);
         Board board = new Board(moveRequest);
@@ -59,7 +58,8 @@ public class MoveServlet extends HttpServlet {
 
     public MoveRequest parseToMoveRequest(final String requestBody)
     {
-        return gson.fromJson(CleanJson.cleanJson(requestBody), MoveRequest.class);
+        return gson
+                .fromJson(CleanJson.cleanJson(requestBody), MoveRequest.class);
     }
 
 }

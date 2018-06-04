@@ -16,12 +16,14 @@ public class Taunt
         this.taunt = taunt;
     }
 
+    @Override
     public String toString()
     {
         String cropped = "";
         int start = turn % taunt.length();
         cropped = taunt.substring(start);
-        if (cropped.length() > MAX_LENGTH) cropped = cropped.substring(0, MAX_LENGTH);
+        if (cropped.length() > MAX_LENGTH)
+            cropped = cropped.substring(0, MAX_LENGTH);
         return cropped;
     }
 }
