@@ -123,5 +123,4 @@ public final class Point {
             return false;
         return true;
     }
-
 }

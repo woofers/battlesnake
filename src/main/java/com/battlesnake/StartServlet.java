@@ -38,7 +38,6 @@ public class StartServlet extends HttpServlet
     protected void doPost(final HttpServletRequest req, final HttpServletResponse resp)
             throws ServletException, IOException
     {
-
         final StartResponse startResponse = SmartSnake.startResponse();
         final String responseBody = gson.toJson(startResponse);
         resp.getWriter().println(responseBody);
