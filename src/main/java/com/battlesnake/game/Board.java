@@ -321,11 +321,6 @@ public class Board
         return isFilled(point, region);
     }
 
-    private boolean isWin()
-    {
-        return false;
-    }
-
     protected int longestSnakeLength()
     {
         int max = Integer.MIN_VALUE;
@@ -337,116 +332,6 @@ public class Board
             }
         }
         return max;
-    }
-
-    private int max(int depth, int maxDepth, int alpha, int beta)
-    {
-        int value;
-        int newValue = -1;
-        int xSpot = -1;
-        int turnsLeft = 0;
-
-        // swapColors();
-        value = alpha;
-        for (int x = 0; x < width; x ++)
-        {
-            if (!rowIsFull(x))
-            {
-                // placeOval(x, placableLocations(x));
-
-                if (isWin())
-                {
-                    newValue = INFINITY - maxDepth + depth;
-                }
-                else if (depth <= 0 || turnsLeft <= 0)
-                {
-                    // newValue = evaluateGrid();
-                }
-                else
-                {
-                    newValue = min(depth - 1, maxDepth, alpha, beta);
-                    // swapColors();
-                }
-
-                // undoMove(x);
-
-                if (xSpot == -1)
-                {
-                    xSpot = x;
-                }
-
-                if (newValue > value)
-                {
-                    value = newValue;
-                    xSpot = x;
-                }
-                alpha = Math.max(alpha, value);
-                if (alpha >= beta) break;
-            }
-        }
-
-        if (depth == maxDepth) return xSpot;
-        return value;
-    }
-
-    private int min(int depth, int maxDepth, int alpha, int beta)
-    {
-        int value;
-        int newValue = -1;
-        int xSpot = -1;
-        int turnsLeft = 0;
-
-        // swapColors();
-        value = beta;
-        for (int x = 0; x < width; x ++)
-        {
-            if (!rowIsFull(x))
-            {
-                // placeOval(x, placableLocations(x));
-
-                if (isWin())
-                {
-                    newValue = -INFINITY + maxDepth - depth;
-                }
-                else if (depth <= 0 || turnsLeft <= 0)
-                {
-                    // newValue = evaluateGrid();
-                }
-                else
-                {
-                    newValue = max(depth - 1, maxDepth, alpha, beta);
-                    // swapColors();
-                }
-
-                // undoMove(x);
-
-                if (xSpot == -1)
-                {
-                    xSpot = x;
-                }
-
-                if (newValue < value)
-                {
-                    value = newValue;
-                    xSpot = x;
-                }
-                beta = Math.min(beta, value);
-                if (alpha >= beta) break;
-            }
-        }
-
-        if (depth == maxDepth) return xSpot;
-        return value;
-    }
-
-    public int miniMax(int depth)
-    {
-        // swapColors();
-        if (depth % 2 == 0 || depth == 0)
-        {
-            return max(depth, depth, -INFINITY, INFINITY);
-        }
-        return min(depth, depth, -INFINITY, INFINITY);
     }
 
     public SmartSnake mySnake()
@@ -475,11 +360,6 @@ public class Board
                 i --;
             }
         }
-    }
-
-    private boolean rowIsFull(int x)
-    {
-        return false;
     }
 
     private void toGrid()
