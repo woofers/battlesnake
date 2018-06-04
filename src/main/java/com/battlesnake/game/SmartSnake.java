@@ -30,8 +30,10 @@ public class SmartSnake
     private static final String START_TAUNT = "Sleeping late as usual, ...eh Snake?";
     private static final String HOLE_TAUNT = "So, the Snake's finally come out of his hole! Are you ready now, my brother!";
     private static final String DUST_TAUNT = "Snake, I'll crush you into dust!";
-    private static final String DUST_GEAR = "Good. Then no one can stop Metal Gear now.";
+    private static final String GEAR_TAUNT = "Good. Then no one can stop Metal Gear now.";
 
+    private static final int MAX_HEALTH = 100;
+    private static final int MIN_HEALTH = 0;
     private static final int HUNGER_ZONE = 50;
 
     private Snake snake;
@@ -77,7 +79,7 @@ public class SmartSnake
 
     public boolean justAte()
     {
-        return health() == 100;
+        return health() == MAX_HEALTH;
     }
 
     public int health()
@@ -160,17 +162,22 @@ public class SmartSnake
 
     public boolean isDead()
     {
-        return health() < 0;
+        return health() < MIN_HEALTH;
     }
 
     public boolean isLongest(Board board)
     {
-        return length() > board.longestSnakeLength();
+        return longerThan(board.longestSnakeLength());
+    }
+
+    private boolean longerThan(int length)
+    {
+        return length() > length;
     }
 
     public boolean longerThan(SmartSnake snake)
     {
-        return length() > snake.length();
+        return  longerThan(snake.length());
     }
 
     public MoveResponse moveResponse(Board board)
