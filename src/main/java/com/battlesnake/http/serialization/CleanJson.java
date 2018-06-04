@@ -14,12 +14,12 @@ import com.google.gson.JsonParser;
  * @author Tony
  *
  */
-public final class TwentyEighteenJsonHelper {
+public final class CleanJson {
 
 	/**
 	 * Utility class.
 	 */
-	private TwentyEighteenJsonHelper() {
+	private CleanJson() {
 	}
 
 	/**

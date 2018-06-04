@@ -14,7 +14,7 @@ public class MoveServletTest {
 
 	@Test
 	public void testDeserialization() throws IOException, URISyntaxException {
-		final String dirty = TwentyEighteenJsonHelperTest.getTestMoveRequest();
+		final String dirty = CleanJsonTest.getTestMoveRequest();
 
 		// Just want to make sure it can do it without errors.
 		MoveRequest result = new MoveServlet().parseToMoveRequest(dirty);

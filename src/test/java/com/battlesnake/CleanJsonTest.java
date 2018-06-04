@@ -11,13 +11,13 @@ import java.nio.file.Paths;
 
 import org.junit.Test;
 
-import com.battlesnake.http.serialization.TwentyEighteenJsonHelper;
+import com.battlesnake.http.serialization.CleanJson;
 import com.google.gson.JsonParser;
 
-public class TwentyEighteenJsonHelperTest {
+public class CleanJsonTest {
 
 	public static String getTestMoveRequest() throws IOException, URISyntaxException {
-		URL resource = TwentyEighteenJsonHelper.class.getResource("exampleMoveRequest.json");
+		URL resource = CleanJson.class.getResource("exampleMoveRequest.json");
 		System.out.println("File path: " + resource);
 		final String dirty = new String(Files.readAllBytes(Paths.get(resource.toURI())));
 		return dirty;
@@ -27,7 +27,7 @@ public class TwentyEighteenJsonHelperTest {
 	public void testCleanJson() throws IOException, URISyntaxException {
 		final String dirty = getTestMoveRequest();
 		System.out.println("Dirty: " + dirty);
-		final String clean = TwentyEighteenJsonHelper.cleanJson(dirty);
+		final String clean = CleanJson.cleanJson(dirty);
 		System.out.println("Clean: " + clean);
 
 		// Ensure no longer contains "data" keys
