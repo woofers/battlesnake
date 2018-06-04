@@ -13,8 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.battlesnake.game.Board;
 import com.battlesnake.game.SmartSnake;
-import com.battlesnake.game.move.Mover;
-import com.battlesnake.game.move.RandomMover;
 import com.battlesnake.http.request.MoveRequest;
 import com.battlesnake.http.response.MoveResponse;
 import com.battlesnake.http.serialization.TwentyEighteenJsonHelper;
@@ -36,11 +34,6 @@ public class MoveServlet extends HttpServlet {
     private final Gson gson = new Gson();
 
     /**
-     * For returning a response.
-     */
-    private final Mover mover = new RandomMover();
-
-    /**
      * This handles the stnadard post request, converts the json request body
      * into a java object, and creates a random response.
      * @param req The http request.
@@ -53,14 +46,12 @@ public class MoveServlet extends HttpServlet {
         final String requestBody = new BufferedReader(
             new InputStreamReader(req.getInputStream())).lines()
                 .collect(Collectors.joining("\n"));
-        //System.out.println("Current Game Statey: [" + requestBody + "]");
 
         final MoveRequest moveRequest = parseToMoveRequest(requestBody);
         Board board = new Board(moveRequest);
         SmartSnake snake = board.mySnake();
 
         final MoveResponse moveResponse = snake.moveResponse(board);
-        //System.out.println("Next Move " + moveResponse.getMove());
 
         final String responseBody = gson.toJson(moveResponse);
         resp.getWriter().println(responseBody);
