@@ -93,34 +93,20 @@ public final class Point {
         this.y = y;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#toString()
-     */
     @Override
     public String toString() {
         return "Point [x=" + x + ", y=" + y + "]";
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#equals(java.lang.Object)
-     */
     @Override
     public boolean equals(final Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Point other = (Point) obj;
-        if (x != other.x)
-            return false;
-        if (y != other.y)
-            return false;
+        if (!(obj instanceof Point)) return false;
+        return equals((Point)obj);
+    }
+
+    public boolean equals(Point other) {
+        if (other == null) return false;
+        if (x != other.x || y != other.y) return false;
         return true;
     }
 }
