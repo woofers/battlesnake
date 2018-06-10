@@ -11,7 +11,7 @@ targetCompatibility = 1.8
 
 
 ext {
-    gsonVersion = '2.8.0'
+    gsonVersion = '2.8.5'
     junitVersion = '4.12'
     servletVersion = '3.0.1'
 }
