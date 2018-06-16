@@ -8,16 +8,8 @@ import com.google.gson.annotations.SerializedName;
  */
 public final class StartRequest
 {
-
     @SerializedName("game_id")
     private String gameId;
-
-    /**
-     * Default constructor.
-     */
-    public StartRequest()
-    {
-    }
 
     /**
      * @return the gameId
@@ -36,10 +28,6 @@ public final class StartRequest
         this.gameId = gameId;
     }
 
-    /*
-     * (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
     @Override
     public String toString()
     {
