@@ -19,12 +19,6 @@ import com.google.gson.Gson;
 @WebServlet("/start")
 public class StartServlet extends HttpServlet
 {
-
-    /**
-     * Used for json serialization/deserialization.
-     */
-    private final Gson gson = new Gson();
-
     /**
      * This handles the standard post request, converts the json request body
      * into a java object, and creates a response.

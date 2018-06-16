@@ -25,12 +25,6 @@ import com.google.gson.Gson;
 @WebServlet("/move")
 public class MoveServlet extends HttpServlet
 {
-
-    /**
-     * Used for json serialization/deserialization.
-     */
-    private final Gson gson = new Gson();
-
     /**
      * This handles the stnadard post request, converts the json request body
      * into a java object, and creates a random response.
@@ -54,7 +48,7 @@ public class MoveServlet extends HttpServlet
 
     public MoveRequest parseToMoveRequest(String requestBody)
     {
-        return gson
+        return new Gson()
                 .fromJson(CleanJson.cleanJson(requestBody),
                           MoveRequest.class);
     }
