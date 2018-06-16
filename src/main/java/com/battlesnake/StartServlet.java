@@ -32,12 +32,10 @@ public class StartServlet extends HttpServlet
      * @param resp The http response.
      */
     @Override
-    protected void doPost(final HttpServletRequest req,
-            final HttpServletResponse resp)
-            throws ServletException, IOException
+    protected void doPost(HttpServletRequest req,
+                          HttpServletResponse resp)
+                          throws ServletException, IOException
     {
-        final StartResponse startResponse = SmartSnake.startResponse();
-        final String responseBody = gson.toJson(startResponse);
-        resp.getWriter().println(responseBody);
+        resp.getWriter().println(gson.toJson(SmartSnake.startResponse()));
     }
 }
