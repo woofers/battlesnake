@@ -14,22 +14,9 @@ import com.battlesnake.game.math.Point;
  */
 public enum Move
 {
-
-    /**
-     * Move up.
-     */
     up,
-    /**
-     * Move left.
-     */
     left,
-    /**
-     * Move down.
-     */
     down,
-    /**
-     * Move right.
-     */
     right;
 
     public Point translate(Point point)

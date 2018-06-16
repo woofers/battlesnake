@@ -5,6 +5,7 @@ package com.battlesnake.game.data;
  */
 public enum HeadType
 {
+    // sand-worm,
     bendr,
     dead,
     fang,
@@ -14,6 +15,4 @@ public enum HeadType
     shades,
     smile,
     tongue;
-    // Left out for ease of implementation:
-    // sand-worm
 }

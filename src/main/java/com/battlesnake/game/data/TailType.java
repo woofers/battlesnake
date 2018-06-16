@@ -5,7 +5,13 @@ package com.battlesnake.game.data;
  */
 public enum TailType
 {
-    curled, freckled, pixel, regular, skinny;
-    // Left out for ease of implementation:
-    // block-bum,fat-rattle,round-bum,small-rattle
+    // block-bum,
+    // fat-rattle,
+    // round-bum,
+    // small-rattle
+    curled,
+    freckled,
+    pixel,
+    regular,
+    skinny;
 }
