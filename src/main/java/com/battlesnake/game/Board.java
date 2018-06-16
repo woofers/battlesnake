@@ -7,6 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import com.battlesnake.game.data.Move;
 import com.battlesnake.game.math.Point;
 import com.battlesnake.http.request.MoveRequest;
+import com.battlesnake.http.response.MoveResponse;
 
 /**
  * @author Ben Austin
@@ -410,6 +411,11 @@ public class Board
     public String toString()
     {
         return toString(board);
+    }
+
+    public MoveResponse moveResponse()
+    {
+        return mySnake().moveResponse(this);
     }
 
     public String toString(int[][] board)

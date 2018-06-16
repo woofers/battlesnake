@@ -38,28 +38,25 @@ public class MoveServlet extends HttpServlet
      * @param resp The http response.
      */
     @Override
-    protected void doPost(final HttpServletRequest req,
-            final HttpServletResponse resp)
-            throws ServletException, IOException
+    protected void doPost(HttpServletRequest req,
+                          HttpServletResponse resp)
+                          throws ServletException, IOException
     {
-        final String requestBody = new BufferedReader(
-                new InputStreamReader(req.getInputStream())).lines()
-                        .collect(Collectors.joining("\n"));
+        String requestBody
+            = new BufferedReader(
+                new InputStreamReader(req.getInputStream()))
+                    .lines()
+                    .collect(Collectors.joining("\n"));
 
-        final MoveRequest moveRequest = parseToMoveRequest(requestBody);
-        Board board = new Board(moveRequest);
-        SmartSnake snake = board.mySnake();
-
-        final MoveResponse moveResponse = snake.moveResponse(board);
-
-        final String responseBody = gson.toJson(moveResponse);
-        resp.getWriter().println(responseBody);
+        Board board = new Board(parseToMoveRequest(requestBody));
+        resp.getWriter().println(gson.toJson(board.moveResponse()));
     }
 
-    public MoveRequest parseToMoveRequest(final String requestBody)
+    public MoveRequest parseToMoveRequest(String requestBody)
     {
         return gson
-                .fromJson(CleanJson.cleanJson(requestBody), MoveRequest.class);
+                .fromJson(CleanJson.cleanJson(requestBody),
+                          MoveRequest.class);
     }
 
 }
