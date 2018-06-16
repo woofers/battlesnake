@@ -2,6 +2,8 @@ package com.battlesnake.game;
 
 import java.util.List;
 import com.battlesnake.game.data.Move;
+import com.battlesnake.game.data.HeadType;
+import com.battlesnake.game.data.TailType;
 import com.battlesnake.game.math.Point;
 import com.battlesnake.http.response.MoveResponse;
 import com.battlesnake.http.response.StartResponse;
@@ -25,6 +27,8 @@ public class SmartSnake
     private static final String NAME = "Liquid Snake";
     private static final String COLOR = "#f2c55c";
     private static final String IMAGE = "https://i.imgur.com/FX5ZLYE.png";
+    private static final TailType TAIL_TYPE = TailType.skinny;
+    private static final HeadType HEAD_TYPE = HeadType.shades;
     private static final String START_TAUNT
             = "Sleeping late as usual, ...eh Snake?";
     private static final String HOLE_TAUNT
@@ -44,11 +48,12 @@ public class SmartSnake
         startResponse.setHeadUrl(IMAGE);
         startResponse.setName(NAME);
         startResponse.setTaunt(START_TAUNT);
+        startResponse.setTailType(TAIL_TYPE);
+        startResponse.setHeadType(HEAD_TYPE);
         return startResponse;
     }
 
     private Snake snake;
-
     private int turn;
 
     public SmartSnake(Snake snake, int turn)
