@@ -1,12 +1,13 @@
 package com.battlesnake.http.response;
 
 import com.battlesnake.game.data.Move;
+import com.battlesnake.http.serialization.JsonObject;
 
 /**
  * A response to a move request.
  * @author Tony
  */
-public final class MoveResponse
+public final class MoveResponse extends JsonObject
 {
 
     private Move move;

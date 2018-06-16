@@ -36,6 +36,6 @@ public class StartServlet extends HttpServlet
                           HttpServletResponse resp)
                           throws ServletException, IOException
     {
-        resp.getWriter().println(gson.toJson(SmartSnake.startResponse()));
+        resp.getWriter().println(SmartSnake.startResponse().toJson());
     }
 }

@@ -3,12 +3,13 @@ package com.battlesnake.http.response;
 import com.battlesnake.game.data.HeadType;
 import com.battlesnake.game.data.TailType;
 import com.google.gson.annotations.SerializedName;
+import com.battlesnake.http.serialization.JsonObject;
 
 /**
  * A standard response to a start request.
  * @author Tony
  */
-public class StartResponse
+public class StartResponse extends JsonObject
 {
 
     private String color;

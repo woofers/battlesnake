@@ -49,7 +49,7 @@ public class MoveServlet extends HttpServlet
                     .collect(Collectors.joining("\n"));
 
         Board board = new Board(parseToMoveRequest(requestBody));
-        resp.getWriter().println(gson.toJson(board.moveResponse()));
+        resp.getWriter().println(board.moveResponse().toJson());
     }
 
     public MoveRequest parseToMoveRequest(String requestBody)
