@@ -26,13 +26,6 @@ public final class MoveRequest implements BoardSpec
     private List<Point> food;
 
     /**
-     * Default constructor.
-     */
-    public MoveRequest()
-    {
-    }
-
-    /**
      * Copy constructor. <br>
      * (deep copy).
      * @param toCopy

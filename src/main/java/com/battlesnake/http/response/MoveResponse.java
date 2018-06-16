@@ -9,16 +9,8 @@ import com.battlesnake.http.serialization.JsonObject;
  */
 public final class MoveResponse extends JsonObject
 {
-
     private Move move;
     private String taunt;
-
-    /**
-     * Default constructor.
-     */
-    public MoveResponse()
-    {
-    }
 
     /**
      * @return the move
