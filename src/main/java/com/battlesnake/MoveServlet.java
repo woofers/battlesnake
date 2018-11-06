@@ -13,7 +13,6 @@ import com.battlesnake.game.Board;
 import com.battlesnake.game.SmartSnake;
 import com.battlesnake.http.request.MoveRequest;
 import com.battlesnake.http.response.MoveResponse;
-import com.battlesnake.http.serialization.CleanJson;
 import com.google.gson.Gson;
 
 /**
@@ -49,8 +48,7 @@ public class MoveServlet extends HttpServlet
     public MoveRequest parseToMoveRequest(String requestBody)
     {
         return new Gson()
-                .fromJson(CleanJson.cleanJson(requestBody),
-                          MoveRequest.class);
+                .fromJson(requestBody, MoveRequest.class);
     }
 
 }
