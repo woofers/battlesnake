@@ -17,7 +17,7 @@ import com.google.gson.Gson;
  */
 @SuppressWarnings("serial")
 @WebServlet("/start")
-public class StartServlet extends HttpServlet
+public class Start extends HttpServlet
 {
     /**
      * This handles the standard post request, converts the json request body

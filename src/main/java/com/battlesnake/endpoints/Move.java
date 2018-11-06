@@ -22,7 +22,7 @@ import com.google.gson.Gson;
  */
 @SuppressWarnings("serial")
 @WebServlet("/move")
-public class MoveServlet extends HttpServlet
+public class Move extends HttpServlet
 {
     /**
      * This handles the stnadard post request, converts the json request body
