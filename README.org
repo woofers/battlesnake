@@ -81,8 +81,8 @@ Twitch stream]] is
 4. Use ~http://[local-ip]:8080~ as snake URL.
 *** Deployment
 1. Build .war file ~./gradlew build~
-2. Deploy to Heroku ~heroku war:deploy build/libs/BattleSnake-[version].war --app <name>~
 3. Use ~https://[name].herokuapp.com/~ as snake URL.
+2. Deploy to Heroku ~heroku war:deploy build/libs/battlesnake.war --app <name>~
 ** Acknowledgments
 
 -  *Built by* [[https://github.com/austinben][Ben Austin]],

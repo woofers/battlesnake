@@ -130,8 +130,8 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 ### Deployment
 
 1.  Build .war file `./gradlew build`
-2.  Deploy to Heroku `heroku war:deploy build/libs/BattleSnake-[version].war --app <name>`
 3.  Use `https://[name].herokuapp.com/` as snake URL.
+2.  Deploy to Heroku `heroku war:deploy build/libs/battlesnake.war --app <name>`
 
 
 <a id="org4a0f7fb"></a>
