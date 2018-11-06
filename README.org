@@ -66,23 +66,22 @@ Twitch stream]] is
 
 ** Usage
 *** Prerequisites
-1. Install Heroku
-2. Install Tomcat (To Run Locally)
-3. Install Docker (To Run Test Server)
+1. Install Java 8 or higher
+2. Install Docker + Docker compose
+3. Install Heroku
 4. Install .war Heroku deployment plug-in ~heroku plugins:install heroku-cli-deploy~
 5. Create a Heroku App ~heroku create <name>~
 *** Test Server
 1. Run ~docker run -it --rm -p 3000:3000 sendwithus/battlesnake-server~
 2. Goto ~localhost:3000~ in a browser.
 *** Run Locally
-1. Build .war file ~./gradlew build~
-2. Copy .war into ~$CATALINA_HOME/webapps~
-3. Start Tomcat using ~sudo service tomcat[version] start~
-4. Use ~http://[local-ip]:8080~ as snake URL.
+1. Build the project using either ~./gradle build~ or ~gradlew build~ for UNIX and Windows platforms respectively.
+2. Run the Docker Tomcat image in a container with ~docker-compose up~.
+4. Use ~http://localhost:8080/battlesnake~ as the snake URL.
 *** Deployment
 1. Build .war file ~./gradlew build~
-3. Use ~https://[name].herokuapp.com/~ as snake URL.
 2. Deploy to Heroku ~heroku war:deploy build/libs/battlesnake.war --app <name>~
+3. Use ~https://[name].herokuapp.com/~ as the snake URL.
 ** Acknowledgments
 
 -  *Built by* [[https://github.com/austinben][Ben Austin]],
