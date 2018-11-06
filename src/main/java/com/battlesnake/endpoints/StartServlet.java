@@ -1,4 +1,4 @@
-package com.battlesnake;
+package com.battlesnake.endpoints;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

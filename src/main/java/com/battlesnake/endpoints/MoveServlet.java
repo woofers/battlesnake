@@ -1,4 +1,4 @@
-package com.battlesnake;
+package com.battlesnake.endpoints;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -47,8 +47,7 @@ public class MoveServlet extends HttpServlet
 
     public MoveRequest parseToMoveRequest(String requestBody)
     {
-        return new Gson()
-                .fromJson(requestBody, MoveRequest.class);
+        return new Gson().fromJson(requestBody, MoveRequest.class);
     }
 
 }
