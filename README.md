@@ -1,21 +1,21 @@
 
 # Table of Contents
 
--   [Battle Snake 2019](#orgf9ab559)
-    -   [Strategy](#org889b147)
-        -   [Drawbacks](#orgfb85c54)
-    -   [Battle History](#orgcfa9a90)
-    -   [Screenshots](#orgc2991ca)
-    -   [Usage](#org7bfc615)
-        -   [Prerequisites](#orge6d4f36)
-        -   [Test Server](#orgf8ef52a)
-        -   [Run Locally](#org73d091b)
-        -   [Deployment](#org3a27619)
-    -   [Acknowledgments](#org4a0f7fb)
+-   [Battle Snake 2019](#orgc3b9d53)
+    -   [Strategy](#orga4a177c)
+        -   [Drawbacks](#org8e967fc)
+    -   [Battle History](#orgce9430d)
+    -   [Screenshots](#org1c4598f)
+    -   [Usage](#orgb6dafef)
+        -   [Prerequisites](#orgd908e34)
+        -   [Test Server](#orgafc325f)
+        -   [Run Locally](#orgbbbafdc)
+        -   [Deployment](#orgcf6bfe2)
+    -   [Acknowledgments](#org52a9788)
 
 
 
-<a id="orgf9ab559"></a>
+<a id="orgc3b9d53"></a>
 
 # Battle Snake 2019
 
@@ -27,7 +27,7 @@ Will be entered in the 2019 Intermediate competition as **Liquid Snake**.
 Deployed to `https://battlesnake-liquid.herokuapp.com/`
 
 
-<a id="org889b147"></a>
+<a id="orga4a177c"></a>
 
 ## Strategy
 
@@ -40,7 +40,7 @@ The snake also included an unused passive state, where she would try to
 loop back around to her tail to avoid collisions.
 
 
-<a id="orgfb85c54"></a>
+<a id="org8e967fc"></a>
 
 ### Drawbacks
 
@@ -50,7 +50,7 @@ of the board, and ultimately the snake died by going for takedowns and
 boxing itself in.
 
 
-<a id="orgcfa9a90"></a>
+<a id="orgce9430d"></a>
 
 ## Battle History
 
@@ -83,7 +83,7 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 **[Game 2](https://clips.twitch.tv/GentleCrispyReubenCorgiDerp)**
 
 
-<a id="orgc2991ca"></a>
+<a id="org1c4598f"></a>
 
 ## Screenshots
 
@@ -91,23 +91,23 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 ![img](./screenshots/snake-2.png) ![img](./screenshots/snake-3.png)
 
 
-<a id="org7bfc615"></a>
+<a id="orgb6dafef"></a>
 
 ## Usage
 
 
-<a id="orge6d4f36"></a>
+<a id="orgd908e34"></a>
 
 ### Prerequisites
 
-1.  Install Heroku
-2.  Install Tomcat (To Run Locally)
-3.  Install Docker (To Run Test Server)
+1.  Install Java 8 or higher
+2.  Install Docker + Docker compose
+3.  Install Heroku
 4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy`
 5.  Create a Heroku App `heroku create <name>`
 
 
-<a id="orgf8ef52a"></a>
+<a id="orgafc325f"></a>
 
 ### Test Server
 
@@ -115,26 +115,25 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 2.  Goto `localhost:3000` in a browser.
 
 
-<a id="org73d091b"></a>
+<a id="orgbbbafdc"></a>
 
 ### Run Locally
 
-1.  Build .war file `./gradlew build`
-2.  Copy .war into `$CATALINA_HOME/webapps`
-3.  Start Tomcat using `sudo service tomcat[version] start`
-4.  Use `http://[local-ip]:8080` as snake URL.
+1.  Build the project using either `./gradle build` or `gradlew build` for UNIX and Windows platforms respectively.
+2.  Run the Docker Tomcat image in a container with `docker-compose up`.
+3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="org3a27619"></a>
+<a id="orgcf6bfe2"></a>
 
 ### Deployment
 
 1.  Build .war file `./gradlew build`
-2.  Deploy to Heroku `heroku war:deploy build/libs/BattleSnake-[version].war --app <name>`
-3.  Use `https://[name].herokuapp.com/` as snake URL.
+2.  Deploy to Heroku `heroku war:deploy build/libs/battlesnake.war --app <name>`
+3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="org4a0f7fb"></a>
+<a id="org52a9788"></a>
 
 ## Acknowledgments
 

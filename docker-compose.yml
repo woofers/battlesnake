@@ -1,0 +1,8 @@
+version: '3.5'
+services:
+  server:
+    image: tomcat:9.0-jre8
+    ports:
+      - 8080:8080
+    volumes:
+      -  ./build/libs/:/usr/local/tomcat/webapps/

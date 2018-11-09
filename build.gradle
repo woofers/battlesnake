@@ -9,6 +9,9 @@ description = "Battlesnake"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+war {
+    archiveName = rootProject.name + '.war'
+}
 
 ext {
     gsonVersion = '2.8.5'
