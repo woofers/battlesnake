@@ -12,49 +12,49 @@ import com.battlesnake.game.math.Point;
  */
 public final class MoveRequest implements BoardSpec
 {
+    private static final class Game {
+        private String id;
 
-    private String id;
-    private int turn;
+        public String id() {
+            return id;
+        }
+    }
+
+    private static final class Board {
+        private List<Snake> snakes;
+        private List<Point> food;
+        private int width;
+        private int height;
+
+        private List<Snake> snakes() {
+            return snakes;
+        }
+
+        private List<Point> food() {
+            return food;
+        }
+
+        private int width() {
+            return width;
+        }
+
+        private int height() {
+            return height;
+        }
+    }
+
 
     private Snake you;
-
-    private List<Snake> snakes;
-
-    private int width;
-    private int height;
-
-    private List<Point> food;
-
-    /**
-     * Copy constructor. <br>
-     * (deep copy).
-     * @param toCopy
-     */
-    public MoveRequest(final MoveRequest toCopy)
-    {
-        this.id = toCopy.id;
-        this.turn = toCopy.turn;
-        this.you = new Snake(toCopy.you);
-
-        this.width = toCopy.width;
-        this.height = toCopy.height;
-
-        this.snakes = toCopy.snakes.stream().map(snake ->
-        {
-            return new Snake(snake);
-        }).collect(Collectors.toList());
-        this.food = toCopy.food.stream().map(aFood ->
-        {
-            return new Point(aFood);
-        }).collect(Collectors.toList());
-    }
+    private Game game;
+    private Board board;
+    private int turn;
 
     /**
      * @return the food
      */
     public final List<Point> getFood()
     {
-        return food;
+        return board.food();
     }
 
     /**
@@ -63,7 +63,7 @@ public final class MoveRequest implements BoardSpec
     @Override
     public final int getHeight()
     {
-        return height;
+        return board.height();
     }
 
     /**
@@ -72,7 +72,7 @@ public final class MoveRequest implements BoardSpec
     @Override
     public final String getId()
     {
-        return id;
+        return game.id();
     }
 
     /**
@@ -80,7 +80,7 @@ public final class MoveRequest implements BoardSpec
      */
     public final List<Snake> getSnakes()
     {
-        return snakes;
+        return board.snakes();
     }
 
     /**
@@ -97,7 +97,7 @@ public final class MoveRequest implements BoardSpec
     @Override
     public final int getWidth()
     {
-        return width;
+        return board.width();
     }
 
     /**
@@ -106,92 +106,5 @@ public final class MoveRequest implements BoardSpec
     public final Snake getYou()
     {
         return you;
-    }
-
-    /**
-     * @param food
-     * the food to set
-     */
-    public final void setFood(final List<Point> food)
-    {
-        this.food = food;
-    }
-
-    /**
-     * @param height
-     * the height to set
-     */
-    public final void setHeight(final int height)
-    {
-        this.height = height;
-    }
-
-    /**
-     * @param gameId
-     * the gameId to set
-     */
-    public final void setId(final String gameId)
-    {
-        this.id = gameId;
-    }
-
-    /**
-     * @param snakes
-     * the snakes to set
-     */
-    public final void setSnakes(final List<Snake> snakes)
-    {
-        this.snakes = snakes;
-    }
-
-    /**
-     * @param turn
-     * the turn to set
-     */
-    public final void setTurn(final int turn)
-    {
-        this.turn = turn;
-    }
-
-    /**
-     * @param width
-     * the width to set
-     */
-    public final void setWidth(final int width)
-    {
-        this.width = width;
-    }
-
-    /**
-     * @param you
-     * the you to set
-     */
-    public final void setYou(final Snake you)
-    {
-        this.you = you;
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString()
-    {
-        return "MoveRequest [gameId="
-                + id
-                + ", width="
-                + width
-                + ", height="
-                + height
-                + ", you="
-                + you
-                + ", turn="
-                + turn
-                + ", snakes="
-                + snakes
-                + ", food="
-                + food
-                + "]";
     }
 }
