@@ -1,4 +1,4 @@
-package com.battlesnake;
+package com.battlesnake.endpoints;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,6 @@ import com.battlesnake.game.Board;
 import com.battlesnake.game.SmartSnake;
 import com.battlesnake.http.request.MoveRequest;
 import com.battlesnake.http.response.MoveResponse;
-import com.battlesnake.http.serialization.CleanJson;
 import com.google.gson.Gson;
 
 /**
@@ -23,7 +22,7 @@ import com.google.gson.Gson;
  */
 @SuppressWarnings("serial")
 @WebServlet("/move")
-public class MoveServlet extends HttpServlet
+public class Move extends HttpServlet
 {
     /**
      * This handles the stnadard post request, converts the json request body
@@ -48,9 +47,7 @@ public class MoveServlet extends HttpServlet
 
     public MoveRequest parseToMoveRequest(String requestBody)
     {
-        return new Gson()
-                .fromJson(CleanJson.cleanJson(requestBody),
-                          MoveRequest.class);
+        return new Gson().fromJson(requestBody, MoveRequest.class);
     }
 
 }
