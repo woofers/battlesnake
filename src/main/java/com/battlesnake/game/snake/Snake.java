@@ -137,11 +137,10 @@ public class Snake {
         return move;
     }
 
-    public BoardMove moveResponse(Board board) {
-        BoardMove moveResponse = new BoardMove();
-        moveResponse.setMove(move(board));
-        moveResponse.setTaunt(new Taunt(taunt(), turn).toString());
-        return moveResponse;
+    public BoardMove gameMove(Board board) {
+        String taunt = new Taunt(taunt(), turn).toString();
+        BoardMove move = new BoardMove(move(board), taunt);
+        return move;
     }
 
     public String name() {

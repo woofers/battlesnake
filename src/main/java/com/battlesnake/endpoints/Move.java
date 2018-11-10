@@ -31,6 +31,6 @@ public class Move extends Endpoint {
                 .collect(Collectors.joining("\n"));
 
         Board board = new Game().fromJson(body).board();
-        respond(board.moveResponse().toJson(), response);
+        respond(board.gameMove().toJson(), response);
     }
 }
