@@ -1,27 +1,26 @@
-package com.battlesnake.game.data;
+package com.battlesnake.game.snake;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
  * @author Tony
  */
-public enum TailType
-{
+public enum Tail {
     @SerializedName("block-bum")
     blockBum,
+
+    curled,
 
     @SerializedName("fat-rattle")
     fatRattle,
 
-    @SerializedName("round-bum")
-    roundBum,
-
-    @SerializedName("small-rattle")
-    smallRattle,
-
-    curled,
     freckled,
+
     pixel,
     regular,
-    skinny;
+    @SerializedName("round-bum")
+    roundBum,
+    skinny,
+    @SerializedName("small-rattle")
+    smallRattle;
 }
