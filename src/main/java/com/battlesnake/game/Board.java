@@ -112,7 +112,7 @@ public class Board {
         for (Snake snake : snakes) {
             if (!snake.equals(you())) {
                 list.addAll(findAdjacent(snake.body().get(0)));
-                list.add(snake.body().get(0));
+                list.add(snake.head());
             }
         }
         return list;
