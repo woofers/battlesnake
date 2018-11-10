@@ -19,6 +19,7 @@ public final class Point
      */
     public Point()
     {
+        this(0, 0);
     }
 
     /**
@@ -26,10 +27,10 @@ public final class Point
      * @param xIn
      * @param yIn
      */
-    public Point(final int xIn, final int yIn)
+    public Point(int x, int y)
     {
-        this.x = xIn;
-        this.y = yIn;
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -88,7 +89,7 @@ public final class Point
      * @param x
      * the x to set
      */
-    public final void setX(final int x)
+    public final void setX(int x)
     {
         this.x = x;
     }
@@ -97,7 +98,7 @@ public final class Point
      * @param y
      * the y to set
      */
-    public final void setY(final int y)
+    public final void setY(int y)
     {
         this.y = y;
     }
