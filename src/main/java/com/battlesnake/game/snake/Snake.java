@@ -35,11 +35,12 @@ public class Snake {
     private String id;
     private int length;
     private String name;
+
     private transient String taunt;
     private transient int turn;
 
     public Snake() {
-        setTaunt(HOLE_TAUNT);
+        this.taunt = HOLE_TAUNT;
     }
 
     public List<Point> body() {
@@ -147,9 +148,6 @@ public class Snake {
         return name;
     }
 
-    public void setTaunt(String taunt) {
-        this.taunt = taunt;
-    }
 
     public void setTurn(int turn) {
         this.turn = turn;
