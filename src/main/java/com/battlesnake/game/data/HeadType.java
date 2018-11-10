@@ -1,11 +1,14 @@
 package com.battlesnake.game.data;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * @author Tony
  */
 public enum HeadType
 {
-    // sand-worm,
+    @SerializedName("sand-worm")
+    sandWorm,
     bendr,
     dead,
     fang,
