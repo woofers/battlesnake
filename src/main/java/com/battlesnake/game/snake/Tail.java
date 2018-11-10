@@ -15,12 +15,14 @@ public enum Tail {
     fatRattle,
 
     freckled,
-
     pixel,
     regular,
+
     @SerializedName("round-bum")
     roundBum,
+
     skinny,
+
     @SerializedName("small-rattle")
     smallRattle;
 }

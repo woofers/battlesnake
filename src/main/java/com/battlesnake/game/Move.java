@@ -14,7 +14,10 @@ import com.battlesnake.game.math.Point;
  * @author Tony
  */
 public enum Move {
-    down, left, right, up;
+    down,
+    left,
+    right,
+    up;
 
     public Point translate(Point point) {
         Point newPoint = new Point(point);
@@ -32,8 +35,6 @@ public enum Move {
             newPoint.setX(point.getX() + 1);
             break;
         }
-        if (newPoint.getX() < 0) return null;
-        if (newPoint.getY() < 0) return null;
         return newPoint;
     }
 }
