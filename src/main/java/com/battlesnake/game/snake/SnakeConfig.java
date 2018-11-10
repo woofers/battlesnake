@@ -10,13 +10,22 @@ import com.google.gson.annotations.SerializedName;
  */
 public class SnakeConfig extends JsonObject {
 
+    private static final String COLOR = "#f2c55c";
+    private static final String NAME = "Liquid Snake";
+    private static final String IMAGE = "https://i.imgur.com/FX5ZLYE.png";
+    private static final String START_TAUNT = "Sleeping late as usual, ...eh Snake?";
+    private static final Head HEAD_TYPE = Head.shades;
+    private static final Tail TAIL_TYPE = Tail.skinny;
+
+    private String name;
     private String color;
+    private String taunt;
+
     @SerializedName("head_type")
     private Head headType;
 
     @SerializedName("head_url")
     private String headUrl;
-    private String name;
 
     @SerializedName("secondary_color")
     private String secondaryColor;
@@ -24,77 +33,12 @@ public class SnakeConfig extends JsonObject {
     @SerializedName("tail_type")
     private Tail tailType;
 
-    private String taunt;
-
-    public final String color() {
-        return color;
-    }
-
-    public final Head headType() {
-        return headType;
-    }
-
-    public final String headUrl() {
-        return headUrl;
-    }
-
-    public final String name() {
-        return name;
-    }
-
-    public final String secondaryColor() {
-        return secondaryColor;
-    }
-
-    public final void setColor(final String color) {
-        this.color = color;
-    }
-
-    public final void setHeadType(final Head headType) {
-        this.headType = headType;
-    }
-
-    public final void setHeadUrl(final String headUrl) {
-        this.headUrl = headUrl;
-    }
-
-    public final void setName(final String name) {
-        this.name = name;
-    }
-
-    public final void setSecondaryColor(final String secondaryColor) {
-        this.secondaryColor = secondaryColor;
-    }
-
-    public final void setTailType(final Tail tailType) {
-        this.tailType = tailType;
-    }
-
-    /**
-     * @param taunt the taunt to set
-     */
-    public final void setTaunt(final String taunt) {
-        this.taunt = taunt;
-    }
-
-    public final Tail tailType() {
-        return tailType;
-    }
-
-    public final String taunt() {
-        return taunt;
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString() {
-        return "StartResponse [color=" + color + ", name=" + name + ", headUrl="
-            + headUrl + ", taunt=" + taunt
-            + ", tailType=" + tailType + ", headType=" + headType
-            + ", secondaryColor=" + secondaryColor + "]";
+    public SnakeConfig() {
+        this.name = NAME;
+        this.color = COLOR;
+        this.headUrl = IMAGE;
+        this.taunt = START_TAUNT;
+        this.tailType = TAIL_TYPE;
+        this.headType = HEAD_TYPE;
     }
 }
