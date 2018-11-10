@@ -4,18 +4,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.stream.Collectors;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.battlesnake.game.Board;
-import com.battlesnake.game.SmartSnake;
-import com.battlesnake.http.request.MoveRequest;
-import com.battlesnake.http.response.MoveResponse;
-import com.google.gson.Gson;
+import com.battlesnake.game.Game;
 
 /**
  * This is the servlet that is hit when triggering the /move endpoint.
+ *
  * @author Tony
  * @author Jaxson Van Doorn
  */
@@ -24,15 +24,13 @@ import com.google.gson.Gson;
 public class Move extends Endpoint {
     @Override
     protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response)
-                          throws ServletException, IOException {
-        String body
-            = new BufferedReader(
-                new InputStreamReader(request.getInputStream()))
-                    .lines()
-                    .collect(Collectors.joining("\n"));
+        HttpServletResponse response)
+        throws ServletException, IOException {
+        String body = new BufferedReader(
+            new InputStreamReader(request.getInputStream())).lines()
+                .collect(Collectors.joining("\n"));
 
-        Board board = new Board(new Gson().fromJson(body, MoveRequest.class));
+        Board board = new Game().fromJson(body).board();
         respond(board.moveResponse().toJson(), response);
     }
 }

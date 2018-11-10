@@ -21,10 +21,14 @@ ext {
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://artifactory.cronapp.io/public-release/"
+    }
 }
 
 dependencies {
     compile "com.google.code.gson:gson:$gsonVersion"
+    compile "com.google.code.gson:gson-extras:$gsonVersion"
     compile "javax.servlet:javax.servlet-api:$servletVersion"
     testCompile "junit:junit:$junitVersion"
 }
