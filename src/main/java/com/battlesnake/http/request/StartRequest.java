@@ -18,19 +18,4 @@ public final class StartRequest
     {
         return gameId;
     }
-
-    /**
-     * @param gameId
-     * the gameId to set
-     */
-    public final void setGameId(final String gameId)
-    {
-        this.gameId = gameId;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "StartRequest [gameId=" + gameId + "]";
-    }
 }
