@@ -94,10 +94,12 @@ public class Snake {
     }
 
     public Mode mode(Board board) {
-        if (health() <= HUNGER_ZONE)
+        if (health() <= HUNGER_ZONE) {
             return Mode.HUNGRY_STATE;
-        else if (length() > board
-            .longestSnakeLength()) return Mode.ATTACK_STATE;
+        }
+        else if (length() > board.longestSnakeLength()) {
+            return Mode.ATTACK_STATE;
+        }
         return Mode.HUNGRY_STATE;
     }
 
