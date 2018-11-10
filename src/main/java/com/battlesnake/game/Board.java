@@ -119,10 +119,6 @@ public class Board {
 
     }
 
-    private List<Point> findOurClosestTail() {
-        return new ArrayList<>();
-    }
-
     private List<Point> findOurTail() {
         return findAdjacent(you().body().get(you().body().size() - 1));
     }
