@@ -12,7 +12,7 @@ public class SnakeConfig extends JsonObject {
 
     private static final String COLOR = "#f2c55c";
     private static final String NAME = "Liquid Snake";
-    private static final String IMAGE = "https://i.imgur.com/FX5ZLYE.png";
+    private static final String IMAGE = "https://i.imgur.com/TGNk0gd.png";
     private static final String START_TAUNT = "Sleeping late as usual, ...eh Snake?";
     private static final Head HEAD_TYPE = Head.shades;
     private static final Tail TAIL_TYPE = Tail.skinny;
