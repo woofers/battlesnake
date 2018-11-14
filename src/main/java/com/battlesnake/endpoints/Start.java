@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.battlesnake.game.snake.Snake;
+import com.battlesnake.game.snake.SnakeConfig;
 
 /**
  * This is the servlet that is hit when triggering the /start endpoint.
@@ -21,6 +21,6 @@ public class Start extends Endpoint {
     protected void doPost(HttpServletRequest request,
         HttpServletResponse response)
         throws ServletException, IOException {
-        respond(Snake.startResponse().toJson(), response);
+        respond(new SnakeConfig().toJson(), response);
     }
 }

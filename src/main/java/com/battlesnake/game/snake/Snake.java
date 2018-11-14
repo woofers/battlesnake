@@ -22,34 +22,16 @@ public class Snake {
         PASSIVE_STATE
     }
 
-    private static final String COLOR = "#f2c55c";
     private static final String DUST_TAUNT = "Snake, I'll crush you into dust!";
     private static final String GEAR_TAUNT = "Good. Then no one can stop Metal Gear now.";
-    private static final Head HEAD_TYPE = Head.shades;
     private static final String HOLE_TAUNT = "So, the Snake's finally come out of his hole! Are you ready now, my brother!";
+
     private static final int HUNGER_ZONE = 50;
-    private static final String IMAGE = "https://i.imgur.com/FX5ZLYE.png";
     private static final int MAX_HEALTH = 100;
     private static final int MIN_HEALTH = 0;
 
-    private static final String NAME = "Liquid Snake";
-    private static final String START_TAUNT = "Sleeping late as usual, ...eh Snake?";
-    private static final Tail TAIL_TYPE = Tail.skinny;
-
-    public static SnakeConfig startResponse() {
-        SnakeConfig config = new SnakeConfig();
-        config.setColor(COLOR);
-        config.setHeadUrl(IMAGE);
-        config.setName(NAME);
-        config.setTaunt(START_TAUNT);
-        config.setTailType(TAIL_TYPE);
-        config.setHeadType(HEAD_TYPE);
-        return config;
-    }
-
     private List<Point> body;
     private int health;
-
     private String id;
     private int length;
     private String name;
