@@ -35,11 +35,12 @@ public class Snake {
     private String id;
     private int length;
     private String name;
+
     private transient String taunt;
     private transient int turn;
 
     public Snake() {
-        setTaunt(HOLE_TAUNT);
+        this.taunt = HOLE_TAUNT;
     }
 
     public List<Point> body() {
@@ -93,10 +94,12 @@ public class Snake {
     }
 
     public Mode mode(Board board) {
-        if (health() <= HUNGER_ZONE)
+        if (health() <= HUNGER_ZONE) {
             return Mode.HUNGRY_STATE;
-        else if (length() > board
-            .longestSnakeLength()) return Mode.ATTACK_STATE;
+        }
+        else if (length() > board.longestSnakeLength()) {
+            return Mode.ATTACK_STATE;
+        }
         return Mode.HUNGRY_STATE;
     }
 
@@ -137,20 +140,16 @@ public class Snake {
         return move;
     }
 
-    public BoardMove moveResponse(Board board) {
-        BoardMove moveResponse = new BoardMove();
-        moveResponse.setMove(move(board));
-        moveResponse.setTaunt(new Taunt(taunt(), turn).toString());
-        return moveResponse;
+    public BoardMove gameMove(Board board) {
+        String taunt = new Taunt(taunt(), turn).toString();
+        BoardMove move = new BoardMove(move(board), taunt);
+        return move;
     }
 
     public String name() {
         return name;
     }
 
-    public void setTaunt(String taunt) {
-        this.taunt = taunt;
-    }
 
     public void setTurn(int turn) {
         this.turn = turn;

@@ -112,15 +112,11 @@ public class Board {
         for (Snake snake : snakes) {
             if (!snake.equals(you())) {
                 list.addAll(findAdjacent(snake.body().get(0)));
-                list.add(snake.body().get(0));
+                list.add(snake.head());
             }
         }
         return list;
 
-    }
-
-    private List<Point> findOurClosestTail() {
-        return new ArrayList<>();
     }
 
     private List<Point> findOurTail() {
@@ -176,33 +172,17 @@ public class Board {
         Point right = Move.right.translate(point.point());
         Move initial = point.initialMove();
 
-        if (up != null && !isFilled(up)) {
-            if (initial == null) {
-                list.add(new MovePoint(Move.up, up, Move.up));
-            } else {
-                list.add(new MovePoint(Move.up, up, initial));
-            }
+        if (!isFilled(up)) {
+            list.add(new MovePoint(Move.up, up, initial != null ? initial : Move.up));
         }
-        if (down != null && !isFilled(down)) {
-            if (initial == null) {
-                list.add(new MovePoint(Move.down, down, Move.down));
-            } else {
-                list.add(new MovePoint(Move.down, down, initial));
-            }
+        if (!isFilled(down)) {
+            list.add(new MovePoint(Move.down, down, initial != null ? initial : Move.down));
         }
-        if (left != null && !isFilled(left)) {
-            if (initial == null) {
-                list.add(new MovePoint(Move.left, left, Move.left));
-            } else {
-                list.add(new MovePoint(Move.left, left, initial));
-            }
+        if (!isFilled(left)) {
+            list.add(new MovePoint(Move.left, left, initial != null ? initial : Move.left));
         }
-        if (right != null && !isFilled(right)) {
-            if (initial == null) {
-                list.add(new MovePoint(Move.right, right, Move.right));
-            } else {
-                list.add(new MovePoint(Move.right, right, initial));
-            }
+        if (!isFilled(right)) {
+            list.add(new MovePoint(Move.right, right, initial != null ? initial : Move.right));
         }
         return list;
     }
@@ -262,8 +242,8 @@ public class Board {
         return max;
     }
 
-    public BoardMove moveResponse() {
-        return you().moveResponse(this);
+    public BoardMove gameMove() {
+        return you().gameMove(this);
     }
 
     public void print() {
