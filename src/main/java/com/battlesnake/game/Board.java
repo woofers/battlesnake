@@ -35,6 +35,9 @@ public class Board {
     private int width;
     private transient Snake you;
 
+    private transient int turn;
+    private transient String gameId;
+
     public boolean exists(Point point) {
         if (point.getX() < 0) return false;
         if (point.getY() < 0) return false;
@@ -208,8 +211,10 @@ public class Board {
         return height;
     }
 
-    public void init(Snake you) {
-        this.you = you;
+    public void init(Game state) {
+        this.you = state.you();
+        this.turn = state.turn();
+        this.gameId = state.id();
 
         removeDead();
         toGrid();
@@ -317,5 +322,9 @@ public class Board {
 
     public Snake you() {
         return you;
+    }
+
+    public int turn() {
+        return turn;
     }
 }

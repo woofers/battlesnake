@@ -37,9 +37,8 @@ public class Snake {
     private String name;
 
     private transient String taunt;
-    private transient int turn;
 
-    public Snake() {
+    private Snake() {
         this.taunt = HOLE_TAUNT;
     }
 
@@ -141,18 +140,13 @@ public class Snake {
     }
 
     public BoardMove gameMove(Board board) {
-        String taunt = new Taunt(taunt(), turn).toString();
+        String taunt = new Taunt(taunt(), board.turn()).toString();
         BoardMove move = new BoardMove(move(board), taunt);
         return move;
     }
 
     public String name() {
         return name;
-    }
-
-
-    public void setTurn(int turn) {
-        this.turn = turn;
     }
 
     public String taunt() {
