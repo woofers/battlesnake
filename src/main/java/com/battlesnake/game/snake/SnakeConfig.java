@@ -14,23 +14,15 @@ public class SnakeConfig extends JsonObject {
     private static final String NAME = "Liquid Snake";
     private static final String IMAGE = "https://i.imgur.com/TGNk0gd.png";
     private static final String START_TAUNT = "Sleeping late as usual, ...eh Snake?";
-    private static final Head HEAD_TYPE = Head.shades;
-    private static final Tail TAIL_TYPE = Tail.skinny;
+    private static final Head HEAD_TYPE = Head.SHADES;
+    private static final Tail TAIL_TYPE = Tail.SKINNY;
 
     private String name;
     private String color;
     private String taunt;
-
-    @SerializedName("head_type")
     private Head headType;
-
-    @SerializedName("head_url")
     private String headUrl;
-
-    @SerializedName("secondary_color")
     private String secondaryColor;
-
-    @SerializedName("tail_type")
     private Tail tailType;
 
     public SnakeConfig() {
