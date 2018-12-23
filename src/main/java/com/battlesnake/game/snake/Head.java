@@ -6,17 +6,14 @@ import com.google.gson.annotations.SerializedName;
  * @author Tony
  */
 public enum Head {
-    bendr,
-    dead,
-    fang,
-    pixel,
-    regular,
-    safe,
-
-    @SerializedName("sand-worm")
-    sandWorm,
-
-    shades,
-    smile,
-    tongue;
+    BENDR,
+    DEAD,
+    FANG,
+    PIXEL,
+    REGULAR,
+    SAFE,
+    SAND_WORM,
+    SHADES,
+    SMILE,
+    TONGUE;
 }

@@ -6,23 +6,13 @@ import com.google.gson.annotations.SerializedName;
  * @author Tony
  */
 public enum Tail {
-    @SerializedName("block-bum")
-    blockBum,
-
-    curled,
-
-    @SerializedName("fat-rattle")
-    fatRattle,
-
-    freckled,
-    pixel,
-    regular,
-
-    @SerializedName("round-bum")
-    roundBum,
-
-    skinny,
-
-    @SerializedName("small-rattle")
-    smallRattle;
+    BLOCK_BUM,
+    CURLED,
+    FAT_RATTLE,
+    FRECKLED,
+    PIXEL,
+    REGULAR,
+    ROUND_BUM,
+    SKINNY,
+    SMALL_RATTLE;
 }
