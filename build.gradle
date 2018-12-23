@@ -17,6 +17,7 @@ ext {
     gsonVersion = '2.8.5'
     junitVersion = '4.12'
     servletVersion = '4.0.1'
+    webappRunnerVersion = '8.5.11.3'
 }
 
 repositories {
@@ -30,5 +31,20 @@ dependencies {
     compile "com.google.code.gson:gson:$gsonVersion"
     compile "com.google.code.gson:gson-extras:$gsonVersion"
     compile "javax.servlet:javax.servlet-api:$servletVersion"
+    compile "com.github.jsimone:webapp-runner:$webappRunnerVersion"
     testCompile "junit:junit:$junitVersion"
 }
+
+task stage() {
+    dependsOn clean, war
+}
+war.mustRunAfter clean
+
+task copyToLib(type: Copy) {
+    into "$buildDir/server"
+    from(configurations.compile) {
+        include "webapp-runner*"
+    }
+}
+
+stage.dependsOn(copyToLib)
