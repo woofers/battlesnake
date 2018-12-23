@@ -47,3 +47,14 @@ task stage() {
 }
 stage.dependsOn(copyRunner)
 
+task run() {
+    dependsOn stage
+    doLast {
+        exec {
+            workingDir "$buildDir"
+            commandLine 'java', '-jar',
+              "server/webapp-runner-${rootProject.ext.webappRunnerVersion}.jar",
+              "libs/$war.archiveName"
+        }
+    }
+}
