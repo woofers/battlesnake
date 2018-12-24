@@ -1,15 +1,32 @@
 apply plugin: 'java'
 apply plugin: 'war'
 
+def getVersionName = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'describe', '--tags'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
 group = 'com.battlesnakes'
 description = "Battlesnake"
-version = '1.0.0'
+version = getVersionName()
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 war {
     archiveName = rootProject.name + '.war'
+    doFirst {
+        manifest {
+            attributes("Implementation-Title": project.name,
+                       "Implementation-Version": version,
+                       "Implementation-Timestamp": new Date()
+            )
+        }
+    }
 }
 war.mustRunAfter clean
 
