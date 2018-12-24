@@ -35,6 +35,10 @@ dependencies {
     testCompile "junit:junit:$junitVersion"
 }
 
+clean.doFirst {
+    delete "${rootDir}/target"
+}
+
 task copyRunner(type: Copy) {
     into "$buildDir/server"
     from(configurations.compile) {
