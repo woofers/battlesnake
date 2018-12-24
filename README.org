@@ -75,9 +75,13 @@ Twitch stream]] is
 1. Run ~docker run -it --rm -p 3000:3000 sendwithus/battlesnake-server~
 2. Goto ~localhost:3000~ in a browser.
 *** Run Locally
+**** Gradle
+1. Run the project using either ~./gradle run~ or ~gradlew run~ for UNIX and Windows platforms respectively.  This will build and run the project as a `JAR` using [[https://github.com/jsimone/webapp-runner][Webapp Runner]].
+2. Use ~http://localhost:8080~ as the snake URL.
+**** Docker
 1. Build the project using either ~./gradle build~ or ~gradlew build~ for UNIX and Windows platforms respectively.
 2. Run the Docker Tomcat image in a container with ~docker-compose up~.
-4. Use ~http://localhost:8080/battlesnake~ as the snake URL.
+3. Use ~http://localhost:8080/battlesnake~ as the snake URL.
 *** Deployment
 1. Build .war file ~./gradlew build~
 2. Deploy to Heroku ~heroku war:deploy build/libs/battlesnake.war --app <name>~

@@ -2,9 +2,8 @@ apply plugin: 'java'
 apply plugin: 'war'
 
 group = 'com.battlesnakes'
-version = '1.0.0'
-
 description = "Battlesnake"
+version = '1.0.0'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -12,6 +11,7 @@ targetCompatibility = 1.8
 war {
     archiveName = rootProject.name + '.war'
 }
+war.mustRunAfter clean
 
 ext {
     gsonVersion = '2.8.5'
@@ -35,16 +35,30 @@ dependencies {
     testCompile "junit:junit:$junitVersion"
 }
 
-task stage() {
-    dependsOn clean, war
+clean.doFirst {
+    delete "${rootDir}/target"
 }
-war.mustRunAfter clean
 
-task copyToLib(type: Copy) {
+task copyRunner(type: Copy) {
     into "$buildDir/server"
     from(configurations.compile) {
         include "webapp-runner*"
     }
 }
 
-stage.dependsOn(copyToLib)
+task stage() {
+    dependsOn clean, war
+}
+stage.dependsOn(copyRunner)
+
+task run() {
+    dependsOn stage
+    doLast {
+        exec {
+            workingDir "$buildDir"
+            commandLine 'java', '-jar',
+              "server/webapp-runner-${rootProject.ext.webappRunnerVersion}.jar",
+              "libs/$war.archiveName"
+        }
+    }
+}
