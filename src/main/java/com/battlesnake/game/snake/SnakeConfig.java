@@ -33,4 +33,28 @@ public class SnakeConfig extends JsonObject {
         this.tailType = TAIL_TYPE;
         this.headType = HEAD_TYPE;
     }
+
+    public String name() {
+        return name;
+    }
+
+    public String profile() {
+        return headUrl;
+    }
+
+    public Head head() {
+        return headType;
+    }
+
+    public Tail tail() {
+        return tailType;
+    }
+
+    public String taunt() {
+        return taunt;
+    }
+
+    public String color() {
+        return color;
+    }
 }
