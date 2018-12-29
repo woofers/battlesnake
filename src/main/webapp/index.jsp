@@ -18,7 +18,24 @@
           <th>Version</th>
           <td><%=VERSION%></td>
         </tr>
+        <tr>
+          <th>Head Type</th>
+          <td class="lower"><%=SNAKE.head()%></td>
+        </tr>
+        <tr>
+          <th>Tail Type</th>
+          <td class="lower"><%=SNAKE.tail()%></td>
+        </tr>
+        <tr>
+          <th>Start Taunt</th>
+          <td><%=SNAKE.taunt()%></td>
+        </tr>
+        <tr>
+          <th>Color</th>
+          <td class="color"><%=SNAKE.color()%></td>
+        </tr>
       </tbody>
     </table>
+    <img src="<%=SNAKE.profile()%>"/>
   </body>
 </html>
