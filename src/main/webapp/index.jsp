@@ -1,17 +1,24 @@
-<%@ page import="java.util.jar.Manifest" %>
+<%@ page import="java.util.jar.Manifest, com.battlesnake.game.snake.SnakeConfig" %>
+<%
+  final SnakeConfig SNAKE = new SnakeConfig();
+  final String VERSION = new Manifest(
+      getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF")
+  ).getMainAttributes().getValue("Implementation-Version");
+%>
 <html>
   <head>
-    <title>Battlesnake</title>
-  </head>
+    <title><%=SNAKE.name()%></title>
 
+  </head>
   <body>
-    <h2>
-      Battle Snake
-      <%
-        Manifest manifest = new Manifest(getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF"));
-        String version = manifest.getMainAttributes().getValue("Implementation-Version");
-        out.println(version);
-      %>
-    </h2>
+    <h1><%=SNAKE.name()%></h1>
+    <table>
+      <tbody>
+        <tr>
+          <th>Version</th>
+          <td><%=VERSION%></td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
