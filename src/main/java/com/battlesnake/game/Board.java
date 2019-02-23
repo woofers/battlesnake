@@ -194,8 +194,6 @@ public class Board {
         return list;
     }
 
-
-    
     public Move goToFallback(Point point) {
         List<MovePoint> moves = getPossibleMoves(new MovePoint(null, point, null), false);
         if (moves.isEmpty()) return Move.left;
@@ -235,9 +233,6 @@ public class Board {
 
         removeDead();
         toGrid();
-        fillInBoxes();
-
-        System.out.println(toRegionString());
     }
 
     public boolean isFakeWall(Point point) {
