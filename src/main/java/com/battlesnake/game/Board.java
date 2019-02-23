@@ -194,6 +194,14 @@ public class Board {
         return list;
     }
 
+
+    
+    public Move goToFallback(Point point) {
+        List<MovePoint> moves = getPossibleMoves(new MovePoint(null, point, null), false);
+        if (moves.isEmpty()) return Move.left;
+        return moves.get(0).move(); 
+    }
+
     private boolean movable(Point point, boolean excludeDanger) {
         return !isFilled(point)
             && excludeDanger ? !isFakeWall(point) : true;
