@@ -136,6 +136,8 @@ public class Snake {
         if (move == null) {
             move = board.goToFallback(head());
         }
+        board.print();
+        System.out.printf("Moving %s", move.toString());
         return move;
     }
 
