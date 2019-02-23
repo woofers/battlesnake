@@ -202,7 +202,7 @@ public class Board {
 
     private boolean movable(Point point, boolean excludeDanger) {
         return !isFilled(point)
-            && excludeDanger ? !isFakeWall(point) : true;
+            && (excludeDanger ? !isFakeWall(point) : true);
     }
 
     public Move goToAttack(Point currentPoint) {
