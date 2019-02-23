@@ -196,6 +196,7 @@ public class Board {
     }
 
     public Move goToFallback(Point point) {
+        System.out.println("Falling back to dangerous moves");
         List<MovePoint> moves = getPossibleMoves(new MovePoint(null, point, null), false);
         if (moves.isEmpty()) return Move.left;
         return moves.get(0).move();
@@ -207,14 +208,17 @@ public class Board {
     }
 
     public Move goToAttack(Point currentPoint) {
+        System.out.println("Attacking");
         return findPath(findHeads(), currentPoint);
     }
 
     public Move goToFood(Point currentPoint) {
+        System.out.println("Eating");
         return findPath(findBestFood(), currentPoint);
     }
 
     public Move goToTail(Point currentPoint) {
+        System.out.println("Going to tail");
         Move move = null;
         for (int i = you().body().size() - 1; i > 0; i--) {
             move = findPath(findAdjacent(you().body().get(i)), currentPoint);
