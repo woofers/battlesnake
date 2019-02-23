@@ -134,7 +134,7 @@ public class Snake {
             break;
         }
         if (move == null) {
-            move = Move.left;
+            move = board.goToFallback(head());
         }
         return move;
     }
