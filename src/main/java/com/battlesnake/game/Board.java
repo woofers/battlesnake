@@ -198,7 +198,7 @@ public class Board {
     public Move goToFallback(Point point) {
         List<MovePoint> moves = getPossibleMoves(new MovePoint(null, point, null), false);
         if (moves.isEmpty()) return Move.left;
-        return moves.get(0).move(); 
+        return moves.get(0).move();
     }
 
     private boolean movable(Point point, boolean excludeDanger) {
@@ -329,7 +329,7 @@ public class Board {
     }
 
     public String toString(int[][] board) {
-        String value = "";
+        String value = String.format("Turn %s\n", turn);
         for (int y = 0; y < height(); y++) {
             for (int x = 0; x < width(); x++) {
                 value += board[x][y];
