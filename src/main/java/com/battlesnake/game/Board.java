@@ -168,6 +168,10 @@ public class Board {
     }
 
     private List<MovePoint> getPossibleMoves(MovePoint point) {
+        return getPossibleMoves(point, true);
+    }
+
+    private List<MovePoint> getPossibleMoves(MovePoint point, boolean excludeDanger) {
         ArrayList<MovePoint> list = new ArrayList<>();
         Point up = Move.up.translate(point.point());
         Point down = Move.down.translate(point.point());
@@ -175,19 +179,24 @@ public class Board {
         Point right = Move.right.translate(point.point());
         Move initial = point.initialMove();
 
-        if (!isFilled(up)) {
+        if (movable(up, excludeDanger)) {
             list.add(new MovePoint(Move.up, up, initial != null ? initial : Move.up));
         }
-        if (!isFilled(down)) {
+        if (movable(down, excludeDanger)) {
             list.add(new MovePoint(Move.down, down, initial != null ? initial : Move.down));
         }
-        if (!isFilled(left)) {
+        if (movable(left, excludeDanger)) {
             list.add(new MovePoint(Move.left, left, initial != null ? initial : Move.left));
         }
-        if (!isFilled(right)) {
+        if (movable(right, excludeDanger)) {
             list.add(new MovePoint(Move.right, right, initial != null ? initial : Move.right));
         }
         return list;
+    }
+
+    private boolean movable(Point point, boolean excludeDanger) {
+        return !isFilled(point)
+            && excludeDanger ? !isFakeWall(point) : true;
     }
 
     public Move goToAttack(Point currentPoint) {
@@ -221,6 +230,11 @@ public class Board {
         fillInBoxes();
 
         System.out.println(toRegionString());
+    }
+
+    public boolean isFakeWall(Point point) {
+        if (!exists(point)) return false;
+        return board[point.getX()][point.getY()] == FAKE_WALL;
     }
 
     public boolean isFilled(Point point) {
@@ -287,7 +301,7 @@ public class Board {
                     List<Point> around = findAdjacent(head);
                     for (Point point : around) {
                         if (exists(point)) {
-                            board[point.getX()][point.getY()] = WALL;
+                            board[point.getX()][point.getY()] = FAKE_WALL;
                         }
                     }
                 }
