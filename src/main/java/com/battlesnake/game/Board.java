@@ -15,6 +15,7 @@ import com.battlesnake.game.snake.Snake;
  */
 public class Board {
     private static final int EMPTY = 0;
+    private static final int TAIL = 6;
     private static final int FAKE_WALL = 5;
 
     private static final int FOOD = 4;
@@ -202,7 +203,7 @@ public class Board {
 
     private boolean movable(Point point, boolean excludeDanger) {
         return !isFilled(point)
-            && (excludeDanger ? !isFakeWall(point) : true);
+            && (excludeDanger ? !isDangerousSpotFilled(point) : true);
     }
 
     public Move goToAttack(Point currentPoint) {
@@ -235,9 +236,10 @@ public class Board {
         toGrid();
     }
 
-    public boolean isFakeWall(Point point) {
+    public boolean isDangerousSpotFilled(Point point) {
         if (!exists(point)) return false;
-        return board[point.getX()][point.getY()] == FAKE_WALL;
+        return board[point.getX()][point.getY()] == FAKE_WALL
+            || board[point.getX()][point.getY()] == TAIL;
     }
 
     public boolean isFilled(Point point) {
@@ -291,8 +293,13 @@ public class Board {
         for (Snake snake : snakes) {
             List<Point> body = snake.body();
             Point head = body.get(0);
-            for (Point bodyPart : body) {
-                board[bodyPart.getX()][bodyPart.getY()] = WALL;
+            for (int i = 0; i < body.size(); i++) {
+                if ((i == body.size() - 1) && body.size() > 1) {
+                    board[body.get(i).getX()][body.get(i).getY()] = TAIL;
+                }
+                else {
+                    board[body.get(i).getX()][body.get(i).getY()] = WALL;
+                }
             }
 
             if (snake.equals(you())) {
