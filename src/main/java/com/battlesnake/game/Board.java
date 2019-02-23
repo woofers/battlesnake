@@ -249,7 +249,9 @@ public class Board {
     private boolean isFilled(Point point, int[][] board) {
         if (!exists(point)) return true;
         return board[point.getX()][point.getY()] != EMPTY
-            && board[point.getX()][point.getY()] != FOOD;
+            && board[point.getX()][point.getY()] != FOOD
+            && board[point.getX()][point.getY()] != FAKE_WALL
+            && board[point.getX()][point.getY()] != TAIL;
     }
 
     public boolean isRegionFilled(Point point) {
