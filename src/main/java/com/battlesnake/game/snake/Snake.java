@@ -19,7 +19,6 @@ public class Snake {
         BAIT_STATE,
         HUNGRY_STATE,
         NO_BEST_MOVE_STATE,
-        PASSIVE_STATE
     }
 
     private static final String DUST_TAUNT = "Snake, I'll crush you into dust!";
@@ -112,15 +111,6 @@ public class Snake {
             }
             if (move == null) {
                 move = board.goToTail(head());
-            }
-            break;
-        case PASSIVE_STATE:
-            move = board.goToTail(head());
-            if (move == null) {
-                move = board.goToFood(head());
-            }
-            if (move == null) {
-                move = board.goToAttack(head());
             }
             break;
         case ATTACK_STATE:
