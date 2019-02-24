@@ -196,9 +196,10 @@ public class Board {
     }
 
     public Move goToFallback(Point point) {
+        System.out.println("Falling back to dangerous moves");
         List<MovePoint> moves = getPossibleMoves(new MovePoint(null, point, null), false);
         if (moves.isEmpty()) return Move.left;
-        return moves.get(0).move(); 
+        return moves.get(0).move();
     }
 
     private boolean movable(Point point, boolean excludeDanger) {
@@ -207,14 +208,17 @@ public class Board {
     }
 
     public Move goToAttack(Point currentPoint) {
+        System.out.println("Attacking");
         return findPath(findHeads(), currentPoint);
     }
 
     public Move goToFood(Point currentPoint) {
+        System.out.println("Eating");
         return findPath(findBestFood(), currentPoint);
     }
 
     public Move goToTail(Point currentPoint) {
+        System.out.println("Going to tail");
         Move move = null;
         for (int i = you().body().size() - 1; i > 0; i--) {
             move = findPath(findAdjacent(you().body().get(i)), currentPoint);
@@ -249,7 +253,9 @@ public class Board {
     private boolean isFilled(Point point, int[][] board) {
         if (!exists(point)) return true;
         return board[point.getX()][point.getY()] != EMPTY
-            && board[point.getX()][point.getY()] != FOOD;
+            && board[point.getX()][point.getY()] != FOOD
+            && board[point.getX()][point.getY()] != FAKE_WALL
+            && board[point.getX()][point.getY()] != TAIL;
     }
 
     public boolean isRegionFilled(Point point) {
@@ -329,7 +335,7 @@ public class Board {
     }
 
     public String toString(int[][] board) {
-        String value = "";
+        String value = String.format("Turn %s\n", turn);
         for (int y = 0; y < height(); y++) {
             for (int x = 0; x < width(); x++) {
                 value += board[x][y];

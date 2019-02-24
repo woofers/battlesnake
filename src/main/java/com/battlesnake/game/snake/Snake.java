@@ -103,7 +103,9 @@ public class Snake {
 
     public Move move(Board board) {
         Move move = null;
-        switch (mode(board)) {
+        Mode mode = mode(board);
+        System.out.printf("State %s\n", mode.toString());
+        switch (mode) {
         case HUNGRY_STATE:
             move = board.goToFood(head());
             if (move == null) {
@@ -126,6 +128,8 @@ public class Snake {
         if (move == null) {
             move = board.goToFallback(head());
         }
+        board.print();
+        System.out.printf("Moving %s\n", move.toString());
         return move;
     }
 
