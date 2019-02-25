@@ -16,15 +16,10 @@ import com.battlesnake.game.math.Point;
 public class Snake {
     public static enum Mode {
         ATTACK_STATE,
-        BAIT_STATE,
-        HUNGRY_STATE,
-        NO_BEST_MOVE_STATE,
-        PASSIVE_STATE
+        HUNGRY_STATE
     }
 
-    private static final String DUST_TAUNT = "Snake, I'll crush you into dust!";
-    private static final String GEAR_TAUNT = "Good. Then no one can stop Metal Gear now.";
-    private static final String HOLE_TAUNT = "So, the Snake's finally come out of his hole! Are you ready now, my brother!";
+    private static final String SLAT_TAUNT = "slat slat slat slat slat";
 
     private static final int HUNGER_ZONE = 50;
     private static final int MAX_HEALTH = 100;
@@ -39,7 +34,7 @@ public class Snake {
     private transient String taunt;
 
     private Snake() {
-        this.taunt = HOLE_TAUNT;
+        this.taunt = SLAT_TAUNT;
     }
 
     public List<Point> body() {
