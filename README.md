@@ -22,9 +22,9 @@
 <img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />
 
 A simple [BattleSnake](https://www.battlesnake.io) written in Java.
-Will be entered in the 2019 Intermediate competition as **Liquid Snake**.
+Will be entered in the 2019 Intermediate competition as **SUPER SLIMEY**.
 
-Deployed to `https://battlesnake-liquid.herokuapp.com/`
+Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
 
 <a id="org24d40c3"></a>
@@ -144,9 +144,8 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 
 ## Acknowledgments
 
--   **Built by** [Ben Austin](https://github.com/austinben),
-    [Jaxson Van Doorn](https://github.com/woofers), and
-    [Zak White](https://github.com/zakwht), March 3, 2018
+-   **Built by** [Ben Austin](https://github.com/austinben) and
+    [Jaxson Van Doorn](https://github.com/woofers), March 3, 2018
 -   **Template Forked from**
     [here](https://github.com/tflinz/BasicBattleSnake2018)
 -   **Designed for** [Sendwithus](https://github.com/sendwithus)'
