@@ -1,4 +1,6 @@
-<%@ page import="java.util.jar.Manifest, com.battlesnake.game.snake.SnakeConfig" %>
+<%@ page contentType="text/html;charset=UTF-8"
+  import="java.util.jar.Manifest, com.battlesnake.game.snake.SnakeConfig"
+%>
 <%
   final SnakeConfig SNAKE = new SnakeConfig();
   final String VERSION = new Manifest(
