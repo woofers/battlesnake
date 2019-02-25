@@ -8,12 +8,17 @@ import com.battlesnake.game.math.MovePoint;
 import com.battlesnake.game.math.Point;
 import com.battlesnake.game.snake.Snake;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 /**
  * @author Ben Austin
  * @author Jaxson Van Doorn
  * @author Zak White
  */
 public class Board {
+    private static Logger log = LogManager.getLogger();
+
     private static final int EMPTY = 0;
     private static final int TAIL = 6;
     private static final int FAKE_WALL = 5;
@@ -208,17 +213,17 @@ public class Board {
     }
 
     public Move goToAttack(Point currentPoint) {
-        System.out.println("Attacking");
+        log.info("Attacking");
         return findPath(findHeads(), currentPoint);
     }
 
     public Move goToFood(Point currentPoint) {
-        System.out.println("Eating");
+        log.info("Eating");
         return findPath(findBestFood(), currentPoint);
     }
 
     public Move goToTail(Point currentPoint) {
-        System.out.println("Going to tail");
+        log.info("Going to tail");
         Move move = null;
         for (int i = you().body().size() - 1; i > 0; i--) {
             move = findPath(findAdjacent(you().body().get(i)), currentPoint);
@@ -277,7 +282,7 @@ public class Board {
     }
 
     public void print() {
-        System.out.println(toString());
+        log.info(toString());
     }
 
     private void removeDead() {

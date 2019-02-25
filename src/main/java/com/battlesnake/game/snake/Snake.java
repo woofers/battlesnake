@@ -8,6 +8,9 @@ import com.battlesnake.game.Move;
 import com.battlesnake.game.Taunt;
 import com.battlesnake.game.math.Point;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 /**
  * @author Ben Austin
  * @author Jaxson Van Doorn
@@ -18,6 +21,8 @@ public class Snake {
         ATTACK_STATE,
         HUNGRY_STATE
     }
+
+    private static Logger log = LogManager.getLogger();
 
     private static final String SLAT_TAUNT = "slat slat slat slat slat";
 
@@ -100,32 +105,32 @@ public class Snake {
     public Move move(Board board) {
         Move move = null;
         Mode mode = mode(board);
-        System.out.printf("State %s\n", mode.toString());
+        log.info("State {}", mode);
         switch (mode) {
-        case HUNGRY_STATE:
-            move = board.goToFood(head());
-            if (move == null) {
-                move = board.goToAttack(head());
-            }
-            if (move == null) {
-                move = board.goToTail(head());
-            }
-            break;
-        case ATTACK_STATE:
-            move = board.goToAttack(head());
-            if (move == null) {
+            case HUNGRY_STATE:
                 move = board.goToFood(head());
-            }
-            if (move == null) {
-                move = board.goToTail(head());
-            }
-            break;
+                if (move == null) {
+                    move = board.goToAttack(head());
+                }
+                if (move == null) {
+                    move = board.goToTail(head());
+                }
+                break;
+            case ATTACK_STATE:
+                move = board.goToAttack(head());
+                if (move == null) {
+                    move = board.goToFood(head());
+                }
+                if (move == null) {
+                    move = board.goToTail(head());
+                }
+                break;
         }
         if (move == null) {
             move = board.goToFallback(head());
         }
         board.print();
-        System.out.printf("Moving %s\n", move.toString());
+        log.info("Moving {}", move);
         return move;
     }
 
