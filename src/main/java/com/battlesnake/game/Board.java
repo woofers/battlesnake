@@ -112,9 +112,10 @@ public class Board {
 
     }
 
-    protected Move findPath(List<Point> destinations, Point currentPoint) {
+    protected List<Move> findPaths(List<Point> destinations, Point currentPoint) {
         LinkedList<MovePoint> points = new LinkedList<>();
         ArrayList<MovePoint> list = new ArrayList<>();
+        ArrayList<Move> paths = new ArrayList<>();
 
         for (int i = 0; i < destinations.size(); i++) {
             if (destinations.get(i).equals(currentPoint)) {
@@ -123,26 +124,35 @@ public class Board {
             }
         }
 
+        int length = Integer.MAX_VALUE;
         MovePoint loopPoint = new MovePoint(null, currentPoint, null);
         points.add(loopPoint);
         list.add(loopPoint);
         while (!points.isEmpty()) {
             loopPoint = points.pollFirst();
+            if (loopPoint.length() > length) return paths;
             for (Point destination : destinations) {
-                if (loopPoint.point()
-                    .equals(destination)) return loopPoint.initialMove();
+                if (loopPoint.point().equals(destination)) {
+                    paths.add(loopPoint.initialMove());
+                    if (length == Integer.MAX_VALUE) {
+                        length = loopPoint.length();
+                    }
+                }
             }
             List<MovePoint> moves = getPossibleMoves(loopPoint);
             for (MovePoint move : moves) {
-                if (list.contains(move)) {
-                    continue;
-                }
+                move.setLength(loopPoint.length() + 1);
+                if (list.contains(move)) continue;
                 points.add(move);
                 list.add(move);
             }
         }
+        return paths;
+    }
 
-        return null;
+    protected Move findPath(List<Point> destinations, Point currentPoint) {
+        List<Move> moves = findPaths(destinations, currentPoint);
+        return !moves.isEmpty() ? moves.get(0) : null;
     }
 
     private List<MovePoint> getPossibleMoves(MovePoint point) {

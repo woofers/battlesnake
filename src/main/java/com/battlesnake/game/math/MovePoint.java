@@ -6,11 +6,13 @@ public class MovePoint {
     private Move initialMove;
     private Move move;
     private Point point;
+    private int length;
 
     public MovePoint(Move move, Point point, Move initialMove) {
         this.move = move;
         this.point = point;
         this.initialMove = initialMove;
+        setLength(0);
     }
 
     public boolean equals(MovePoint other) {
@@ -25,6 +27,14 @@ public class MovePoint {
 
     public Move initialMove() {
         return initialMove;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public int length() {
+        return length;
     }
 
     public Move move() {
