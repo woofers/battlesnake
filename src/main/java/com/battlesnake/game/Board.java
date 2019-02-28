@@ -3,6 +3,7 @@ package com.battlesnake.game;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 
 import com.battlesnake.game.math.MovePoint;
 import com.battlesnake.game.math.Point;
@@ -178,30 +179,23 @@ public class Board {
     }
 
     private List<MovePoint> getPossibleMoves(MovePoint point, boolean excludeDanger) {
-        ArrayList<MovePoint> list = new ArrayList<>();
-        Point up = Move.up.translate(point.point());
-        Point down = Move.down.translate(point.point());
-        Point left = Move.left.translate(point.point());
-        Point right = Move.right.translate(point.point());
+        ArrayList<MovePoint> moves = new ArrayList<>();
         Move initial = point.initialMove();
-
-        if (movable(up, excludeDanger)) {
-            list.add(new MovePoint(Move.up, up, initial != null ? initial : Move.up));
+        for (Entry<Move, Point> move: Move.adjacent(point.point()).entrySet()) {
+            if (movable(move.getValue(), excludeDanger)) {
+                moves.add(new MovePoint(
+                              move.getKey(),
+                              move.getValue(),
+                              initial != null ? initial : move.getKey()
+                         )
+                );
+            }
         }
-        if (movable(down, excludeDanger)) {
-            list.add(new MovePoint(Move.down, down, initial != null ? initial : Move.down));
-        }
-        if (movable(left, excludeDanger)) {
-            list.add(new MovePoint(Move.left, left, initial != null ? initial : Move.left));
-        }
-        if (movable(right, excludeDanger)) {
-            list.add(new MovePoint(Move.right, right, initial != null ? initial : Move.right));
-        }
-        return list;
+        return moves;
     }
 
     public Move goToFallback(Point point) {
-        System.out.println("Falling back to dangerous moves");
+        log.info("Falling back to dangerous moves");
         List<MovePoint> moves = getPossibleMoves(new MovePoint(null, point, null), false);
         if (moves.isEmpty()) return Move.left;
         return moves.get(0).move();
