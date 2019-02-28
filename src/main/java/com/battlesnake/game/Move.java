@@ -22,18 +22,18 @@ public enum Move {
     public Point translate(Point point) {
         Point newPoint = new Point(point);
         switch (this) {
-        case up:
-            newPoint.setY(point.getY() - 1);
-            break;
-        case down:
-            newPoint.setY(point.getY() + 1);
-            break;
-        case left:
-            newPoint.setX(point.getX() - 1);
-            break;
-        case right:
-            newPoint.setX(point.getX() + 1);
-            break;
+            case up:
+                newPoint.setY(point.getY() - 1);
+                break;
+            case down:
+                newPoint.setY(point.getY() + 1);
+                break;
+            case left:
+                newPoint.setX(point.getX() - 1);
+                break;
+            case right:
+                newPoint.setX(point.getX() + 1);
+                break;
         }
         return newPoint;
     }

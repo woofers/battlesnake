@@ -53,6 +53,6 @@ public final class LowercaseEnumTypeAdapterFactory
     }
 
     private String toLowercase(Object object) {
-      return object.toString().toLowerCase(Locale.US);
+        return object.toString().toLowerCase(Locale.US);
     }
 }
