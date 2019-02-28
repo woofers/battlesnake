@@ -124,6 +124,8 @@ public class Board {
             }
         }
 
+        log.info("Starting path-finding to {}", String.join(", "), destinations);
+
         int length = Integer.MAX_VALUE;
         MovePoint loopPoint = new MovePoint(null, currentPoint, null);
         points.add(loopPoint);
@@ -134,6 +136,11 @@ public class Board {
             for (Point destination : destinations) {
                 if (loopPoint.point().equals(destination)) {
                     paths.add(loopPoint.initialMove());
+                    log.info(
+                        "Found path to {} with a distance of {} by moving {}",
+                        destination,
+                        loopPoint.length(),
+                        loopPoint.initialMove());
                     if (length == Integer.MAX_VALUE) {
                         length = loopPoint.length();
                     }

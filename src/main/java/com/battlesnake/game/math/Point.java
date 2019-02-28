@@ -104,6 +104,6 @@ public final class Point {
 
     @Override
     public String toString() {
-        return "Point [x=" + x + ", y=" + y + "]";
+        return String.format("(%d, %d)", getX(), getY());
     }
 }
