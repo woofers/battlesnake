@@ -93,12 +93,7 @@ public class Board {
     }
 
     private List<Point> findAdjacent(Point point) {
-        ArrayList<Point> list = new ArrayList<>();
-        list.add(new Point(point.getX() - 1, point.getY()));
-        list.add(new Point(point.getX() + 1, point.getY()));
-        list.add(new Point(point.getX(), point.getY() - 1));
-        list.add(new Point(point.getX(), point.getY() + 1));
-        return list;
+        return new ArrayList<>(Move.adjacent(point).values());
     }
 
     protected List<Point> findBestAttackPoint() {
