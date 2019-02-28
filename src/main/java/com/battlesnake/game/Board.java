@@ -161,14 +161,6 @@ public class Board {
         return null;
     }
 
-    protected List<Point> findSafestPoint() {
-        ArrayList<Point> list = new ArrayList<>();
-        for (Snake snake : snakes) {
-            list.add(snake.body().get(snake.body().size()));
-        }
-        return list;
-    }
-
     private List<MovePoint> getPossibleMoves(MovePoint point) {
         return getPossibleMoves(point, true);
     }
