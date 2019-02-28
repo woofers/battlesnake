@@ -96,18 +96,6 @@ public class Board {
         return new ArrayList<>(Move.adjacent(point).values());
     }
 
-    protected List<Point> findBestAttackPoint() {
-        ArrayList<Point> list = new ArrayList<>();
-        for (int y = 0; y < height(); y++) {
-            for (int x = 0; x < width(); x++) {
-                if (board[x][y] == HEADS) {
-                    list.add(new Point(x, y));
-                }
-            }
-        }
-        return list;
-    }
-
     protected List<Point> findBestFood() {
         return food;
     }
@@ -122,10 +110,6 @@ public class Board {
         }
         return list;
 
-    }
-
-    private List<Point> findOurTail() {
-        return findAdjacent(you().body().get(you().body().size() - 1));
     }
 
     protected Move findPath(List<Point> destinations, Point currentPoint) {
