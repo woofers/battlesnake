@@ -201,7 +201,7 @@ public class Board {
     }
 
     public Move goToFallback(Point point) {
-        System.out.println("Falling back to dangerous moves");
+        log.info("Falling back to dangerous moves");
         List<MovePoint> moves = getPossibleMoves(new MovePoint(null, point, null), false);
         if (moves.isEmpty()) return Move.left;
         return moves.get(0).move();
