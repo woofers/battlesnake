@@ -1,6 +1,8 @@
 package com.battlesnake.game;
 
 import com.battlesnake.game.math.Point;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The four valid moves.
@@ -36,5 +38,14 @@ public enum Move {
                 break;
         }
         return newPoint;
+    }
+
+    public static Map<Move, Point> adjacent(Point point) {
+        Map<Move, Point> moves = new HashMap<>();
+        moves.put(Move.up, Move.up.translate(point));
+        moves.put(Move.down, Move.down.translate(point));
+        moves.put(Move.left, Move.left.translate(point));
+        moves.put(Move.right, Move.right.translate(point));
+        return moves;
     }
 }
