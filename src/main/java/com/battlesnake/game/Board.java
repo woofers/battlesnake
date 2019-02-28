@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import com.battlesnake.game.math.MovePoint;
 import com.battlesnake.game.math.Point;
@@ -124,7 +125,11 @@ public class Board {
             }
         }
 
-        log.info("Starting path-finding to {}", String.join(", "), destinations);
+        log.info("Starting path-finding to {}",
+                 destinations.stream()
+                 .map(Object::toString)
+                 .collect(Collectors.joining(", "))
+        );
 
         int length = Integer.MAX_VALUE;
         MovePoint loopPoint = new MovePoint(null, currentPoint, null);
