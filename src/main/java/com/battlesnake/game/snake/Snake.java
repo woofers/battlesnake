@@ -129,6 +129,7 @@ public class Snake {
             move = board.goToFallback(head());
         }
         board.print();
+        log.info("(Region {})", board.toRegionString());
         log.info("Moving {}", move);
         return move;
     }

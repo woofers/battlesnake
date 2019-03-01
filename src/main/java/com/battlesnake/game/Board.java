@@ -44,6 +44,8 @@ public class Board {
 
     private transient Tile[][] board;
 
+    private transient Integer[][] regions;
+
     private List<Point> food;
 
     private int height;
@@ -83,6 +85,35 @@ public class Board {
 
     }
 
+    private void fillIn() {
+        this.regions = new Integer[width()][height()];
+        for (int y = 0; y < height(); y++) {
+            for (int x = 0; x < width(); x++) {
+                if (isFilled(new Point(x, y))) {
+                    regions[x][y] = 0;
+                }
+            }
+        }
+        Exit condition = new Exit() {
+            public boolean shouldExit(MovePoint point) {
+                return false;
+            }
+
+            public List<MovePoint> onFailure(List<MovePoint> path) {
+                return path;
+            }
+        };
+        for (int y = 0; y < height(); y++) {
+            for (int x = 0; x < width(); x++) {
+                if (regions[x][y] != null) continue;
+                List<MovePoint> region = floodFill(new Point(x, y), condition, false);
+                for (MovePoint point : region) {
+                    regions[point.point().getX()][point.point().getY()] = region.size();
+                }
+            }
+        }
+    }
+
     protected Move findPath(List<Point> destinations, Point point) {
         for (int i = 0; i < destinations.size(); i++) {
             if (destinations.get(i).equals(point)) {
@@ -114,12 +145,12 @@ public class Board {
                 return new ArrayList<MovePoint>();
             }
         };
-        List<MovePoint> path = floodFill(point, condition);
+        List<MovePoint> path = floodFill(point, condition, true);
         if (path.isEmpty()) return null;
         return path.get(path.size() - 1).initialMove();
     }
 
-    protected List<MovePoint> floodFill(Point point, Exit condition) {
+    protected List<MovePoint> floodFill(Point point, Exit condition, boolean excludeDanger) {
         LinkedList<MovePoint> points = new LinkedList<>();
         ArrayList<MovePoint> list = new ArrayList<>();
         ArrayList<MovePoint> visited = new ArrayList<>();
@@ -133,7 +164,7 @@ public class Board {
             if (condition.shouldExit(loopPoint)) {
                 return visited;
             }
-            List<MovePoint> moves = getPossibleMoves(loopPoint);
+            List<MovePoint> moves = getPossibleMoves(loopPoint, excludeDanger);
             for (MovePoint move : moves) {
                 move.setLength(loopPoint.length() + 1);
                 if (list.contains(move)) continue;
@@ -207,6 +238,7 @@ public class Board {
 
         removeDead();
         toGrid();
+        fillIn();
     }
 
     public boolean isDangerousSpotFilled(Point point) {
@@ -301,16 +333,20 @@ public class Board {
         }
     }
 
+    public String toRegionString() {
+        return toString(regions);
+    }
+
     @Override
     public String toString() {
         return toString(board);
     }
 
-    public String toString(Tile[][] board) {
+    public String toString(Object[][] board) {
         String value = String.format("Turn %s\n", turn);
         for (int y = 0; y < height(); y++) {
             for (int x = 0; x < width(); x++) {
-                value += board[x][y].toString();
+                value += String.valueOf(board[x][y]);
                 value += " ";
             }
             value += "\n";
