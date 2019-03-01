@@ -309,7 +309,10 @@ public class Board {
                     List<Point> around = findAdjacent(head);
                     for (Point point : around) {
                         if (exists(point)) {
-                            board[point.getX()][point.getY()] = FAKE_WALL;
+                            if (board[point.getX()][point.getY()] == EMPTY
+                             || board[point.getX()][point.getY()] == FOOD) {
+                                board[point.getX()][point.getY()] = FAKE_WALL;
+                            }
                         }
                     }
                 }
