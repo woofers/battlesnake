@@ -304,7 +304,8 @@ public class Board {
 
             if (snake.equals(you())) {
                 board[head.getX()][head.getY()] = ME;
-            } else {
+            }
+            else {
                 board[head.getX()][head.getY()] = HEADS;
 
                 if (!you().longerThan(snake)) {
