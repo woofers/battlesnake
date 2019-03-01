@@ -259,7 +259,7 @@ public class Board {
             for (int i = 0; i < body.size(); i++) {
                 if ((i == body.size() - 1)
                     && body.size() > 1
-                    && !(snake.justAte() && turn != 0)) {
+                    && !snake.justAte()) {
                     board[body.get(i).getX()][body.get(i).getY()] = Tile.TAIL;
                 }
                 else {
