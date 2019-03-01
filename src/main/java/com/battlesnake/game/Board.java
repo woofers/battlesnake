@@ -38,6 +38,8 @@ public class Board {
 
     private static interface Exit {
         public boolean shouldExit(MovePoint point);
+
+        public List<MovePoint> onFailure(List<MovePoint> path);
     }
 
     private transient Tile[][] board;
@@ -107,8 +109,13 @@ public class Board {
                 }
                 return false;
             }
+
+            public List<MovePoint> onFailure(List<MovePoint> path) {
+                return new ArrayList<MovePoint>();
+            }
         };
         List<MovePoint> path = floodFill(point, condition);
+        if (path.isEmpty()) return null;
         return path.get(path.size() - 1).initialMove();
     }
 
@@ -134,7 +141,7 @@ public class Board {
                 list.add(move);
             }
         }
-        return visited;
+        return condition.onFailure(visited);
     }
 
     private List<MovePoint> getPossibleMoves(MovePoint point) {
