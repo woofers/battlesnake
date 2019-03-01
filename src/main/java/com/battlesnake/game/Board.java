@@ -21,23 +21,26 @@ import org.apache.logging.log4j.LogManager;
 public class Board {
     private static Logger log = LogManager.getLogger();
 
-    private static final int EMPTY = 0;
-    private static final int TAIL = 6;
-    private static final int FAKE_WALL = 5;
 
-    private static final int FOOD = 4;
+    public static enum Tile {
+        EMPTY,
+        WALL,
+        ME,
+        HEADS,
+        FOOD,
+        FAKE_WALL,
+        TAIL;
 
-    private static final int HEADS = 3;
+        public String toString() {
+            return new Integer(this.ordinal()).toString();
+        }
+    }
 
-    private static final int ME = 2;
-    private static final int WALL = 1;
-
-    private transient int[][] board;
+    private transient Tile[][] board;
 
     private List<Point> food;
 
     private int height;
-    private transient int[][] region;
     private List<Snake> snakes;
 
     private int width;
@@ -52,45 +55,6 @@ public class Board {
         if (point.getX() > width() - 1) return false;
         if (point.getY() > height() - 1) return false;
         return true;
-    }
-
-    private void fillInBoxes() {
-        this.region = new int[width()][height()];
-
-        for (int i = 0; i < board.length; i++) {
-            System.arraycopy(board[i], 0, region[i], 0, board[i].length);
-        }
-
-        int startId = 10;
-
-        for (int y = 0; y < height(); y++) {
-            for (int x = 0; x < width(); x++) {
-                Point currentPoint = new Point(x, y);
-                if (!isRegionFilled(currentPoint)) {
-                    LinkedList<MovePoint> points = new LinkedList<>();
-                    ArrayList<MovePoint> list = new ArrayList<>();
-
-                    MovePoint loopPoint = new MovePoint(null, currentPoint,
-                        null);
-                    points.add(loopPoint);
-                    list.add(loopPoint);
-                    while (!points.isEmpty()) {
-                        loopPoint = points.pollFirst();
-                        List<MovePoint> moves = getPossibleMoves(loopPoint);
-                        for (MovePoint move : moves) {
-                            if (list.contains(move)) {
-                                continue;
-                            }
-                            points.add(move);
-                            list.add(move);
-                            region[move.point().getX()][move.point()
-                                .getY()] = startId;
-                        }
-                    }
-                    startId++;
-                }
-            }
-        }
     }
 
     private List<Point> findAdjacent(Point point) {
@@ -234,24 +198,20 @@ public class Board {
 
     public boolean isDangerousSpotFilled(Point point) {
         if (!exists(point)) return false;
-        return board[point.getX()][point.getY()] == FAKE_WALL
-            || board[point.getX()][point.getY()] == TAIL;
+        return board[point.getX()][point.getY()] == Tile.FAKE_WALL
+            || board[point.getX()][point.getY()] == Tile.TAIL;
     }
 
     public boolean isFilled(Point point) {
         return isFilled(point, board);
     }
 
-    private boolean isFilled(Point point, int[][] board) {
+    private boolean isFilled(Point point, Tile[][] board) {
         if (!exists(point)) return true;
-        return board[point.getX()][point.getY()] != EMPTY
-            && board[point.getX()][point.getY()] != FOOD
-            && board[point.getX()][point.getY()] != FAKE_WALL
-            && board[point.getX()][point.getY()] != TAIL;
-    }
-
-    public boolean isRegionFilled(Point point) {
-        return isFilled(point, region);
+        return board[point.getX()][point.getY()] != Tile.EMPTY
+            && board[point.getX()][point.getY()] != Tile.FOOD
+            && board[point.getX()][point.getY()] != Tile.FAKE_WALL
+            && board[point.getX()][point.getY()] != Tile.TAIL;
     }
 
     public int longestSnakeLength() {
@@ -282,10 +242,15 @@ public class Board {
     }
 
     private void toGrid() {
-        this.board = new int[width()][height()];
+        this.board = new Tile[width()][height()];
+        for (int y = 0; y < height(); y++) {
+            for (int x = 0; x < width(); x++) {
+                board[x][y] = Tile.EMPTY;
+            }
+        }
 
         for (Point snack : food) {
-            board[snack.getX()][snack.getY()] = FOOD;
+            board[snack.getX()][snack.getY()] = Tile.FOOD;
         }
 
         for (Snake snake : snakes) {
@@ -295,26 +260,26 @@ public class Board {
                 if ((i == body.size() - 1)
                     && body.size() > 1
                     && !snake.justAte()) {
-                    board[body.get(i).getX()][body.get(i).getY()] = TAIL;
+                    board[body.get(i).getX()][body.get(i).getY()] = Tile.TAIL;
                 }
                 else {
-                    board[body.get(i).getX()][body.get(i).getY()] = WALL;
+                    board[body.get(i).getX()][body.get(i).getY()] = Tile.WALL;
                 }
             }
 
             if (snake.equals(you())) {
-                board[head.getX()][head.getY()] = ME;
+                board[head.getX()][head.getY()] = Tile.ME;
             }
             else {
-                board[head.getX()][head.getY()] = HEADS;
+                board[head.getX()][head.getY()] = Tile.HEADS;
 
                 if (!you().longerThan(snake)) {
                     List<Point> around = findAdjacent(head);
                     for (Point point : around) {
                         if (exists(point)) {
-                            if (board[point.getX()][point.getY()] == EMPTY
-                             || board[point.getX()][point.getY()] == FOOD) {
-                                board[point.getX()][point.getY()] = FAKE_WALL;
+                            if (board[point.getX()][point.getY()] == Tile.EMPTY
+                             || board[point.getX()][point.getY()] == Tile.FOOD) {
+                                board[point.getX()][point.getY()] = Tile.FAKE_WALL;
                             }
                         }
                     }
@@ -323,20 +288,16 @@ public class Board {
         }
     }
 
-    public String toRegionString() {
-        return toString(region);
-    }
-
     @Override
     public String toString() {
         return toString(board);
     }
 
-    public String toString(int[][] board) {
+    public String toString(Tile[][] board) {
         String value = String.format("Turn %s\n", turn);
         for (int y = 0; y < height(); y++) {
             for (int x = 0; x < width(); x++) {
-                value += board[x][y];
+                value += board[x][y].toString();
                 value += " ";
             }
             value += "\n";
