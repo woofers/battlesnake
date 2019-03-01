@@ -143,7 +143,7 @@ public class Board {
                 loopPoint.length(),
                 length
             );
-            if (loopPoint.length() > length) return paths;
+            if (loopPoint.length() > length) continue;
             for (Point destination : destinations) {
                 if (loopPoint.point().equals(destination)) {
                     paths.add(loopPoint.initialMove());
@@ -160,7 +160,7 @@ public class Board {
             List<MovePoint> moves = getPossibleMoves(loopPoint);
             for (MovePoint move : moves) {
                 move.setLength(loopPoint.length() + 1);
-                if (list.contains(move)) continue;
+                if (list.contains(move) && length == Integer.MAX_VALUE) continue;
                 points.add(move);
                 list.add(move);
             }
