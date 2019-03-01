@@ -36,6 +36,10 @@ public class Board {
         }
     }
 
+    private static interface Exit {
+        public boolean shouldExit(MovePoint point);
+    }
+
     private transient Tile[][] board;
 
     private List<Point> food;
@@ -77,58 +81,60 @@ public class Board {
 
     }
 
-    protected List<Move> findPaths(List<Point> destinations, Point currentPoint) {
-        LinkedList<MovePoint> points = new LinkedList<>();
-        ArrayList<MovePoint> list = new ArrayList<>();
-        ArrayList<Move> paths = new ArrayList<>();
-
+    protected Move findPath(List<Point> destinations, Point point) {
         for (int i = 0; i < destinations.size(); i++) {
-            if (destinations.get(i).equals(currentPoint)) {
+            if (destinations.get(i).equals(point)) {
                 destinations.remove(i);
                 i--;
             }
         }
-
         log.info("Starting path-finding to {}",
                  destinations.stream()
                  .map(Object::toString)
                  .collect(Collectors.joining(", "))
         );
+        Exit condition = new Exit() {
+            public boolean shouldExit(MovePoint point) {
+                for (Point destination : destinations) {
+                    if (point.point().equals(destination)) {
+                        log.info(
+                            "Found path to {} with a distance of {} by moving {}",
+                            point,
+                            point.length(),
+                            point.initialMove());
+                        return true;
+                    }
+                }
+                return false;
+            }
+        };
+        List<MovePoint> path = floodFill(point, condition);
+        return path.get(path.size() - 1).initialMove();
+    }
 
-        int length = Integer.MAX_VALUE;
-        MovePoint loopPoint = new MovePoint(null, currentPoint, null);
+    protected List<MovePoint> floodFill(Point point, Exit condition) {
+        LinkedList<MovePoint> points = new LinkedList<>();
+        ArrayList<MovePoint> list = new ArrayList<>();
+        ArrayList<MovePoint> visited = new ArrayList<>();
+
+        MovePoint loopPoint = new MovePoint(null, point, null);
         points.add(loopPoint);
         list.add(loopPoint);
         while (!points.isEmpty()) {
             loopPoint = points.pollFirst();
-            if (loopPoint.length() > length) continue;
-            for (Point destination : destinations) {
-                if (loopPoint.point().equals(destination)) {
-                    paths.add(loopPoint.initialMove());
-                    log.info(
-                        "Found path to {} with a distance of {} by moving {}",
-                        destination,
-                        loopPoint.length(),
-                        loopPoint.initialMove());
-                    if (length == Integer.MAX_VALUE) {
-                        length = loopPoint.length();
-                    }
-                }
+            visited.add(loopPoint);
+            if (condition.shouldExit(loopPoint)) {
+                return visited;
             }
             List<MovePoint> moves = getPossibleMoves(loopPoint);
             for (MovePoint move : moves) {
                 move.setLength(loopPoint.length() + 1);
-                if (list.contains(move) && length == Integer.MAX_VALUE) continue;
+                if (list.contains(move)) continue;
                 points.add(move);
                 list.add(move);
             }
         }
-        return paths;
-    }
-
-    protected Move findPath(List<Point> destinations, Point currentPoint) {
-        List<Move> moves = findPaths(destinations, currentPoint);
-        return !moves.isEmpty() ? moves.get(0) : null;
+        return visited;
     }
 
     private List<MovePoint> getPossibleMoves(MovePoint point) {
