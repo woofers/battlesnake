@@ -137,12 +137,6 @@ public class Board {
         list.add(loopPoint);
         while (!points.isEmpty()) {
             loopPoint = points.pollFirst();
-            log.info(
-                "Next point at {} has a length of {} compared to shortest path of {}",
-                loopPoint.point(),
-                loopPoint.length(),
-                length
-            );
             if (loopPoint.length() > length) continue;
             for (Point destination : destinations) {
                 if (loopPoint.point().equals(destination)) {
