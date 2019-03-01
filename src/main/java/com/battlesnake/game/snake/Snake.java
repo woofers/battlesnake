@@ -33,7 +33,6 @@ public class Snake {
     private List<Point> body;
     private int health;
     private String id;
-    private int length;
     private String name;
 
     private transient String taunt;
@@ -81,7 +80,7 @@ public class Snake {
     }
 
     public int length() {
-        return length;
+        return body.size();
     }
 
     private boolean longerThan(int length) {
