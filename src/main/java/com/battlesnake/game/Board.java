@@ -37,13 +37,13 @@ public class Board {
     }
 
     private static interface Exit {
-        public boolean shouldExit(MovePoint point);
+        public boolean shouldExit(MovePoint point, Point initial);
 
         public List<MovePoint> onFailure(List<MovePoint> path);
     }
 
-    private static final int IGNORE_SIZE = 4;
     private static final int FUDGE_FACTOR = 2;
+    private static final int IGNORE_SIZE = 4;
 
     private transient Tile[][] board;
 
@@ -112,7 +112,7 @@ public class Board {
             }
         }
         Exit condition = new Exit() {
-            public boolean shouldExit(MovePoint point) {
+            public boolean shouldExit(MovePoint point, Point initial) {
                 return false;
             }
 
@@ -144,7 +144,7 @@ public class Board {
                  .collect(Collectors.joining(", "))
         );
         Exit condition = new Exit() {
-            public boolean shouldExit(MovePoint point) {
+            public boolean shouldExit(MovePoint point, Point initial) {
                 for (Point destination : destinations) {
                     if (point.point().equals(destination)) {
                         log.info(
@@ -152,6 +152,18 @@ public class Board {
                             point,
                             point.length(),
                             point.initialMove());
+                            int smallRegion = Math.max(IGNORE_SIZE, (int)Math.floor(you().length() / 2));
+                            Point newPoint = point.initialMove().translate(initial);
+                            int region = regionSize(newPoint);
+                            if (region <= smallRegion) {
+                                log.info(
+                                    "Rejecting moving {} since it results in moving into a "
+                                  + "bad region of size {} when we need at least {}",
+                                    point.initialMove(),
+                                    region,
+                                    smallRegion + 1);
+                                return false;
+                            }
                         return true;
                     }
                 }
@@ -164,10 +176,7 @@ public class Board {
         };
         List<MovePoint> path = floodFill(point, condition, true);
         if (path.isEmpty()) return null;
-        MovePoint move = path.get(path.size() - 1);
-        Point newPoint = move.initialMove().translate(point);
-        if (regionSize(newPoint) <= IGNORE_SIZE) return null;
-        return move.initialMove();
+        return path.get(0).initialMove();
     }
 
     protected List<MovePoint> floodFill(Point point, Exit condition, boolean excludeDanger) {
@@ -181,7 +190,7 @@ public class Board {
         while (!points.isEmpty()) {
             loopPoint = points.pollFirst();
             visited.add(loopPoint);
-            if (condition.shouldExit(loopPoint)) {
+            if (condition.shouldExit(loopPoint, point)) {
                 return visited;
             }
             List<MovePoint> moves = getPossibleMoves(loopPoint, excludeDanger);
