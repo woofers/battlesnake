@@ -1,33 +1,33 @@
 
 # Table of Contents
 
--   [Battle Snake 2019](#orgd6bce11)
-    -   [Strategy](#org24d40c3)
-        -   [Drawbacks](#org829ec48)
-    -   [Battle History](#org21ee592)
-    -   [Screenshots](#org724c68d)
-    -   [Usage](#org0af2685)
-        -   [Prerequisites](#orgd35566e)
-        -   [Test Server](#orgbff479e)
-        -   [Run Locally](#org23ed799)
-        -   [Deployment](#orge0f762a)
-    -   [Acknowledgments](#orge2f2566)
+-   [Battle Snake 2019](#org181e5d9)
+    -   [Strategy](#org55c93dc)
+        -   [Drawbacks](#org3e2b02e)
+    -   [Battle History](#orgddb4acc)
+    -   [Game snippets](#org9c50572)
+    -   [Usage](#org018f668)
+        -   [Prerequisites](#orga439c20)
+        -   [Test Server](#org2d5931e)
+        -   [Run Locally](#orgc08c451)
+        -   [Deployment](#orgb326486)
+    -   [Acknowledgments](#org3232dd1)
 
 
 
-<a id="orgd6bce11"></a>
+<a id="org181e5d9"></a>
 
 # Battle Snake 2019
 
-<img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />
+<img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced.png?raw=true" />
 
 A simple [BattleSnake](https://www.battlesnake.io) written in Java.
-Will be entered in the 2019 Intermediate competition as **SUPER SLIMEY**.
+Will be entered in the expert divison of 2019's tournament as **🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍**.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
 
-<a id="org24d40c3"></a>
+<a id="org55c93dc"></a>
 
 ## Strategy
 
@@ -40,7 +40,7 @@ The snake also included an unused passive state, where she would try to
 loop back around to her tail to avoid collisions.
 
 
-<a id="org829ec48"></a>
+<a id="org3e2b02e"></a>
 
 ### Drawbacks
 
@@ -50,24 +50,25 @@ of the board, and ultimately the snake died by going for takedowns and
 boxing itself in.
 
 
-<a id="org21ee592"></a>
+<a id="orgddb4acc"></a>
 
 ## Battle History
 
 **Bounty Snakes:**
 
--   Beat two of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
--   Beat [Rooof](https://www.rooof.com/)'s bounty snakes
+-   Beat [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
+-   Beat [Freshworks](https://freshworks.io/)' bounty snakes
+-   Beat [Semaphore](https://semaphoresolutions.com/)'s bounty snakes
+-   Beat two of [Rooof](https://www.rooof.com/)'s bounty snakes
+-   Beat one of [Redbrick](https://rdbrck.com/)'s bounty snakes
+-   Beat one of [Pixel Union](https://www.pixelunion.net/)'s bounty snakes
+-   Beat one of [Schneider Electric](https://www.schneider-electric.ca/en/)'s bounty snakes
+-   Beat one of [Telmediq](https://www.telmediq.com/)'s bounty snakes
 -   Beat [Giftbit](https://www.giftbit.com/)'s bounty snakes
--   Beat [GitHub](https://github.com)'s two snakes in only 67 moves
--   Beat [Sendwithus](https://www.sendwithus.com/)' three bounty snakes
--   Beat [Semaphore](https://semaphoresolutions.com/)'s zombie snakes and hungry snake
--   Lost to one of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
--   Lost to [Accio](https://myaccio.com/)'s defensive snake
--   Lost to [AppColony](http://www.appcolony.ca/)'s tron snake
--   Lost to [Redbrick](https://rdbrck.com/)'s champion snake
--   Lost to [Workday](https://www.workday.com/)'s bounty snake
+-   Beat [Workday](https://www.workday.com/)'s bounty snake
+-   Made it to round 6 with [Sendwithus](https://www.sendwithus.com/)' custom bounty snakes
 -   Lost to [CheckFront](https://www.checkfront.com/)'s two bounty snakes
+-   Lost to [GitHub](https://github.com)'s bounty snake
 
 **Tournament:**
 
@@ -83,20 +84,20 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 **[Game 2](https://clips.twitch.tv/GentleCrispyReubenCorgiDerp)**
 
 
-<a id="org724c68d"></a>
+<a id="org9c50572"></a>
 
-## Screenshots
+## Game snippets
 
-![img](./screenshots/snake-0.png) ![img](./screenshots/snake-1.png)
-![img](./screenshots/snake-2.png) ![img](./screenshots/snake-3.png)
+![img](./screenshots/snake-win-1.gif) ![img](./screenshots/snake-win-2.gif)
+![img](./screenshots/snake-win-3.gif) ![img](./screenshots/snake-win-4.gif)
 
 
-<a id="org0af2685"></a>
+<a id="org018f668"></a>
 
 ## Usage
 
 
-<a id="orgd35566e"></a>
+<a id="orga439c20"></a>
 
 ### Prerequisites
 
@@ -107,7 +108,7 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 5.  Create a Heroku App `heroku create <name>`
 
 
-<a id="orgbff479e"></a>
+<a id="org2d5931e"></a>
 
 ### Test Server
 
@@ -115,7 +116,7 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 2.  Goto `localhost:3000` in a browser.
 
 
-<a id="org23ed799"></a>
+<a id="orgc08c451"></a>
 
 ### Run Locally
 
@@ -131,7 +132,7 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
     3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="orge0f762a"></a>
+<a id="orgb326486"></a>
 
 ### Deployment
 
@@ -140,7 +141,7 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="orge2f2566"></a>
+<a id="org3232dd1"></a>
 
 ## Acknowledgments
 
@@ -151,4 +152,4 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 -   **Designed for** [Sendwithus](https://github.com/sendwithus)'
     BattleSnake competition, March 3, 2018
 
-<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />
+<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced?raw=true" />
