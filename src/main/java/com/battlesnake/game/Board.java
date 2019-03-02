@@ -43,6 +43,7 @@ public class Board {
     }
 
     private static final int IGNORE_SIZE = 4;
+    private static final int FUDGE_FACTOR = 2;
 
     private transient Tile[][] board;
 
@@ -87,6 +88,11 @@ public class Board {
 
     }
 
+    private void fill(Point point) {
+        if (!exists(point)) return;
+        regions[point.getX()][point.getY()] = 0;
+    }
+
     private void fillIn() {
         this.regions = new Integer[width()][height()];
         for (int y = 0; y < height(); y++) {
@@ -94,6 +100,15 @@ public class Board {
                 if (isFilled(new Point(x, y))) {
                     regions[x][y] = 0;
                 }
+            }
+        }
+        for (Snake snake : snakes) {
+            if (snake.equals(you()) || snake.length() <= 1) continue;
+            Point head = snake.head();
+            Point neck = snake.body().get(1);
+            Point delta = head.delta(neck);
+            for (int i = 1; i <= FUDGE_FACTOR; i ++) {
+                fill(new Point(head.getX() + delta.getX() * i, head.getY() + delta.getY() * i));
             }
         }
         Exit condition = new Exit() {
