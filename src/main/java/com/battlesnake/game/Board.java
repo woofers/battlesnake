@@ -132,6 +132,10 @@ public class Board {
     }
 
     protected Move findPath(List<Point> destinations, Point point) {
+        return findPath(destinations, point, true);
+    }
+
+    protected Move findPath(List<Point> destinations, Point point, boolean checkBox) {
         for (int i = 0; i < destinations.size(); i++) {
             if (destinations.get(i).equals(point)) {
                 destinations.remove(i);
@@ -155,7 +159,7 @@ public class Board {
                             int smallRegion = Math.max(IGNORE_SIZE, (int)Math.floor(you().length() / 2));
                             Point newPoint = point.initialMove().translate(initial);
                             int region = regionSize(newPoint);
-                            if (region <= smallRegion) {
+                            if (checkBox && region <= smallRegion) {
                                 log.info(
                                     "Rejecting moving {} since it results in moving into a "
                                   + "bad region of size {} when we need at least {}",
@@ -253,7 +257,7 @@ public class Board {
         log.info("Going to tail");
         Move move = null;
         for (int i = you().body().size() - 1; i > 0; i--) {
-            move = findPath(findAdjacent(you().body().get(i)), currentPoint);
+            move = findPath(findAdjacent(you().body().get(i)), currentPoint, false);
             if (move != null) return move;
         }
         return null;
