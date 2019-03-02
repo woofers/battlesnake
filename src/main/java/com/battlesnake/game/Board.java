@@ -42,7 +42,7 @@ public class Board {
         public List<MovePoint> onFailure(List<MovePoint> path);
     }
 
-    private static final int IGNORE_SIZE = 2;
+    private static final int IGNORE_SIZE = 4;
 
     private transient Tile[][] board;
 
