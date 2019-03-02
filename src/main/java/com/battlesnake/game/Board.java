@@ -204,6 +204,9 @@ public class Board {
         log.info("Falling back to dangerous moves");
         List<MovePoint> moves = getPossibleMoves(new MovePoint(null, point, null), false);
         if (moves.isEmpty()) return Move.left;
+        for (MovePoint move: moves) {
+            if (isFood(move.point())) return move.move();
+        }
         return moves.get(0).move();
     }
 
@@ -250,6 +253,11 @@ public class Board {
         if (!exists(point)) return false;
         return board[point.getX()][point.getY()] == Tile.FAKE_WALL
             || board[point.getX()][point.getY()] == Tile.TAIL;
+    }
+
+    public boolean isFood(Point point) {
+        if (!exists(point)) return false;
+        return board[point.getX()][point.getY()] == Tile.FOOD;
     }
 
     public boolean isFilled(Point point) {
