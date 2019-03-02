@@ -343,15 +343,27 @@ public class Board {
     }
 
     public String toString(Object[][] board) {
-        String value = String.format("Turn %s\n", turn);
+        String out = String.format("Turn %s\n", turn);
+        int[] padding = new int[width()];
         for (int y = 0; y < height(); y++) {
             for (int x = 0; x < width(); x++) {
-                value += String.valueOf(board[x][y]);
-                value += " ";
+                int length = String.valueOf(board[x][y]).length();
+                if (length > padding[x]) padding[x] = length;
             }
-            value += "\n";
         }
-        return value;
+        for (int y = 0; y < height(); y++) {
+            for (int x = 0; x < width(); x++) {
+                String value = String.valueOf(board[x][y]);
+                int diff = padding[x] - value.length();
+                if (diff > 0) {
+                    out += new String(new char[diff]).replace("\0", " ");
+                }
+                out += value;
+                out += " ";
+            }
+            out += "\n";
+        }
+        return out;
     }
 
     public int width() {
