@@ -360,7 +360,9 @@ public class Board {
                 String value = String.valueOf(board[x][y]);
                 int diff = padding[x] - value.length();
                 if (diff > 0) {
-                    out += new String(new char[diff]).replace("\0", " ");
+                    for (int i = 0; i < diff; i ++) {
+                        out += "_";
+                    }
                 }
                 out += value;
                 out += " ";
