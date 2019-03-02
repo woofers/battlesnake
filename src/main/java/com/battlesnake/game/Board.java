@@ -152,7 +152,7 @@ public class Board {
                             point,
                             point.length(),
                             point.initialMove());
-                            int smallRegion = IGNORE_SIZE;
+                            int smallRegion = Math.max(IGNORE_SIZE, (int)Math.floor(you().length() / 2));
                             Point newPoint = point.initialMove().translate(initial);
                             int region = regionSize(newPoint);
                             if (region <= smallRegion) {
