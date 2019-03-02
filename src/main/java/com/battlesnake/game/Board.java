@@ -42,6 +42,8 @@ public class Board {
         public List<MovePoint> onFailure(List<MovePoint> path);
     }
 
+    private static final int IGNORE_SIZE = 2;
+
     private transient Tile[][] board;
 
     private transient Integer[][] regions;
@@ -147,7 +149,10 @@ public class Board {
         };
         List<MovePoint> path = floodFill(point, condition, true);
         if (path.isEmpty()) return null;
-        return path.get(path.size() - 1).initialMove();
+        MovePoint move = path.get(path.size() - 1);
+        Point newPoint = move.initialMove().translate(point);
+        if (regionSize(newPoint) <= IGNORE_SIZE) return null;
+        return move.initialMove();
     }
 
     protected List<MovePoint> floodFill(Point point, Exit condition, boolean excludeDanger) {
@@ -257,6 +262,11 @@ public class Board {
             && board[point.getX()][point.getY()] != Tile.FOOD
             && board[point.getX()][point.getY()] != Tile.FAKE_WALL
             && board[point.getX()][point.getY()] != Tile.TAIL;
+    }
+
+    public int regionSize(Point point) {
+        if (!exists(point)) return 0;
+        return regions[point.getX()][point.getY()];
     }
 
     public int longestSnakeLength() {
