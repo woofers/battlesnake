@@ -351,6 +351,10 @@ public class Board {
                 if (length > padding[x]) padding[x] = length;
             }
         }
+        for (int x = 0; x < width(); x++) {
+            out += padding[x] + " ";
+        }
+        out += "\n---Padding---\n";
         for (int y = 0; y < height(); y++) {
             for (int x = 0; x < width(); x++) {
                 String value = String.valueOf(board[x][y]);
