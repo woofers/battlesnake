@@ -176,7 +176,7 @@ public class Board {
         };
         List<MovePoint> path = floodFill(point, condition, true);
         if (path.isEmpty()) return null;
-        return path.get(0).initialMove();
+        return path.get(path.size() - 1).initialMove();
     }
 
     protected List<MovePoint> floodFill(Point point, Exit condition, boolean excludeDanger) {
