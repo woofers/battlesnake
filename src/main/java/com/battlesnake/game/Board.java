@@ -37,11 +37,12 @@ public class Board {
     }
 
     private static interface Exit {
-        public boolean shouldExit(MovePoint point);
+        public boolean shouldExit(MovePoint point, Point initial);
 
         public List<MovePoint> onFailure(List<MovePoint> path);
     }
 
+    private static final int FUDGE_FACTOR = 2;
     private static final int IGNORE_SIZE = 4;
 
     private transient Tile[][] board;
@@ -87,6 +88,11 @@ public class Board {
 
     }
 
+    private void fill(Point point) {
+        if (!exists(point)) return;
+        regions[point.getX()][point.getY()] = 0;
+    }
+
     private void fillIn() {
         this.regions = new Integer[width()][height()];
         for (int y = 0; y < height(); y++) {
@@ -96,8 +102,17 @@ public class Board {
                 }
             }
         }
+        for (Snake snake : snakes) {
+            if (snake.equals(you()) || snake.length() <= 1) continue;
+            Point head = snake.head();
+            Point neck = snake.body().get(1);
+            Point delta = head.delta(neck);
+            for (int i = 1; i <= FUDGE_FACTOR; i ++) {
+                fill(new Point(head.getX() + delta.getX() * i, head.getY() + delta.getY() * i));
+            }
+        }
         Exit condition = new Exit() {
-            public boolean shouldExit(MovePoint point) {
+            public boolean shouldExit(MovePoint point, Point initial) {
                 return false;
             }
 
@@ -117,6 +132,10 @@ public class Board {
     }
 
     protected Move findPath(List<Point> destinations, Point point) {
+        return findPath(destinations, point, true);
+    }
+
+    protected Move findPath(List<Point> destinations, Point point, boolean checkBox) {
         for (int i = 0; i < destinations.size(); i++) {
             if (destinations.get(i).equals(point)) {
                 destinations.remove(i);
@@ -129,7 +148,7 @@ public class Board {
                  .collect(Collectors.joining(", "))
         );
         Exit condition = new Exit() {
-            public boolean shouldExit(MovePoint point) {
+            public boolean shouldExit(MovePoint point, Point initial) {
                 for (Point destination : destinations) {
                     if (point.point().equals(destination)) {
                         log.info(
@@ -137,6 +156,18 @@ public class Board {
                             point,
                             point.length(),
                             point.initialMove());
+                            int smallRegion = Math.max(IGNORE_SIZE, (int)Math.floor(you().length() / 2));
+                            Point newPoint = point.initialMove().translate(initial);
+                            int region = regionSize(newPoint);
+                            if (checkBox && region <= smallRegion) {
+                                log.info(
+                                    "Rejecting moving {} since it results in moving into a "
+                                  + "bad region of size {} when we need at least {}",
+                                    point.initialMove(),
+                                    region,
+                                    smallRegion + 1);
+                                return false;
+                            }
                         return true;
                     }
                 }
@@ -149,10 +180,7 @@ public class Board {
         };
         List<MovePoint> path = floodFill(point, condition, true);
         if (path.isEmpty()) return null;
-        MovePoint move = path.get(path.size() - 1);
-        Point newPoint = move.initialMove().translate(point);
-        if (regionSize(newPoint) <= IGNORE_SIZE) return null;
-        return move.initialMove();
+        return path.get(path.size() - 1).initialMove();
     }
 
     protected List<MovePoint> floodFill(Point point, Exit condition, boolean excludeDanger) {
@@ -166,7 +194,7 @@ public class Board {
         while (!points.isEmpty()) {
             loopPoint = points.pollFirst();
             visited.add(loopPoint);
-            if (condition.shouldExit(loopPoint)) {
+            if (condition.shouldExit(loopPoint, point)) {
                 return visited;
             }
             List<MovePoint> moves = getPossibleMoves(loopPoint, excludeDanger);
@@ -229,7 +257,7 @@ public class Board {
         log.info("Going to tail");
         Move move = null;
         for (int i = you().body().size() - 1; i > 0; i--) {
-            move = findPath(findAdjacent(you().body().get(i)), currentPoint);
+            move = findPath(findAdjacent(you().body().get(i)), currentPoint, false);
             if (move != null) return move;
         }
         return null;

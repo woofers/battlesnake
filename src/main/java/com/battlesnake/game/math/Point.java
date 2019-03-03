@@ -66,6 +66,10 @@ public final class Point {
         return true;
     }
 
+    public Point delta(Point point) {
+        return new Point(getX() - point.getX(), getY() - point.getY());
+    }
+
     /**
      * @return the x
      */
