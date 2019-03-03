@@ -72,16 +72,16 @@ boxing itself in.
 
 **Tournament:**
 
-The snake came third in both our rounds of the battle. There were 57
-competitors in the intermediate tier.  Our games were played on a 15x15 board with 10 food.
+The snake came 4th in the 1st round of battle, and came 2nd in the second round. There were 29
+competitors in the expert tier.  Our games were played on a 11x11 board with 5 food spawned at start.
 
 Timestamp on [Sendwithus'
-Twitch stream](https://www.twitch.tv/videos/234961139) is
-[1:56:44-1:58:24](https://www.twitch.tv/videos/234961139?t=01h56m44s).
+Twitch stream](https://www.twitch.tv/videos/389395340) is
+[2:52:53-2:55:30](https://www.twitch.tv/videos/389395340?t=02h52m53s).
 
-**[Game 1](https://clips.twitch.tv/SplendidNiceKoalaTwitchRPG)**
+**[Game 1](https://clips.twitch.tv/SoftDepressedWebDAESuppy)**
 
-**[Game 2](https://clips.twitch.tv/GentleCrispyReubenCorgiDerp)**
+**[Game 2](https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed)**
 
 
 <a id="org9c50572"></a>
@@ -146,10 +146,10 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 ## Acknowledgments
 
 -   **Built by** [Ben Austin](https://github.com/austinben) and
-    [Jaxson Van Doorn](https://github.com/woofers), March 3, 2018
+    [Jaxson Van Doorn](https://github.com/woofers), March 2, 2019
 -   **Template Forked from**
     [here](https://github.com/tflinz/BasicBattleSnake2018)
 -   **Designed for** [Sendwithus](https://github.com/sendwithus)'
-    BattleSnake competition, March 3, 2018
+    BattleSnake competition, March 2, 2019
 
 <img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced.png?raw=true" />
