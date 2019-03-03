@@ -59,13 +59,13 @@ boxing itself in.
 -   Beat [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
 -   Beat [Freshworks](https://freshworks.io/)' bounty snakes
 -   Beat [Semaphore](https://semaphoresolutions.com/)'s bounty snakes
+-   Beat [Workday](https://www.workday.com/)'s bounty snake
+-   Beat [Giftbit](https://www.giftbit.com/)'s bounty snakes
 -   Beat two of [Rooof](https://www.rooof.com/)'s bounty snakes
 -   Beat one of [Redbrick](https://rdbrck.com/)'s bounty snakes
 -   Beat one of [Pixel Union](https://www.pixelunion.net/)'s bounty snakes
 -   Beat one of [Schneider Electric](https://www.schneider-electric.ca/en/)'s bounty snakes
 -   Beat one of [Telmediq](https://www.telmediq.com/)'s bounty snakes
--   Beat [Giftbit](https://www.giftbit.com/)'s bounty snakes
--   Beat [Workday](https://www.workday.com/)'s bounty snake
 -   Made it to round 6 with [Sendwithus](https://www.sendwithus.com/)' custom bounty snakes
 -   Lost to [CheckFront](https://www.checkfront.com/)'s two bounty snakes
 -   Lost to [GitHub](https://github.com)'s bounty snake
@@ -86,10 +86,10 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 
 <a id="org9c50572"></a>
 
-## Game snippets
+## Game Snippets
 
 ![img](./screenshots/snake-win-1.gif) ![img](./screenshots/snake-win-2.gif)
-![img](./screenshots/snake-win-3.gif) ![img](./screenshots/snake-win-4.gif)
+![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
 
 
 <a id="org018f668"></a>
@@ -152,4 +152,4 @@ Twitch stream](https://www.twitch.tv/videos/234961139) is
 -   **Designed for** [Sendwithus](https://github.com/sendwithus)'
     BattleSnake competition, March 3, 2018
 
-<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced?raw=true" />
+<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced.png?raw=true" />
