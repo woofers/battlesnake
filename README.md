@@ -22,7 +22,8 @@
 <img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced.png?raw=true" />
 
 A simple [BattleSnake](https://www.battlesnake.io) written in Java.
-Will be entered in the expert divison of 2019's tournament as **🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍**.
+
+Was entered in the expert divison of 2019's tournament as **🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍**.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
@@ -67,7 +68,7 @@ boxing itself in.
 -   Beat one of [Schneider Electric](https://www.schneider-electric.ca/en/)'s bounty snakes
 -   Beat one of [Telmediq](https://www.telmediq.com/)'s bounty snakes
 -   Made it to round 6 with [Sendwithus](https://www.sendwithus.com/)' custom bounty snakes
--   Lost to [CheckFront](https://www.checkfront.com/)'s two bounty snakes
+-   Lost to [CheckFront](https://www.checkfront.com/)'s bounty snake
 -   Lost to [GitHub](https://github.com)'s bounty snake
 
 **Tournament:**
