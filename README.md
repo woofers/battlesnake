@@ -72,7 +72,7 @@ boxing itself in.
 
 **Tournament:**
 
-The snake came 4th in the first round of battle, and came 2nd in the second round. There were 29
+The snake came 3rd in the first round of battle, and came 2nd in the second round. There were 29
 competitors in the expert tier.  Our games were played on a 11x11 board with 5 food spawned at start.
 
 Timestamp on [Sendwithus'
