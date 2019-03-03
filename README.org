@@ -21,15 +21,13 @@ the largest on the board, or if the health was below a specific
 threshold, the snake would navigate towards the closest food. Otherwise,
 it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
-The snake also included an unused passive state, where she would try to
-loop back around to her tail to avoid collisions.
 
 *** Drawbacks
 
-The snake's biggest drawback was trapping itself in its own tail. We
-didn't implement an effective algorithm to calculate dangerous regions
-of the board, and ultimately the snake died by going for takedowns and
-boxing itself in.
+Despite efforts to improve the issue from 2018's entry, the snake's biggest 
+drawback was trapping itself in its own tail. Wedidn't implement an effective 
+algorithm to calculate dangerous regions of the board, and ultimately the
+snake died by going for a food point and boxing itself in.
 
 ** Battle History
 
@@ -60,6 +58,10 @@ Twitch stream]] is
 *[[https://clips.twitch.tv/SoftDepressedWebDAESuppy][Game 1]]*
 
 *[[https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed][Game 2]]*
+
+At the end of the tournament competition, our snake
+was listed #13 of 139 snakes in the public 
+[[https://play.battlesnake.io/leaderboard/][global arena].
 
 ** Game Snippets
 
@@ -96,5 +98,14 @@ Twitch stream]] is
    [[https://github.com/tflinz/BasicBattleSnake2018][here]]
 -  *Designed for* [[https://github.com/sendwithus][Sendwithus]]'
    BattleSnake competition, March 2, 2019
+
+*** Notable Moments
+
+"Is that a Young Thug reference? You guys are awesome."
+
+"Im just a white guy at a coding convention talking about
+Young Thug, don't mind me!"
+
+"Ohhh, /you're/ woofers. Your emojis are breaking my logs!"
 
 @@html:<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced.png?raw=true" />@@
