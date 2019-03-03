@@ -160,7 +160,7 @@ was listed #13 of 139 snakes in the public
 "Is that a Young Thug reference? You guys are awesome."
 
 "Im just a white guy at a coding convention talking about
-Young Thug, dont mind me!"
+Young Thug, don't mind me!"
 
 "Ohhh, *you're* woofers. Your emojis are breaking my logs!"
 
