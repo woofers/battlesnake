@@ -6,10 +6,10 @@
 
 * Battle Snake 2019
 
-@@html:<img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />@@
+@@html:<img height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced.png?raw=true" />@@
 
 A simple [[https://www.battlesnake.io][BattleSnake]] written in Java.
-Will be entered in the 2019 Intermediate competition as *SUPER SLIMEY*.
+Will be entered in the expert divison of 2019's tournament as *🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍*.
 
 Deployed to [[https://battlesnake-liquid.herokuapp.com/][https://battlesnake-liquid.herokuapp.com/]]
 
@@ -33,18 +33,19 @@ boxing itself in.
 ** Battle History
 
 *Bounty Snakes:*
-- Beat two of [[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes
-- Beat [[https://www.rooof.com/][Rooof]]'s bounty snakes
+- Beat [[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes
+- Beat [[https://freshworks.io/][Freshworks]]' bounty snakes
+- Beat [[https://semaphoresolutions.com/][Semaphore]]'s bounty snakes
+- Beat two of [[https://www.rooof.com/][Rooof]]'s bounty snakes
+- Beat one of [[https://rdbrck.com/][Redbrick]]'s bounty snakes
+- Beat one of [[https://www.pixelunion.net/][Pixel Union]]'s bounty snakes
+- Beat one of [[https://www.schneider-electric.ca/en/][Schneider Electric]]'s bounty snakes
+- Beat one of [[https://www.telmediq.com/][Telmediq]]'s bounty snakes
 - Beat [[https://www.giftbit.com/][Giftbit]]'s bounty snakes
-- Beat [[https://github.com][GitHub]]'s two snakes in only 67 moves
-- Beat [[https://www.sendwithus.com/][Sendwithus]]' three bounty snakes
-- Beat [[https://semaphoresolutions.com/][Semaphore]]'s zombie snakes and hungry snake
-- Lost to one of [[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes
-- Lost to [[https://myaccio.com/][Accio]]'s defensive snake
-- Lost to [[http://www.appcolony.ca/][AppColony]]'s tron snake
-- Lost to [[https://rdbrck.com/][Redbrick]]'s champion snake
-- Lost to [[https://www.workday.com/][Workday]]'s bounty snake
+- Beat [[https://www.workday.com/][Workday]]'s bounty snake
+- Made it to round 6 with [[https://www.sendwithus.com/][Sendwithus]]' custom bounty snakes
 - Lost to [[https://www.checkfront.com/][CheckFront]]'s two bounty snakes
+- Lost to [[https://github.com][GitHub]]'s bounty snake
 
 *Tournament:*
 
@@ -59,10 +60,10 @@ Twitch stream]] is
 
 *[[https://clips.twitch.tv/GentleCrispyReubenCorgiDerp][Game 2]]*
 
-** Screenshots
+** Game snippets
 
-[[./screenshots/snake-0.png]] [[./screenshots/snake-1.png]]
-[[./screenshots/snake-2.png]] [[./screenshots/snake-3.png]]
+[[./screenshots/snake-win-1.gif]] [[./screenshots/snake-win-2.gif]]
+[[./screenshots/snake-win-3.gif]] [[./screenshots/snake-win-4.gif]]
 
 ** Usage
 *** Prerequisites
@@ -95,4 +96,4 @@ Twitch stream]] is
 -  *Designed for* [[https://github.com/sendwithus][Sendwithus]]'
    BattleSnake competition, March 3, 2018
 
-@@html:<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/intermediate.png?raw=true" />@@
+@@html:<img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced?raw=true" />@@
