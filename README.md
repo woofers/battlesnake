@@ -37,18 +37,16 @@ the largest on the board, or if the health was below a specific
 threshold, the snake would navigate towards the closest food. Otherwise,
 it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
-The snake also included an unused passive state, where she would try to
-loop back around to her tail to avoid collisions.
 
 
 <a id="org3e2b02e"></a>
 
 ### Drawbacks
 
-The snake's biggest drawback was trapping itself in its own tail. We
-didn't implement an effective algorithm to calculate dangerous regions
-of the board, and ultimately the snake died by going for takedowns and
-boxing itself in.
+Despite efforts to improve the issue from 2018's entry, the snake's biggest 
+drawback was trapping itself in its own tail. Wedidn't implement an effective 
+algorithm to calculate dangerous regions of the board, and ultimately the
+snake died by going for a food point and boxing itself in.
 
 
 <a id="orgddb4acc"></a>
@@ -57,17 +55,17 @@ boxing itself in.
 
 **Bounty Snakes:**
 
--   Beat [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
--   Beat [Freshworks](https://freshworks.io/)' bounty snakes
--   Beat [Semaphore](https://semaphoresolutions.com/)'s bounty snakes
+-   Beat all 3 of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
+-   Beat all 3 of [Freshworks](https://freshworks.io/)' bounty snake level
+-   Beat both of [Semaphore](https://semaphoresolutions.com/)'s bounty snakes
 -   Beat [Workday](https://www.workday.com/)'s bounty snake
--   Beat [Giftbit](https://www.giftbit.com/)'s bounty snakes
--   Beat two of [Rooof](https://www.rooof.com/)'s bounty snakes
--   Beat one of [Redbrick](https://rdbrck.com/)'s bounty snakes
--   Beat one of [Pixel Union](https://www.pixelunion.net/)'s bounty snakes
+-   Beat [Giftbit](https://www.giftbit.com/)'s 3v1 bounty snake match
+-   Beat two of four played [Rooof](https://www.rooof.com/)'s bounty snakes
+-   Beat one of two of [Redbrick](https://rdbrck.com/)'s bounty snakes
+-   Beat both of [Pixel Union](https://www.pixelunion.net/)'s bounty snakes
 -   Beat one of [Schneider Electric](https://www.schneider-electric.ca/en/)'s bounty snakes
 -   Beat one of [Telmediq](https://www.telmediq.com/)'s bounty snakes
--   Made it to round 6 with [Sendwithus](https://www.sendwithus.com/)' custom bounty snakes
+-   Made it to round 6 with [Sendwithus](https://www.sendwithus.com/)' zombie wave style bounty snakes
 -   Lost to [CheckFront](https://www.checkfront.com/)'s bounty snake
 -   Lost to [GitHub](https://github.com)'s bounty snake
 
@@ -83,6 +81,10 @@ Twitch stream](https://www.twitch.tv/videos/389395340) is
 **[Game 1](https://clips.twitch.tv/SoftDepressedWebDAESuppy)**
 
 **[Game 2](https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed)**
+
+At the end of the tournament competition, our snake
+was listed #13 of 139 snakes in the public 
+[global arena](https://play.battlesnake.io/leaderboard/).
 
 
 <a id="org9c50572"></a>
@@ -152,5 +154,14 @@ Twitch stream](https://www.twitch.tv/videos/389395340) is
     [here](https://github.com/tflinz/BasicBattleSnake2018)
 -   **Designed for** [Sendwithus](https://github.com/sendwithus)'
     BattleSnake competition, March 2, 2019
+
+### Notable Moments
+
+"Is that a Young Thug reference? You guys are awesome."
+
+"Im just a white guy at a coding convention talking about
+Young Thug, don't mind me!"
+
+"Ohhh, *you're* woofers. Your emojis are breaking my logs!"
 
 <img align="left" height="120" width="120" src="https://github.com/woofers/battle-snake-2019/blob/master/screenshots/bs18+advanced.png?raw=true" />
