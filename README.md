@@ -20,7 +20,7 @@
 
 # Battle Snake 2019
 
-<img height="120" width="120" src="/screenshots/advanced.png" />
+<img height="120" width="120" src="screenshots/advanced.png" />
 
 A simple [BattleSnake](https://www.battlesnake.io) written in Java.
 
@@ -168,4 +168,4 @@ Young Thug, don't mind me!"
 
 "Ohhh, *you're* woofers. Your emojis are breaking my logs!"
 
-<img align="left" height="120" width="120" src="/screenshots/advanced.png" />
+<img align="left" height="120" width="120" src="screenshots/advanced.png" />
