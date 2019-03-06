@@ -32,7 +32,7 @@ public class Board {
         TAIL;
 
         public String toString() {
-            return new Integer(this.ordinal()).toString();
+            return Integer.valueOf(this.ordinal()).toString();
         }
     }
 
