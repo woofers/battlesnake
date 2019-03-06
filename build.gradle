@@ -36,6 +36,7 @@ ext {
     servletVersion = '4.0.1'
     log4jVersion = '2.8'
     webappRunnerVersion = '8.5.11.3'
+    wsVersion = '2.1'
 }
 
 repositories {
@@ -50,6 +51,7 @@ dependencies {
     compile "com.google.code.gson:gson-extras:$gsonVersion"
     compile "javax.servlet:javax.servlet-api:$servletVersion"
     compile "com.github.jsimone:webapp-runner:$webappRunnerVersion"
+    compile "javax.ws.rs:javax.ws.rs-api:$wsVersion"
     compile "org.apache.logging.log4j:log4j-api:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-core:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-web:$log4jVersion"
