@@ -3,7 +3,6 @@ package com.battlesnake.game.snake;
 import java.util.List;
 
 import com.battlesnake.game.Board;
-import com.battlesnake.game.BoardMove;
 import com.battlesnake.game.Move;
 import com.battlesnake.game.Taunt;
 import com.battlesnake.game.math.Point;
@@ -131,12 +130,6 @@ public class Snake {
         board.print();
         log.info("(Region {})", board.toRegionString());
         log.info("Moving {}", move);
-        return move;
-    }
-
-    public BoardMove gameMove(Board board) {
-        String taunt = new Taunt(taunt(), board.turn()).toString();
-        BoardMove move = new BoardMove(move(board), taunt);
         return move;
     }
 
