@@ -24,8 +24,8 @@ opponent in a head-on collision or trap them by cutting off their path.
 
 *** Drawbacks
 
-Despite efforts to improve the issue from 2018's entry, the snake's biggest 
-drawback was trapping itself in its own tail. Wedidn't implement an effective 
+Despite efforts to improve the issue from 2018's entry, the snake's biggest
+drawback was trapping itself in its own tail. Wedidn't implement an effective
 algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
@@ -60,7 +60,7 @@ Twitch stream]] is
 *[[https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed][Game 2]]*
 
 At the end of the tournament competition, our snake
-was listed #13 of 139 snakes in the public 
+was listed #13 of 139 snakes in the public
 [[https://play.battlesnake.io/leaderboard/][global arena].
 
 ** Game Snippets
@@ -70,7 +70,7 @@ was listed #13 of 139 snakes in the public
 
 ** Usage
 *** Prerequisites
-1. Install Java 8 or higher
+1. Install Java 11 or higher
 2. Install Docker + Docker compose
 3. Install Heroku
 4. Install .war Heroku deployment plug-in ~heroku plugins:install heroku-cli-deploy~
