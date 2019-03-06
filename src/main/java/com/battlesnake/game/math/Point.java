@@ -1,12 +1,9 @@
 package com.battlesnake.game.math;
 
-import lombok.experimental.Accessors;
-import lombok.Getter;
-import lombok.EqualsAndHashCode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.experimental.Accessors;
 
 @Accessors(fluent = true)
 @EqualsAndHashCode

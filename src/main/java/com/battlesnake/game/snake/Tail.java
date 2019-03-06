@@ -1,6 +1,5 @@
 package com.battlesnake.game.snake;
 
-import com.google.gson.annotations.SerializedName;
 
 public enum Tail {
     BLOCK_BUM,

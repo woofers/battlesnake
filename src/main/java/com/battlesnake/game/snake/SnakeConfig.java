@@ -1,7 +1,7 @@
 package com.battlesnake.game.snake;
 
-import lombok.experimental.Accessors;
 import lombok.Getter;
+import lombok.experimental.Accessors;
 
 import com.battlesnake.serialization.JsonObject;
 

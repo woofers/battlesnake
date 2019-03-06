@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
-
 import javax.ws.rs.core.MediaType;
 
 public class Endpoint extends HttpServlet {

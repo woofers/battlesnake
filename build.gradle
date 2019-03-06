@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'war'
     id 'io.franzbecker.gradle-lombok' version '2.1'
+    id "com.diffplug.gradle.spotless" version "3.18.0"
 }
 
 def getVersionName = { ->
@@ -46,6 +47,15 @@ ext {
 lombok {
     version = "$lombokVersion"
     sha256 = ""
+}
+
+spotless {
+  java {
+    target 'src/**/*.java'
+
+    importOrder 'java', 'javax', 'org', 'com'
+    removeUnusedImports()
+  }
 }
 
 repositories {
