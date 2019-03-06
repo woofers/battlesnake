@@ -13,7 +13,6 @@ public class SnakeConfig extends JsonObject {
     private static final String COLOR = "#8fd628";
     private static final String NAME = "🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍";
     private static final String IMAGE = "https://i.imgur.com/7bOdXtX.gif";
-    private static final String START_TAUNT = "𝐬𝐥𝐚𝐭𝐭!";
     private static final Head HEAD_TYPE = Head.EVIL;
     private static final Tail TAIL_TYPE = Tail.BOLT;
 
@@ -29,7 +28,6 @@ public class SnakeConfig extends JsonObject {
         this.name = NAME;
         this.color = COLOR;
         this.headUrl = IMAGE;
-        this.taunt = START_TAUNT;
         this.tailType = TAIL_TYPE;
         this.headType = HEAD_TYPE;
     }

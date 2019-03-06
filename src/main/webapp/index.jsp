@@ -49,10 +49,6 @@
           <td class="lower"><%=SNAKE.tail()%></td>
         </tr>
         <tr>
-          <th>Start Taunt</th>
-          <td><%=SNAKE.taunt()%></td>
-        </tr>
-        <tr>
           <th>Color</th>
           <td class="color"><%=SNAKE.color()%></td>
         </tr>
