@@ -33,9 +33,10 @@ war.mustRunAfter clean
 ext {
     gsonVersion = '2.8.5'
     junitVersion = '5.4.0'
-    servletVersion = '4.0.1'
+    log4jVersion = '2.11.2'
+    tomcatVersion = '9.0.16'
+    webappRunnerVersion = "$tomcatVersion.0"
     wsVersion = '2.1'
-    log4jVersion = '2.8.2'
     webappRunnerVersion = '8.5.34.0'
 }
 
@@ -49,8 +50,8 @@ repositories {
 dependencies {
     compile "com.google.code.gson:gson:$gsonVersion"
     compile "com.google.code.gson:gson-extras:$gsonVersion"
-    compile "javax.servlet:javax.servlet-api:$servletVersion"
-    compile "com.github.jsimone:webapp-runner:$webappRunnerVersion"
+    compile "org.apache.tomcat:tomcat-servlet-api:$tomcatVersion"
+    providedCompile "com.github.jsimone:webapp-runner:$webappRunnerVersion"
     compile "javax.ws.rs:javax.ws.rs-api:$wsVersion"
     compile "org.apache.logging.log4j:log4j-api:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-core:$log4jVersion"
