@@ -13,11 +13,6 @@ import com.battlesnake.game.snake.Snake;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-/**
- * @author Ben Austin
- * @author Jaxson Van Doorn
- * @author Zak White
- */
 public class Board {
     private static Logger log = LogManager.getLogger();
 

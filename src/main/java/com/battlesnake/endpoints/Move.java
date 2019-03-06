@@ -13,15 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.battlesnake.game.Board;
 import com.battlesnake.game.Game;
 
-/**
- * This is the servlet that is hit when triggering the /move endpoint.
- *
- * @author Tony
- * @author Jaxson Van Doorn
- */
-@SuppressWarnings("serial")
 @WebServlet("/move")
 public class Move extends Endpoint {
+
     @Override
     protected void doPost(HttpServletRequest request,
         HttpServletResponse response)
