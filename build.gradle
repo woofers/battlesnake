@@ -33,10 +33,10 @@ war.mustRunAfter clean
 ext {
     gsonVersion = '2.8.5'
     junitVersion = '5.4.0'
+    log4jVersion = '2.11.2'
     tomcatVersion = '9.0.16'
     webappRunnerVersion = "$tomcatVersion.0"
     wsVersion = '2.1'
-    log4jVersion = '2.8.2'
     webappRunnerVersion = '8.5.34.0'
 }
 
