@@ -1,13 +1,19 @@
 package com.battlesnake.game.math;
 
+import lombok.experimental.Accessors;
+import lombok.Getter;
+import lombok.EqualsAndHashCode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Accessors(fluent = true)
+@EqualsAndHashCode
 public final class Point {
 
-    private int x;
-    private int y;
+    @Getter private int x;
+    @Getter private int y;
 
     public Point() {
         this(0, 0);
@@ -18,29 +24,8 @@ public final class Point {
         this.y = y;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
-        if (!(obj instanceof Point)) return false;
-        return equals((Point) obj);
-    }
-
-    public boolean equals(Point other) {
-        if (other == null) return false;
-        if (x != other.x || y != other.y) return false;
-        return true;
-    }
-
     public Point delta(Point point) {
         return new Point(x() - point.x(), y() - point.y());
-    }
-
-    public int x() {
-        return x;
-    }
-
-
-    public int y() {
-        return y;
     }
 
     @Override

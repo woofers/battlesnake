@@ -9,8 +9,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import lombok.extern.log4j.Log4j2;
 
 /**
  * Logs total time taken to perform request.
@@ -19,9 +18,8 @@ import org.apache.logging.log4j.LogManager;
  * "https://stackoverflow.com/a/16050835/9129020"
  * >ResponseTimeFilter</a>
  */
+@Log4j2
 public class ResponseTimeFilter implements Filter {
-
-    private static Logger log = LogManager.getLogger();
 
     private FilterConfig config;
 
@@ -39,9 +37,8 @@ public class ResponseTimeFilter implements Filter {
         long startTime = System.currentTimeMillis();
         chain.doFilter(request, response);
         long elapsed = System.currentTimeMillis() - startTime;
-        if (request instanceof HttpServletRequest) {
-           String name = ((HttpServletRequest) request).getRequestURI();
-           log.info("{} completed in {} ms", name, elapsed);
-        }
+        if (!(request instanceof HttpServletRequest)) return;
+        String name = ((HttpServletRequest) request).getRequestURI();
+        log.info("{} completed in {} ms", name, elapsed);
     }
 }

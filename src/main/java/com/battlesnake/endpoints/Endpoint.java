@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import javax.ws.rs.core.MediaType;
 
-@SuppressWarnings("serial")
 public class Endpoint extends HttpServlet {
 
     protected static void respond(String body, HttpServletResponse response)

@@ -1,18 +1,25 @@
 package com.battlesnake.game.math;
 
+import lombok.experimental.Accessors;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import com.battlesnake.game.Move;
 
+@ToString
+@Accessors(fluent = true)
 public class MovePoint {
-    private Move initialMove;
-    private Move move;
-    private Point point;
-    private int length;
+    @Getter private Move initialMove;
+    @Getter private Move move;
+    @Getter private Point point;
+    @Getter @Setter private int length;
 
     public MovePoint(Move move, Point point, Move initialMove) {
         this.move = move;
         this.point = point;
         this.initialMove = initialMove;
-        setLength(0);
+        length(0);
     }
 
     public boolean equals(MovePoint other) {
@@ -23,40 +30,5 @@ public class MovePoint {
     public boolean equals(Object other) {
         if (other instanceof MovePoint) return equals((MovePoint) other);
         return false;
-    }
-
-    public Move initialMove() {
-        return initialMove;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public int length() {
-        return length;
-    }
-
-    public Move move() {
-        return move;
-    }
-
-    public Point point() {
-        return point;
-    }
-
-    @Override
-    public String toString() {
-        String value = "";
-        if (move() != null) {
-            value += move().toString() + " ";
-        }
-        if (point() != null) {
-            value += "X: " + point().x() + " Y: " + point.y() + " ";
-        }
-        if (initialMove() != null) {
-            value += initialMove().toString() + " ";
-        }
-        return value;
     }
 }

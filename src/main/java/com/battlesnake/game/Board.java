@@ -1,5 +1,9 @@
 package com.battlesnake.game;
 
+import lombok.extern.log4j.Log4j2;
+import lombok.experimental.Accessors;
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,12 +14,9 @@ import com.battlesnake.game.math.MovePoint;
 import com.battlesnake.game.math.Point;
 import com.battlesnake.game.snake.Snake;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
+@Log4j2
+@Accessors(fluent = true)
 public class Board {
-    private static Logger log = LogManager.getLogger();
-
 
     public static enum Tile {
         EMPTY,
@@ -46,13 +47,13 @@ public class Board {
 
     private List<Point> food;
 
-    private int height;
+    @Getter private int height;
     private List<Snake> snakes;
 
-    private int width;
-    private transient Snake you;
+    @Getter private int width;
+    @Getter private transient Snake you;
 
-    private transient int turn;
+    @Getter private transient int turn;
     private transient String gameId;
 
     public boolean exists(Point point) {
@@ -194,7 +195,7 @@ public class Board {
             }
             List<MovePoint> moves = getPossibleMoves(loopPoint, excludeDanger);
             for (MovePoint move : moves) {
-                move.setLength(loopPoint.length() + 1);
+                move.length(loopPoint.length() + 1);
                 if (list.contains(move)) continue;
                 points.add(move);
                 list.add(move);
@@ -256,10 +257,6 @@ public class Board {
             if (move != null) return move;
         }
         return null;
-    }
-
-    public int height() {
-        return height;
     }
 
     public void init(Game state) {
@@ -407,17 +404,5 @@ public class Board {
             out += "\n";
         }
         return out;
-    }
-
-    public int width() {
-        return width;
-    }
-
-    public Snake you() {
-        return you;
-    }
-
-    public int turn() {
-        return turn;
     }
 }
