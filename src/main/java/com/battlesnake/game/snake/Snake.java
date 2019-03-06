@@ -1,38 +1,33 @@
 package com.battlesnake.game.snake;
 
+import lombok.extern.log4j.Log4j2;
+import lombok.experimental.Accessors;
+import lombok.Getter;
+
 import java.util.List;
 
 import com.battlesnake.game.Board;
 import com.battlesnake.game.Move;
 import com.battlesnake.game.math.Point;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
+@Log4j2
+@Accessors(fluent = true)
 public class Snake {
-    public static enum Mode {
+    private static enum Mode {
         ATTACK_STATE,
         HUNGRY_STATE
     }
-
-    private static Logger log = LogManager.getLogger();
 
     private static final int HUNGER_ZONE = 50;
     private static final int MAX_HEALTH = 100;
     private static final int MIN_HEALTH = 0;
 
-    private List<Point> body;
-    private int health;
-    private String id;
-    private String name;
-
-    private transient String taunt;
+    @Getter private List<Point> body;
+    @Getter private int health;
+    @Getter private String id;
+    @Getter private String name;
 
     private Snake() {
-    }
-
-    public List<Point> body() {
-        return body;
     }
 
     @Override
@@ -47,14 +42,6 @@ public class Snake {
 
     public Point head() {
         return body.get(0);
-    }
-
-    public int health() {
-        return health;
-    }
-
-    public String id() {
-        return id;
     }
 
     public boolean isDead() {
@@ -122,13 +109,5 @@ public class Snake {
         log.info("(Region {})", board.toRegionString());
         log.info("Moving {}", move);
         return move;
-    }
-
-    public String name() {
-        return name;
-    }
-
-    public String taunt() {
-        return taunt;
     }
 }

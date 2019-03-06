@@ -37,6 +37,7 @@ ext {
     tomcatVersion = '9.0.16'
     webappRunnerVersion = "$tomcatVersion.0"
     wsVersion = '2.1'
+    lombokVersion = '1.18.6'
 }
 
 repositories {
@@ -50,21 +51,19 @@ dependencies {
     compile "com.google.code.gson:gson:$gsonVersion"
     compile "com.google.code.gson:gson-extras:$gsonVersion"
     compile "org.apache.tomcat:tomcat-servlet-api:$tomcatVersion"
-    providedCompile "com.github.jsimone:webapp-runner:$webappRunnerVersion"
     compile "javax.ws.rs:javax.ws.rs-api:$wsVersion"
     compile "org.apache.logging.log4j:log4j-api:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-core:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-web:$log4jVersion"
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    providedCompile "com.github.jsimone:webapp-runner:$webappRunnerVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
 clean.doFirst {
     delete "${rootDir}/target"
-}
-
-compileJava {
-    options.compilerArgs += '-proc:none'
 }
 
 task copyRunner(type: Copy) {

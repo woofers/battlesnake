@@ -42,11 +42,11 @@
         </tr>
         <tr>
           <th>Head Type</th>
-          <td class="lower"><%=SNAKE.head()%></td>
+          <td class="lower"><%=SNAKE.headType()%></td>
         </tr>
         <tr>
           <th>Tail Type</th>
-          <td class="lower"><%=SNAKE.tail()%></td>
+          <td class="lower"><%=SNAKE.tailType()%></td>
         </tr>
         <tr>
           <th>Color</th>
