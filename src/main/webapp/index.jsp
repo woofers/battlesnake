@@ -54,6 +54,5 @@
         </tr>
       </tbody>
     </table>
-    <img src="<%=SNAKE.profile()%>"/>
   </body>
 </html>
