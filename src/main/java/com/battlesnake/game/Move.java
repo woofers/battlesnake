@@ -5,18 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 import com.battlesnake.serialization.JsonObject;
 
-
-/**
- * The four valid moves.
- * <ul>
- * <li>{@link #up}</li>
- * <li>{@link #left}</li>
- * <li>{@link #down}</li>
- * <li>{@link #right}</li>
- * </ul>
- *
- * @author Tony
- */
 public enum Move {
     DOWN,
     LEFT,

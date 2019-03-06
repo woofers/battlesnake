@@ -9,11 +9,6 @@ import com.battlesnake.game.math.Point;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-/**
- * @author Ben Austin
- * @author Jaxson Van Doorn
- * @author Zak White
- */
 public class Snake {
     public static enum Mode {
         ATTACK_STATE,
