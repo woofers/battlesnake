@@ -1,21 +1,22 @@
 
 # Table of Contents
 
--   [Battle Snake 2019](#org181e5d9)
-    -   [Strategy](#org55c93dc)
-        -   [Drawbacks](#org3e2b02e)
-    -   [Battle History](#orgddb4acc)
-    -   [Game snippets](#org9c50572)
-    -   [Usage](#org018f668)
-        -   [Prerequisites](#orga439c20)
-        -   [Test Server](#org2d5931e)
-        -   [Run Locally](#orgc08c451)
-        -   [Deployment](#orgb326486)
-    -   [Acknowledgments](#org3232dd1)
+-   [Battle Snake 2019](#org4e91cd1)
+    -   [Strategy](#orgeab5bd6)
+        -   [Drawbacks](#org8332067)
+    -   [Battle History](#orgbfe2e4c)
+    -   [Game Snippets](#orgd1f662a)
+    -   [Usage](#org90ebbb7)
+        -   [Prerequisites](#orge89a154)
+        -   [Test Server](#orgadc8afd)
+        -   [Run Locally](#org9d3375d)
+        -   [Deployment](#orgb9d54fa)
+    -   [Acknowledgments](#org1f4145d)
+        -   [Notable Moments](#org5025f01)
 
 
 
-<a id="org181e5d9"></a>
+<a id="org4e91cd1"></a>
 
 # Battle Snake 2019
 
@@ -23,12 +24,12 @@
 
 A simple [BattleSnake](https://www.battlesnake.io) written in Java.
 
-Was entered in the expert divison of 2019's tournament as **🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍**.
+Was entered in the expert divison of 2019's tournament as ****🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍****.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
 
-<a id="org55c93dc"></a>
+<a id="orgeab5bd6"></a>
 
 ## Strategy
 
@@ -39,28 +40,28 @@ it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
 
 
-<a id="org3e2b02e"></a>
+<a id="org8332067"></a>
 
 ### Drawbacks
 
-Despite efforts to improve the issue from 2018's entry, the snake's biggest 
-drawback was trapping itself in its own tail. Wedidn't implement an effective 
+Despite efforts to improve the issue from 2018's entry, the snake's biggest
+drawback was trapping itself in its own tail. Wedidn't implement an effective
 algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
 
-<a id="orgddb4acc"></a>
+<a id="orgbfe2e4c"></a>
 
 ## Battle History
 
 **Bounty Snakes:**
 
 -   Beat all 3 of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
--   Beat all 3 of [Freshworks](https://freshworks.io/)' bounty snake level
+-   Beat all 3 of [Freshworks](https://freshworks.io/)' bounty snake levels
 -   Beat both of [Semaphore](https://semaphoresolutions.com/)'s bounty snakes
 -   Beat [Workday](https://www.workday.com/)'s bounty snake
 -   Beat [Giftbit](https://www.giftbit.com/)'s 3v1 bounty snake match
--   Beat two of four played [Rooof](https://www.rooof.com/)'s bounty snakes
+-   Beat two of four of [Rooof](https://www.rooof.com/)'s bounty snakes
 -   Beat one of two of [Redbrick](https://rdbrck.com/)'s bounty snakes
 -   Beat both of [Pixel Union](https://www.pixelunion.net/)'s bounty snakes
 -   Beat one of [Schneider Electric](https://www.schneider-electric.ca/en/)'s bounty snakes
@@ -76,18 +77,18 @@ competitors in the expert tier.  Our games were played on a 11x11 board with 5 f
 
 Timestamp on [Sendwithus'
 Twitch stream](https://www.twitch.tv/videos/389395340) is
-[2:52:53-2:55:30](https://www.twitch.tv/videos/389395340?t=02h52m53s).
+[2:52:53-2:55:30](https://www.twitch.tv/videos/389395340?t=02h52m53s)].
 
 **[Game 1](https://clips.twitch.tv/SoftDepressedWebDAESuppy)**
 
 **[Game 2](https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed)**
 
 At the end of the tournament competition, our snake
-was listed #13 of 139 snakes in the public 
-[global arena](https://play.battlesnake.io/leaderboard/).
+was listed #13 of 139 snakes in the public
+[[<https://play.battlesnake.io/leaderboard/>][global arena].
 
 
-<a id="org9c50572"></a>
+<a id="orgd1f662a"></a>
 
 ## Game Snippets
 
@@ -95,23 +96,23 @@ was listed #13 of 139 snakes in the public
 ![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
 
 
-<a id="org018f668"></a>
+<a id="org90ebbb7"></a>
 
 ## Usage
 
 
-<a id="orga439c20"></a>
+<a id="orge89a154"></a>
 
 ### Prerequisites
 
-1.  Install Java 8 or higher
+1.  Install Java 11 or higher
 2.  Install Docker + Docker compose
 3.  Install Heroku
 4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy`
 5.  Create a Heroku App `heroku create <name>`
 
 
-<a id="org2d5931e"></a>
+<a id="orgadc8afd"></a>
 
 ### Test Server
 
@@ -119,7 +120,7 @@ was listed #13 of 139 snakes in the public
 2.  Goto `localhost:3000` in a browser.
 
 
-<a id="orgc08c451"></a>
+<a id="org9d3375d"></a>
 
 ### Run Locally
 
@@ -135,7 +136,7 @@ was listed #13 of 139 snakes in the public
     3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="orgb326486"></a>
+<a id="orgb9d54fa"></a>
 
 ### Deployment
 
@@ -144,7 +145,7 @@ was listed #13 of 139 snakes in the public
 3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="org3232dd1"></a>
+<a id="org1f4145d"></a>
 
 ## Acknowledgments
 
@@ -154,6 +155,9 @@ was listed #13 of 139 snakes in the public
     [here](https://github.com/tflinz/BasicBattleSnake2018)
 -   **Designed for** [Sendwithus](https://github.com/sendwithus)'
     BattleSnake competition, March 2, 2019
+
+
+<a id="org5025f01"></a>
 
 ### Notable Moments
 

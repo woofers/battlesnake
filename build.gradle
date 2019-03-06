@@ -14,8 +14,8 @@ group = 'com.battlesnakes'
 description = "Battlesnake"
 version = getVersionName()
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
 
 war {
     archiveName = rootProject.name + '.war'
