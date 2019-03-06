@@ -37,7 +37,6 @@ ext {
     tomcatVersion = '9.0.16'
     webappRunnerVersion = "$tomcatVersion.0"
     wsVersion = '2.1'
-    webappRunnerVersion = '8.5.34.0'
 }
 
 repositories {
