@@ -61,10 +61,10 @@ public class Board {
     private transient String gameId;
 
     public boolean exists(Point point) {
-        if (point.getX() < 0) return false;
-        if (point.getY() < 0) return false;
-        if (point.getX() > width() - 1) return false;
-        if (point.getY() > height() - 1) return false;
+        if (point.x() < 0) return false;
+        if (point.y() < 0) return false;
+        if (point.x() > width() - 1) return false;
+        if (point.y() > height() - 1) return false;
         return true;
     }
 
@@ -90,7 +90,7 @@ public class Board {
 
     private void fill(Point point) {
         if (!exists(point)) return;
-        regions[point.getX()][point.getY()] = 0;
+        regions[point.x()][point.y()] = 0;
     }
 
     private void fillIn() {
@@ -108,7 +108,7 @@ public class Board {
             Point neck = snake.body().get(1);
             Point delta = head.delta(neck);
             for (int i = 1; i <= FUDGE_FACTOR; i ++) {
-                fill(new Point(head.getX() + delta.getX() * i, head.getY() + delta.getY() * i));
+                fill(new Point(head.x() + delta.x() * i, head.y() + delta.y() * i));
             }
         }
         Exit condition = new Exit() {
@@ -125,7 +125,7 @@ public class Board {
                 if (regions[x][y] != null) continue;
                 List<MovePoint> region = floodFill(new Point(x, y), condition, false);
                 for (MovePoint point : region) {
-                    regions[point.point().getX()][point.point().getY()] = region.size();
+                    regions[point.point().x()][point.point().y()] = region.size();
                 }
             }
         }
@@ -279,13 +279,13 @@ public class Board {
 
     public boolean isDangerousSpotFilled(Point point) {
         if (!exists(point)) return false;
-        return board[point.getX()][point.getY()] == Tile.FAKE_WALL
-            || board[point.getX()][point.getY()] == Tile.TAIL;
+        return board[point.x()][point.y()] == Tile.FAKE_WALL
+            || board[point.x()][point.y()] == Tile.TAIL;
     }
 
     public boolean isFood(Point point) {
         if (!exists(point)) return false;
-        return board[point.getX()][point.getY()] == Tile.FOOD;
+        return board[point.x()][point.y()] == Tile.FOOD;
     }
 
     public boolean isFilled(Point point) {
@@ -294,15 +294,15 @@ public class Board {
 
     private boolean isFilled(Point point, Tile[][] board) {
         if (!exists(point)) return true;
-        return board[point.getX()][point.getY()] != Tile.EMPTY
-            && board[point.getX()][point.getY()] != Tile.FOOD
-            && board[point.getX()][point.getY()] != Tile.FAKE_WALL
-            && board[point.getX()][point.getY()] != Tile.TAIL;
+        return board[point.x()][point.y()] != Tile.EMPTY
+            && board[point.x()][point.y()] != Tile.FOOD
+            && board[point.x()][point.y()] != Tile.FAKE_WALL
+            && board[point.x()][point.y()] != Tile.TAIL;
     }
 
     public int regionSize(Point point) {
         if (!exists(point)) return 0;
-        return regions[point.getX()][point.getY()];
+        return regions[point.x()][point.y()];
     }
 
     public int longestSnakeLength() {
@@ -341,7 +341,7 @@ public class Board {
         }
 
         for (Point snack : food) {
-            board[snack.getX()][snack.getY()] = Tile.FOOD;
+            board[snack.x()][snack.y()] = Tile.FOOD;
         }
 
         for (Snake snake : snakes) {
@@ -351,26 +351,26 @@ public class Board {
                 if ((i == body.size() - 1)
                     && body.size() > 1
                     && !snake.justAte()) {
-                    board[body.get(i).getX()][body.get(i).getY()] = Tile.TAIL;
+                    board[body.get(i).x()][body.get(i).y()] = Tile.TAIL;
                 }
                 else {
-                    board[body.get(i).getX()][body.get(i).getY()] = Tile.WALL;
+                    board[body.get(i).x()][body.get(i).y()] = Tile.WALL;
                 }
             }
 
             if (snake.equals(you())) {
-                board[head.getX()][head.getY()] = Tile.ME;
+                board[head.x()][head.y()] = Tile.ME;
             }
             else {
-                board[head.getX()][head.getY()] = Tile.HEADS;
+                board[head.x()][head.y()] = Tile.HEADS;
 
                 if (!you().longerThan(snake)) {
                     List<Point> around = findAdjacent(head);
                     for (Point point : around) {
                         if (exists(point)) {
-                            if (board[point.getX()][point.getY()] == Tile.EMPTY
-                             || board[point.getX()][point.getY()] == Tile.FOOD) {
-                                board[point.getX()][point.getY()] = Tile.FAKE_WALL;
+                            if (board[point.x()][point.y()] == Tile.EMPTY
+                             || board[point.x()][point.y()] == Tile.FOOD) {
+                                board[point.x()][point.y()] = Tile.FAKE_WALL;
                             }
                         }
                     }

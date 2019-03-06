@@ -22,22 +22,16 @@ public enum Move {
     up;
 
     public Point translate(Point point) {
-        Point newPoint = new Point(point);
         switch (this) {
             case up:
-                newPoint.setY(point.getY() - 1);
-                break;
+                return new Point(point.x(), point.y() - 1);
             case down:
-                newPoint.setY(point.getY() + 1);
-                break;
+                return new Point(point.x(), point.y() + 1);
             case left:
-                newPoint.setX(point.getX() - 1);
-                break;
-            case right:
-                newPoint.setX(point.getX() + 1);
-                break;
+                return new Point(point.x() - 1, point.y());
+            default:
+                return new Point(point.x() + 1, point.y());
         }
-        return newPoint;
     }
 
     public static Map<Move, Point> adjacent(Point point) {
