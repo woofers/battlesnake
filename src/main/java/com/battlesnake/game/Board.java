@@ -231,7 +231,7 @@ public class Board {
     public Move goToFallback(Point point) {
         log.info("Falling back to dangerous moves");
         List<MovePoint> moves = getPossibleMoves(new MovePoint(null, point, null), false);
-        if (moves.isEmpty()) return Move.left;
+        if (moves.isEmpty()) return Move.fallback();
         for (MovePoint move: moves) {
             if (isFood(move.point())) return move.move();
         }
