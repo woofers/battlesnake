@@ -1,5 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'war'
+plugins {
+    id 'java'
+    id 'war'
+    id 'io.franzbecker.gradle-lombok' version '2.1'
+}
 
 def getVersionName = { ->
     def stdout = new ByteArrayOutputStream()
@@ -40,6 +43,11 @@ ext {
     lombokVersion = '1.18.6'
 }
 
+lombok {
+    version = "$lombokVersion"
+    sha256 = ""
+}
+
 repositories {
     mavenCentral()
     maven {
@@ -55,8 +63,6 @@ dependencies {
     compile "org.apache.logging.log4j:log4j-api:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-core:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-web:$log4jVersion"
-    compileOnly "org.projectlombok:lombok:$lombokVersion"
-    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
     providedCompile "com.github.jsimone:webapp-runner:$webappRunnerVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
@@ -87,5 +93,19 @@ task run() {
               "server/webapp-runner-${rootProject.ext.webappRunnerVersion}.jar",
               "libs/$war.archiveName"
         }
+    }
+}
+
+import io.franzbecker.gradle.lombok.task.DelombokTask
+
+task delombok(type: DelombokTask, dependsOn: compileJava) {
+    ext.outputDir = file("$buildDir/delombok")
+    outputs.dir(outputDir)
+    sourceSets.main.java.srcDirs.each {
+        inputs.dir(it)
+        args(it, "-d", outputDir)
+    }
+    doFirst {
+        outputDir.deleteDir()
     }
 }
