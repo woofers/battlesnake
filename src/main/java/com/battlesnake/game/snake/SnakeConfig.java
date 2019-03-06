@@ -3,11 +3,6 @@ package com.battlesnake.game.snake;
 import com.battlesnake.serialization.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * A standard response to a start request.
- *
- * @author Tony
- */
 public class SnakeConfig extends JsonObject {
 
     private static final String COLOR = "#8fd628";
