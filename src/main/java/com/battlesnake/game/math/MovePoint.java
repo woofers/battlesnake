@@ -52,7 +52,7 @@ public class MovePoint {
             value += move().toString() + " ";
         }
         if (point() != null) {
-            value += "X: " + point().getX() + " Y: " + point.getY() + " ";
+            value += "X: " + point().x() + " Y: " + point.y() + " ";
         }
         if (initialMove() != null) {
             value += initialMove().toString() + " ";

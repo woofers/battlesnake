@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * A point on the board.
- *
- * @author Tony
- */
 public final class Point {
 
     private int x;
@@ -36,25 +31,20 @@ public final class Point {
     }
 
     public Point delta(Point point) {
-        return new Point(getX() - point.getX(), getY() - point.getY());
+        return new Point(x() - point.x(), y() - point.y());
     }
 
-    /**
-     * @return the x
-     */
-    public final int getX() {
+    public int x() {
         return x;
     }
 
-    /**
-     * @return the y
-     */
-    public final int getY() {
+
+    public int y() {
         return y;
     }
 
     @Override
     public String toString() {
-        return String.format("(%d, %d)", getX(), getY());
+        return String.format("(%d, %d)", x(), y());
     }
 }

@@ -24,13 +24,13 @@ public enum Move {
     public Point translate(Point point) {
         switch (this) {
             case up:
-                return new Point(point.getX(), point.getY() - 1);
+                return new Point(point.x(), point.y() - 1);
             case down:
-                return new Point(point.getX(), point.getY() + 1);
+                return new Point(point.x(), point.y() + 1);
             case left:
-                return new Point(point.getX() - 1, point.getY());
+                return new Point(point.x() - 1, point.y());
             default:
-                return new Point(point.getX() + 1, point.getY());
+                return new Point(point.x() + 1, point.y());
         }
     }
 
