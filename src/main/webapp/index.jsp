@@ -34,6 +34,9 @@
   </head>
   <body>
     <h1><%=SNAKE.name()%></h1>
+    <p>Battlesnake documentation can be found at
+      <a href="https://docs.battlesnake.io">https://docs.battlesnake.io</a>.
+    </p>
     <table>
       <tbody>
         <tr>
