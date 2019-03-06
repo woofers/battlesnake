@@ -16,18 +16,18 @@ import java.util.Map;
  * @author Tony
  */
 public enum Move {
-    down,
-    left,
-    right,
-    up;
+    DOWN,
+    LEFT,
+    RIGHT,
+    UP;
 
     public Point translate(Point point) {
         switch (this) {
-            case up:
+            case UP:
                 return new Point(point.x(), point.y() - 1);
-            case down:
+            case DOWN:
                 return new Point(point.x(), point.y() + 1);
-            case left:
+            case LEFT:
                 return new Point(point.x() - 1, point.y());
             default:
                 return new Point(point.x() + 1, point.y());
@@ -36,10 +36,14 @@ public enum Move {
 
     public static Map<Move, Point> adjacent(Point point) {
         Map<Move, Point> moves = new HashMap<>();
-        moves.put(Move.up, Move.up.translate(point));
-        moves.put(Move.down, Move.down.translate(point));
-        moves.put(Move.left, Move.left.translate(point));
-        moves.put(Move.right, Move.right.translate(point));
+        moves.put(Move.UP, Move.UP.translate(point));
+        moves.put(Move.DOWN, Move.DOWN.translate(point));
+        moves.put(Move.LEFT, Move.LEFT.translate(point));
+        moves.put(Move.RIGHT, Move.RIGHT.translate(point));
         return moves;
+    }
+
+    public static Move fallback() {
+        return Move.LEFT;
     }
 }
