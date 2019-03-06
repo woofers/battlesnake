@@ -60,6 +60,10 @@ clean.doFirst {
     delete "${rootDir}/target"
 }
 
+compileJava {
+    options.compilerArgs += '-proc:none'
+}
+
 task copyRunner(type: Copy) {
     into "$buildDir/server"
     from(configurations.compile) {
