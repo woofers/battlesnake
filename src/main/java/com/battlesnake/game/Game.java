@@ -1,13 +1,13 @@
 package com.battlesnake.game;
 
-import lombok.experimental.Accessors;
 import lombok.Getter;
+import lombok.experimental.Accessors;
 
 import com.battlesnake.game.snake.Snake;
 import com.battlesnake.serialization.JsonObject;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.interceptors.Intercept;
 import com.google.gson.interceptors.JsonPostDeserializer;
-import com.google.gson.annotations.SerializedName;
 
 @Intercept(postDeserialize = Game.Setup.class)
 @Accessors(fluent = true)

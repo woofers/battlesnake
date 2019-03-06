@@ -1,8 +1,9 @@
 package com.battlesnake.game;
 
-import com.battlesnake.game.math.Point;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.battlesnake.game.math.Point;
 import com.battlesnake.serialization.JsonObject;
 
 public enum Move {

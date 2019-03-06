@@ -1,14 +1,14 @@
 package com.battlesnake.game;
 
-import lombok.extern.log4j.Log4j2;
-import lombok.experimental.Accessors;
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
+
+import lombok.Getter;
+import lombok.experimental.Accessors;
+import lombok.extern.log4j.Log4j2;
 
 import com.battlesnake.game.math.MovePoint;
 import com.battlesnake.game.math.Point;

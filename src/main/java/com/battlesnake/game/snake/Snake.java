@@ -1,10 +1,10 @@
 package com.battlesnake.game.snake;
 
-import lombok.extern.log4j.Log4j2;
-import lombok.experimental.Accessors;
-import lombok.Getter;
-
 import java.util.List;
+
+import lombok.Getter;
+import lombok.experimental.Accessors;
+import lombok.extern.log4j.Log4j2;
 
 import com.battlesnake.game.Board;
 import com.battlesnake.game.Move;
