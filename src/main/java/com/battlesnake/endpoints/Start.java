@@ -9,14 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.battlesnake.game.snake.SnakeConfig;
 
-/**
- * This is the servlet that is hit when triggering the /start endpoint.
- *
- * @author Tony
- * @author Jaxson Van Doorn
- */
 @WebServlet("/start")
 public class Start extends Endpoint {
+
     @Override
     protected void doPost(HttpServletRequest request,
         HttpServletResponse response)

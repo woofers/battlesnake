@@ -11,6 +11,7 @@ import com.battlesnake.serialization.JsonObject;
 
 @WebServlet("/end")
 public class End extends Endpoint {
+
     private static final class Response extends JsonObject {
         private boolean over = true;
     }
