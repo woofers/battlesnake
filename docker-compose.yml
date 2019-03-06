@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   server:
-    image: tomcat:9.0-jre8
+    image: tomcat:9.0.16-jre11-slim
     ports:
       - 8080:8080
     volumes:
