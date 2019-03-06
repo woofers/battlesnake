@@ -32,10 +32,10 @@ war.mustRunAfter clean
 
 ext {
     gsonVersion = '2.8.5'
-    junitVersion = '4.12'
+    junitVersion = '5.4.0'
     servletVersion = '4.0.1'
-    log4jVersion = '2.8'
-    webappRunnerVersion = '8.5.11.3'
+    log4jVersion = '2.8.2'
+    webappRunnerVersion = '8.5.34.0'
 }
 
 repositories {
@@ -53,7 +53,8 @@ dependencies {
     compile "org.apache.logging.log4j:log4j-api:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-core:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-web:$log4jVersion"
-    testCompile "junit:junit:$junitVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
 clean.doFirst {
