@@ -315,8 +315,8 @@ public class Board {
         return max;
     }
 
-    public BoardMove gameMove() {
-        return you().gameMove(this);
+    public Move move() {
+        return you().move(this);
     }
 
     public void print() {

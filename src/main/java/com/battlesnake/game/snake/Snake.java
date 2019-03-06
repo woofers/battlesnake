@@ -3,9 +3,7 @@ package com.battlesnake.game.snake;
 import java.util.List;
 
 import com.battlesnake.game.Board;
-import com.battlesnake.game.BoardMove;
 import com.battlesnake.game.Move;
-import com.battlesnake.game.Taunt;
 import com.battlesnake.game.math.Point;
 
 import org.apache.logging.log4j.Logger;
@@ -24,8 +22,6 @@ public class Snake {
 
     private static Logger log = LogManager.getLogger();
 
-    private static final String SLAT_TAUNT = "slat slat slat slat slat";
-
     private static final int HUNGER_ZONE = 50;
     private static final int MAX_HEALTH = 100;
     private static final int MIN_HEALTH = 0;
@@ -38,7 +34,6 @@ public class Snake {
     private transient String taunt;
 
     private Snake() {
-        this.taunt = SLAT_TAUNT;
     }
 
     public List<Point> body() {
@@ -131,12 +126,6 @@ public class Snake {
         board.print();
         log.info("(Region {})", board.toRegionString());
         log.info("Moving {}", move);
-        return move;
-    }
-
-    public BoardMove gameMove(Board board) {
-        String taunt = new Taunt(taunt(), board.turn()).toString();
-        BoardMove move = new BoardMove(move(board), taunt);
         return move;
     }
 
