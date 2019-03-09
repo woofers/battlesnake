@@ -1,35 +1,35 @@
 
 # Table of Contents
 
--   [Battle Snake 2019](#org50aa15d)
-    -   [Strategy](#org00e1929)
-        -   [Drawbacks](#org73fbbf2)
-    -   [Battle History](#org697cf60)
-    -   [Game Snippets](#org4880702)
-    -   [Usage](#org754bda3)
-        -   [Prerequisites](#org91751bb)
-        -   [Test Server](#org089136e)
-        -   [Run Locally](#orga4a5984)
-        -   [Deployment](#org621bd8a)
-    -   [Acknowledgments](#org34f4ddb)
-        -   [Notable Moments](#orge0c9fa8)
+-   [Battle Snake 2019](#org0eea078)
+    -   [Strategy](#org71b89c8)
+        -   [Drawbacks](#orga021ee5)
+    -   [Battle History](#org4e67edd)
+    -   [Game Snippets](#orgc69e24a)
+    -   [Usage](#org7b6249b)
+        -   [Prerequisites](#org30fed4d)
+        -   [Test Server](#orgd0283da)
+        -   [Run Locally](#org55e72bb)
+        -   [Deployment](#org84537a2)
+    -   [Acknowledgments](#org0ce5f6a)
+        -   [Notable Moments](#org221265e)
 
 
 
-<a id="org50aa15d"></a>
+<a id="org0eea078"></a>
 
 # Battle Snake 2019
 
 <img height="120" width="120" src="screenshots/advanced.png" />
 
-A simple [BattleSnake](https://www.battlesnake.io) written in Java.
+A simple [Battlesnake](https://www.battlesnake.io) written in Java.
 
 Was entered in the expert divison of 2019's tournament as ****🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍****.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
 
-<a id="org00e1929"></a>
+<a id="org71b89c8"></a>
 
 ## Strategy
 
@@ -40,7 +40,7 @@ it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
 
 
-<a id="org73fbbf2"></a>
+<a id="orga021ee5"></a>
 
 ### Drawbacks
 
@@ -50,7 +50,7 @@ algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
 
-<a id="org697cf60"></a>
+<a id="org4e67edd"></a>
 
 ## Battle History
 
@@ -85,7 +85,7 @@ At the end of the tournament competition, our snake
 was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leaderboard/)**.
 
 
-<a id="org4880702"></a>
+<a id="orgc69e24a"></a>
 
 ## Game Snippets
 
@@ -93,12 +93,12 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 ![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
 
 
-<a id="org754bda3"></a>
+<a id="org7b6249b"></a>
 
 ## Usage
 
 
-<a id="org91751bb"></a>
+<a id="org30fed4d"></a>
 
 ### Prerequisites
 
@@ -109,7 +109,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 5.  Create a Heroku App `heroku create <name>`
 
 
-<a id="org089136e"></a>
+<a id="orgd0283da"></a>
 
 ### Test Server
 
@@ -117,7 +117,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 2.  Goto `localhost:3000` in a browser.
 
 
-<a id="orga4a5984"></a>
+<a id="org55e72bb"></a>
 
 ### Run Locally
 
@@ -133,7 +133,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
     3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="org621bd8a"></a>
+<a id="org84537a2"></a>
 
 ### Deployment
 
@@ -151,19 +151,16 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
     3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="org34f4ddb"></a>
+<a id="org0ce5f6a"></a>
 
 ## Acknowledgments
 
--   **Built by** [Ben Austin](https://github.com/austinben) and
-    [Jaxson Van Doorn](https://github.com/woofers), March 2, 2019
--   **Template Forked from**
-    [here](https://github.com/tflinz/BasicBattleSnake2018)
--   **Designed for** [Sendwithus](https://github.com/sendwithus)'
-    BattleSnake competition, March 2, 2019
+-   **Built by** [Ben Austin](https://github.com/austinben) and [Jaxson Van Doorn](https://github.com/woofers), March 2, 2019
+-   **Template Forked from** [here](https://github.com/tflinz/BasicBattleSnake2018)
+-   **Designed for** [Sendwithus](https://github.com/sendwithus)' Battlesnake competition, March 2, 2019
 
 
-<a id="orge0c9fa8"></a>
+<a id="org221265e"></a>
 
 ### Notable Moments
 
