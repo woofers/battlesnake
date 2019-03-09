@@ -1,35 +1,37 @@
 
 # Table of Contents
 
--   [Battle Snake 2019](#org4e91cd1)
-    -   [Strategy](#orgeab5bd6)
-        -   [Drawbacks](#org8332067)
-    -   [Battle History](#orgbfe2e4c)
-    -   [Game Snippets](#orgd1f662a)
-    -   [Usage](#org90ebbb7)
-        -   [Prerequisites](#orge89a154)
-        -   [Test Server](#orgadc8afd)
-        -   [Run Locally](#org9d3375d)
-        -   [Deployment](#orgb9d54fa)
-    -   [Acknowledgments](#org1f4145d)
-        -   [Notable Moments](#org5025f01)
+-   [Battlesnake 2019](#org6e239c2)
+    -   [Strategy](#org2576642)
+        -   [Drawbacks](#orga764f64)
+    -   [Battle History](#orgcffd0c1)
+    -   [Game Snippets](#org6ecf3c0)
+    -   [Usage](#org3b87e52)
+        -   [Prerequisites](#orgc9941fc)
+        -   [Test Server](#org5469145)
+        -   [Run Locally](#orge4eb721)
+        -   [Deployment](#orgbfca526)
+    -   [Acknowledgments](#orge25cb18)
+        -   [Notable Moments](#org68ca739)
 
 
 
-<a id="org4e91cd1"></a>
+<a id="org6e239c2"></a>
 
-# Battle Snake 2019
+# Battlesnake 2019
 
 <img height="120" width="120" src="screenshots/advanced.png" />
 
-A simple [BattleSnake](https://www.battlesnake.io) written in Java.
+A simple [Battlesnake](https://www.battlesnake.io) written in Java.
 
 Was entered in the expert divison of 2019's tournament as ****🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍****.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
+[![img](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-<a id="orgeab5bd6"></a>
+
+<a id="org2576642"></a>
 
 ## Strategy
 
@@ -40,7 +42,7 @@ it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
 
 
-<a id="org8332067"></a>
+<a id="orga764f64"></a>
 
 ### Drawbacks
 
@@ -50,7 +52,7 @@ algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
 
-<a id="orgbfe2e4c"></a>
+<a id="orgcffd0c1"></a>
 
 ## Battle History
 
@@ -75,20 +77,17 @@ snake died by going for a food point and boxing itself in.
 The snake came 3rd in the first round of battle, and came 2nd in the second round. There were 29
 competitors in the expert tier.  Our games were played on a 11x11 board with 5 food spawned at start.
 
-Timestamp on [Sendwithus'
-Twitch stream](https://www.twitch.tv/videos/389395340) is
-[2:52:53-2:55:30](https://www.twitch.tv/videos/389395340?t=02h52m53s)].
+Timestamp on the [Battlesnake.io Twitch stream](https://www.twitch.tv/videos/389395340) is [2:52:53-2:55:30](https://www.twitch.tv/videos/389395340?t=02h52m53s).
 
 **[Game 1](https://clips.twitch.tv/SoftDepressedWebDAESuppy)**
 
 **[Game 2](https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed)**
 
 At the end of the tournament competition, our snake
-was listed #13 of 139 snakes in the public
-[[<https://play.battlesnake.io/leaderboard/>][global arena].
+was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leaderboard/)**.
 
 
-<a id="orgd1f662a"></a>
+<a id="org6ecf3c0"></a>
 
 ## Game Snippets
 
@@ -96,12 +95,12 @@ was listed #13 of 139 snakes in the public
 ![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
 
 
-<a id="org90ebbb7"></a>
+<a id="org3b87e52"></a>
 
 ## Usage
 
 
-<a id="orge89a154"></a>
+<a id="orgc9941fc"></a>
 
 ### Prerequisites
 
@@ -112,7 +111,7 @@ was listed #13 of 139 snakes in the public
 5.  Create a Heroku App `heroku create <name>`
 
 
-<a id="orgadc8afd"></a>
+<a id="org5469145"></a>
 
 ### Test Server
 
@@ -120,7 +119,7 @@ was listed #13 of 139 snakes in the public
 2.  Goto `localhost:3000` in a browser.
 
 
-<a id="org9d3375d"></a>
+<a id="orge4eb721"></a>
 
 ### Run Locally
 
@@ -136,28 +135,34 @@ was listed #13 of 139 snakes in the public
     3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="orgb9d54fa"></a>
+<a id="orgbfca526"></a>
 
 ### Deployment
 
-1.  Build .war file `./gradlew build`
-2.  Deploy to Heroku `heroku war:deploy build/libs/battlesnake.war --app <name>`
-3.  Use `https://[name].herokuapp.com/` as the snake URL.
+-   Heroku-GitHub Integration
+
+    1.  Go the dashboard for the Heroku app.
+    2.  Click on the `deploy` tab.
+    3.  Scroll down to the `Deployment method` and select `GitHub`.
+    4.  Enter the repository name and click `Connect`.
+
+-   Manual
+
+    1.  Build .war file `./gradlew build`
+    2.  Deploy to Heroku `heroku war:deploy build/libs/battlesnake.war --app <name>`
+    3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="org1f4145d"></a>
+<a id="orge25cb18"></a>
 
 ## Acknowledgments
 
--   **Built by** [Ben Austin](https://github.com/austinben) and
-    [Jaxson Van Doorn](https://github.com/woofers), March 2, 2019
--   **Template Forked from**
-    [here](https://github.com/tflinz/BasicBattleSnake2018)
--   **Designed for** [Sendwithus](https://github.com/sendwithus)'
-    BattleSnake competition, March 2, 2019
+-   **Built by** [Ben Austin](https://github.com/austinben) and [Jaxson Van Doorn](https://github.com/woofers)
+-   **Adapted from** [tflinz's snake](https://github.com/tflinz/BasicBattleSnake2018)
+-   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition
 
 
-<a id="org5025f01"></a>
+<a id="org68ca739"></a>
 
 ### Notable Moments
 
