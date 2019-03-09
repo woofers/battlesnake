@@ -51,17 +51,14 @@ snake died by going for a food point and boxing itself in.
 The snake came 3rd in the first round of battle, and came 2nd in the second round. There were 29
 competitors in the expert tier.  Our games were played on a 11x11 board with 5 food spawned at start.
 
-Timestamp on [[https://www.twitch.tv/videos/389395340][Sendwithus'
-Twitch stream]] is
-[[https://www.twitch.tv/videos/389395340?t=02h52m53s][2:52:53-2:55:30]]].
+Timestamp on [[https://www.twitch.tv/videos/389395340][Sendwithus' Twitch stream]] is [[https://www.twitch.tv/videos/389395340?t=02h52m53s][2:52:53-2:55:30]].
 
 *[[https://clips.twitch.tv/SoftDepressedWebDAESuppy][Game 1]]*
 
 *[[https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed][Game 2]]*
 
 At the end of the tournament competition, our snake
-was listed #13 of 139 snakes in the public
-[[https://play.battlesnake.io/leaderboard/][global arena].
+was listed #13 of 139 snakes in the *[[https://play.battlesnake.io/leaderboard/][Arena]]*.
 
 ** Game Snippets
 
