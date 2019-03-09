@@ -1,22 +1,22 @@
 
 # Table of Contents
 
--   [Battle Snake 2019](#orgbc5e2d1)
-    -   [Strategy](#org80526ab)
-        -   [Drawbacks](#org52d2fe9)
-    -   [Battle History](#org774df75)
-    -   [Game Snippets](#org50bc149)
-    -   [Usage](#org92b1b13)
-        -   [Prerequisites](#orgca22bdb)
-        -   [Test Server](#orgcfbf19d)
-        -   [Run Locally](#orgdfb9877)
-        -   [Deployment](#org7b832a8)
-    -   [Acknowledgments](#org5c846ff)
-        -   [Notable Moments](#orgf5ca1cb)
+-   [Battle Snake 2019](#org0f685b9)
+    -   [Strategy](#org80ce459)
+        -   [Drawbacks](#org98a1bd2)
+    -   [Battle History](#org311e819)
+    -   [Game Snippets](#org6a6cbdf)
+    -   [Usage](#org798f57b)
+        -   [Prerequisites](#org2f59a44)
+        -   [Test Server](#orgd0b60ad)
+        -   [Run Locally](#org2e66afb)
+        -   [Deployment](#orgf6a1264)
+    -   [Acknowledgments](#orgf5e7a9d)
+        -   [Notable Moments](#orgfd0e5ea)
 
 
 
-<a id="orgbc5e2d1"></a>
+<a id="org0f685b9"></a>
 
 # Battle Snake 2019
 
@@ -29,7 +29,7 @@ Was entered in the expert divison of 2019's tournament as ****🐍 ‏‏‎ �
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
 
-<a id="org80526ab"></a>
+<a id="org80ce459"></a>
 
 ## Strategy
 
@@ -40,7 +40,7 @@ it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
 
 
-<a id="org52d2fe9"></a>
+<a id="org98a1bd2"></a>
 
 ### Drawbacks
 
@@ -50,7 +50,7 @@ algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
 
-<a id="org774df75"></a>
+<a id="org311e819"></a>
 
 ## Battle History
 
@@ -85,7 +85,7 @@ At the end of the tournament competition, our snake
 was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leaderboard/)**.
 
 
-<a id="org50bc149"></a>
+<a id="org6a6cbdf"></a>
 
 ## Game Snippets
 
@@ -93,12 +93,12 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 ![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
 
 
-<a id="org92b1b13"></a>
+<a id="org798f57b"></a>
 
 ## Usage
 
 
-<a id="orgca22bdb"></a>
+<a id="org2f59a44"></a>
 
 ### Prerequisites
 
@@ -109,7 +109,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 5.  Create a Heroku App `heroku create <name>`
 
 
-<a id="orgcfbf19d"></a>
+<a id="orgd0b60ad"></a>
 
 ### Test Server
 
@@ -117,7 +117,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 2.  Goto `localhost:3000` in a browser.
 
 
-<a id="orgdfb9877"></a>
+<a id="org2e66afb"></a>
 
 ### Run Locally
 
@@ -133,7 +133,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
     3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="org7b832a8"></a>
+<a id="orgf6a1264"></a>
 
 ### Deployment
 
@@ -151,16 +151,16 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
     3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="org5c846ff"></a>
+<a id="orgf5e7a9d"></a>
 
 ## Acknowledgments
 
--   **Built by** [Ben Austin](https://github.com/austinben) and [Jaxson Van Doorn](https://github.com/woofers), March 2, 2019
+-   **Built by** [Ben Austin](https://github.com/austinben) and [Jaxson Van Doorn](https://github.com/woofers)
 -   **Template Forked from** [here](https://github.com/tflinz/BasicBattleSnake2018)
--   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition, March 2, 2019
+-   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition
 
 
-<a id="orgf5ca1cb"></a>
+<a id="orgfd0e5ea"></a>
 
 ### Notable Moments
 

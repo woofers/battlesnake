@@ -95,9 +95,9 @@ was listed #13 of 139 snakes in the *[[https://play.battlesnake.io/leaderboard/]
 3. Use ~https://[name].herokuapp.com/~ as the snake URL.
 ** Acknowledgments
 
--  *Built by* [[https://github.com/austinben][Ben Austin]] and [[https://github.com/woofers][Jaxson Van Doorn]], March 2, 2019
+-  *Built by* [[https://github.com/austinben][Ben Austin]] and [[https://github.com/woofers][Jaxson Van Doorn]]
 -  *Template Forked from* [[https://github.com/tflinz/BasicBattleSnake2018][here]]
--  *Designed for* [[https://github.com/battlesnakeio][Battlesnake.io]] competition, March 2, 2019
+-  *Designed for* [[https://github.com/battlesnakeio][Battlesnake.io]] competition
 
 *** Notable Moments
 
