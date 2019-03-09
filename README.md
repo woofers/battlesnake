@@ -28,8 +28,10 @@ Was entered in the expert divison of 2019's tournament as ****🐍 ‏‏‎ �
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
+[![img](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-<a id="orga9a3952"></a>
+
+<a id="org2576642"></a>
 
 ## Strategy
 
@@ -40,7 +42,7 @@ it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
 
 
-<a id="org5b2473e"></a>
+<a id="orga764f64"></a>
 
 ### Drawbacks
 
@@ -50,7 +52,7 @@ algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
 
-<a id="orgec2a97c"></a>
+<a id="orgcffd0c1"></a>
 
 ## Battle History
 
@@ -85,7 +87,7 @@ At the end of the tournament competition, our snake
 was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leaderboard/)**.
 
 
-<a id="org87308d6"></a>
+<a id="org6ecf3c0"></a>
 
 ## Game Snippets
 
@@ -93,12 +95,12 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 ![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
 
 
-<a id="org2f31b34"></a>
+<a id="org3b87e52"></a>
 
 ## Usage
 
 
-<a id="org1f75feb"></a>
+<a id="orgc9941fc"></a>
 
 ### Prerequisites
 
@@ -109,7 +111,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 5.  Create a Heroku App `heroku create <name>`
 
 
-<a id="orge4406c4"></a>
+<a id="org5469145"></a>
 
 ### Test Server
 
@@ -117,7 +119,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 2.  Goto `localhost:3000` in a browser.
 
 
-<a id="orge2f358c"></a>
+<a id="orge4eb721"></a>
 
 ### Run Locally
 
@@ -133,7 +135,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
     3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="org881bf5a"></a>
+<a id="orgbfca526"></a>
 
 ### Deployment
 
@@ -151,7 +153,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
     3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="org5183a21"></a>
+<a id="orge25cb18"></a>
 
 ## Acknowledgments
 
@@ -160,7 +162,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 -   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition
 
 
-<a id="org7b62bf2"></a>
+<a id="org68ca739"></a>
 
 ### Notable Moments
 
