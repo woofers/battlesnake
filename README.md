@@ -1,22 +1,22 @@
 
 # Table of Contents
 
--   [Battle Snake 2019](#org0eea078)
-    -   [Strategy](#org71b89c8)
-        -   [Drawbacks](#orga021ee5)
-    -   [Battle History](#org4e67edd)
-    -   [Game Snippets](#orgc69e24a)
-    -   [Usage](#org7b6249b)
-        -   [Prerequisites](#org30fed4d)
-        -   [Test Server](#orgd0283da)
-        -   [Run Locally](#org55e72bb)
-        -   [Deployment](#org84537a2)
-    -   [Acknowledgments](#org0ce5f6a)
-        -   [Notable Moments](#org221265e)
+-   [Battle Snake 2019](#orgbc5e2d1)
+    -   [Strategy](#org80526ab)
+        -   [Drawbacks](#org52d2fe9)
+    -   [Battle History](#org774df75)
+    -   [Game Snippets](#org50bc149)
+    -   [Usage](#org92b1b13)
+        -   [Prerequisites](#orgca22bdb)
+        -   [Test Server](#orgcfbf19d)
+        -   [Run Locally](#orgdfb9877)
+        -   [Deployment](#org7b832a8)
+    -   [Acknowledgments](#org5c846ff)
+        -   [Notable Moments](#orgf5ca1cb)
 
 
 
-<a id="org0eea078"></a>
+<a id="orgbc5e2d1"></a>
 
 # Battle Snake 2019
 
@@ -29,7 +29,7 @@ Was entered in the expert divison of 2019's tournament as ****🐍 ‏‏‎ �
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
 
-<a id="org71b89c8"></a>
+<a id="org80526ab"></a>
 
 ## Strategy
 
@@ -40,7 +40,7 @@ it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
 
 
-<a id="orga021ee5"></a>
+<a id="org52d2fe9"></a>
 
 ### Drawbacks
 
@@ -50,7 +50,7 @@ algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
 
-<a id="org4e67edd"></a>
+<a id="org774df75"></a>
 
 ## Battle History
 
@@ -75,7 +75,7 @@ snake died by going for a food point and boxing itself in.
 The snake came 3rd in the first round of battle, and came 2nd in the second round. There were 29
 competitors in the expert tier.  Our games were played on a 11x11 board with 5 food spawned at start.
 
-Timestamp on [Sendwithus' Twitch stream](https://www.twitch.tv/videos/389395340) is [2:52:53-2:55:30](https://www.twitch.tv/videos/389395340?t=02h52m53s).
+Timestamp on the [Battlesnake.io Twitch stream](https://www.twitch.tv/videos/389395340) is [2:52:53-2:55:30](https://www.twitch.tv/videos/389395340?t=02h52m53s).
 
 **[Game 1](https://clips.twitch.tv/SoftDepressedWebDAESuppy)**
 
@@ -85,7 +85,7 @@ At the end of the tournament competition, our snake
 was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leaderboard/)**.
 
 
-<a id="orgc69e24a"></a>
+<a id="org50bc149"></a>
 
 ## Game Snippets
 
@@ -93,12 +93,12 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 ![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
 
 
-<a id="org7b6249b"></a>
+<a id="org92b1b13"></a>
 
 ## Usage
 
 
-<a id="org30fed4d"></a>
+<a id="orgca22bdb"></a>
 
 ### Prerequisites
 
@@ -109,7 +109,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 5.  Create a Heroku App `heroku create <name>`
 
 
-<a id="orgd0283da"></a>
+<a id="orgcfbf19d"></a>
 
 ### Test Server
 
@@ -117,7 +117,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
 2.  Goto `localhost:3000` in a browser.
 
 
-<a id="org55e72bb"></a>
+<a id="orgdfb9877"></a>
 
 ### Run Locally
 
@@ -133,7 +133,7 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
     3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="org84537a2"></a>
+<a id="org7b832a8"></a>
 
 ### Deployment
 
@@ -151,16 +151,16 @@ was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leader
     3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="org0ce5f6a"></a>
+<a id="org5c846ff"></a>
 
 ## Acknowledgments
 
 -   **Built by** [Ben Austin](https://github.com/austinben) and [Jaxson Van Doorn](https://github.com/woofers), March 2, 2019
 -   **Template Forked from** [here](https://github.com/tflinz/BasicBattleSnake2018)
--   **Designed for** [Sendwithus](https://github.com/sendwithus)' Battlesnake competition, March 2, 2019
+-   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition, March 2, 2019
 
 
-<a id="org221265e"></a>
+<a id="orgf5ca1cb"></a>
 
 ### Notable Moments
 

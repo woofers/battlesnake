@@ -51,7 +51,7 @@ snake died by going for a food point and boxing itself in.
 The snake came 3rd in the first round of battle, and came 2nd in the second round. There were 29
 competitors in the expert tier.  Our games were played on a 11x11 board with 5 food spawned at start.
 
-Timestamp on [[https://www.twitch.tv/videos/389395340][Sendwithus' Twitch stream]] is [[https://www.twitch.tv/videos/389395340?t=02h52m53s][2:52:53-2:55:30]].
+Timestamp on the [[https://www.twitch.tv/videos/389395340][Battlesnake.io Twitch stream]] is [[https://www.twitch.tv/videos/389395340?t=02h52m53s][2:52:53-2:55:30]].
 
 *[[https://clips.twitch.tv/SoftDepressedWebDAESuppy][Game 1]]*
 
@@ -97,7 +97,7 @@ was listed #13 of 139 snakes in the *[[https://play.battlesnake.io/leaderboard/]
 
 -  *Built by* [[https://github.com/austinben][Ben Austin]] and [[https://github.com/woofers][Jaxson Van Doorn]], March 2, 2019
 -  *Template Forked from* [[https://github.com/tflinz/BasicBattleSnake2018][here]]
--  *Designed for* [[https://github.com/sendwithus][Sendwithus]]' Battlesnake competition, March 2, 2019
+-  *Designed for* [[https://github.com/battlesnakeio][Battlesnake.io]] competition, March 2, 2019
 
 *** Notable Moments
 
