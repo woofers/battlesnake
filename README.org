@@ -96,7 +96,7 @@ was listed #13 of 139 snakes in the *[[https://play.battlesnake.io/leaderboard/]
 ** Acknowledgments
 
 -  *Built by* [[https://github.com/austinben][Ben Austin]] and [[https://github.com/woofers][Jaxson Van Doorn]]
--  *Template Forked from* [[https://github.com/tflinz/BasicBattleSnake2018][here]]
+-  *Adapted from* [[https://github.com/tflinz/BasicBattleSnake2018][tflinz's snake]]
 -  *Designed for* [[https://github.com/battlesnakeio][Battlesnake.io]] competition
 
 *** Notable Moments
