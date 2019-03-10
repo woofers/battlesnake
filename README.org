@@ -33,7 +33,8 @@ snake died by going for a food point and boxing itself in.
 
 ** Battle History
 
-*Bounty Snakes:*
+*Bounty Snakes*
+
 - Beat all 3 of [[https://www.bambora.com/en/ca/][Bambora]]'s bounty snakes
 - Beat all 3 of [[https://freshworks.io/][Freshworks]]' bounty snake levels
 - Beat both of [[https://semaphoresolutions.com/][Semaphore]]'s bounty snakes
@@ -48,7 +49,7 @@ snake died by going for a food point and boxing itself in.
 - Lost to [[https://www.checkfront.com/][CheckFront]]'s bounty snake
 - Lost to [[https://github.com][GitHub]]'s bounty snake
 
-*Tournament:*
+*Tournament*
 
 The snake came 3rd in the first round of battle, and came 2nd in the second round. There were 29
 competitors in the expert tier.  Our games were played on a 11x11 board with 5 food spawned at start.
@@ -59,8 +60,16 @@ Timestamp on the [[https://www.twitch.tv/videos/389395340][Battlesnake.io Twitch
 
 *[[https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed][Game 2]]*
 
-At the end of the tournament competition, our snake
-was listed #13 of 139 snakes in the *[[https://play.battlesnake.io/leaderboard/][Arena]]*.
+*Arena*
+
+At our highest ranking, shortly after the end of the tournament,
+our snake was listed at #11 of ~150 snakes in the *[[https://play.battlesnake.io/leaderboard/][Arena]]*.
+Overall our snake seemed to fluctuate in-between #15-#40.
+
+[[./screenshots/arena.png]]
+
+This ranking is likely somewhat in-accurate as many snakes were
+pulled out of the arena for the tournament in-order to minimize load.
 
 ** Game Snippets
 

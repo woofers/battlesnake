@@ -83,11 +83,19 @@ Timestamp on the [Battlesnake.io Twitch stream](https://www.twitch.tv/videos/389
 
 **[Game 2](https://clips.twitch.tv/CoyRelentlessFiddleheadsSoBayed)**
 
-At the end of the tournament competition, our snake
-was listed #13 of 139 snakes in the **[Arena](https://play.battlesnake.io/leaderboard/)**.
+**Arena**
 
+At our highest ranking, shortly after the end of the tournament,
+our snake was listed at #11 of ~150 snakes in the **[Arena](https://play.battlesnake.io/leaderboard/)**.
+Overall our snake seemed to fluctuate in-between #15-#40.
 
 <a id="orgae07e2d"></a>
+![img](./screenshots/arena.png)
+
+This ranking is likely somewhat in-accurate as many snakes were
+pulled out of the arena for the tournament in-order to minimize load.
+
+
 
 ## Game Snippets
 
