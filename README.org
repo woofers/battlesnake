@@ -122,6 +122,17 @@ Goto [[https://play.battlesnake.io][play.battlesnake.io]]
 -  *Adapted from* [[https://github.com/tflinz/BasicBattleSnake2018][tflinz's snake]]
 -  *Designed for* [[https://github.com/battlesnakeio][Battlesnake.io]] competition
 
+*** Training Snakes
+
+Below are some snakes which we found useful for testing our snake with:
+
+- xtagon/Nagini
+- jonknoll/Siamese Fighting Snake
+- MarkZsombor/Ouroboros
+- koryk/furd
+- tbgiles/FeistySnake
+- gsnake3/Schneider
+
 *** Notable Moments
 
 "Is that a Young Thug reference? You guys are awesome."

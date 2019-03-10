@@ -1,22 +1,23 @@
 
 # Table of Contents
 
--   [Battlesnake 2019](#orga0c7492)
-    -   [Strategy](#org1411895)
-        -   [Drawbacks](#org68a530b)
-    -   [Battle History](#orgc6ab1bb)
-    -   [Game Snippets](#orgae07e2d)
-    -   [Usage](#org390aed9)
-        -   [Prerequisites](#orgd4faa34)
-        -   [Test Board](#org76b7c9e)
-        -   [Run Locally](#orgb6c38e4)
-        -   [Deployment](#org3321789)
-    -   [Acknowledgments](#orgd5b8901)
-        -   [Notable Moments](#orgb2c2492)
+-   [Battlesnake 2019](#org7a845bc)
+    -   [Strategy](#org3ada019)
+        -   [Drawbacks](#org94fdead)
+    -   [Battle History](#org3a447d3)
+    -   [Game Snippets](#org667c41f)
+    -   [Usage](#orgde93732)
+        -   [Prerequisites](#org37b2efb)
+        -   [Test Board](#orgdb070fe)
+        -   [Run Locally](#org52bee51)
+        -   [Deployment](#org8fd235d)
+    -   [Acknowledgments](#orge9015a3)
+        -   [Training Snakes](#org23ee626)
+        -   [Notable Moments](#orgec2b967)
 
 
 
-<a id="orga0c7492"></a>
+<a id="org7a845bc"></a>
 
 # Battlesnake 2019
 
@@ -31,7 +32,7 @@ Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liqu
 [![img](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
-<a id="org1411895"></a>
+<a id="org3ada019"></a>
 
 ## Strategy
 
@@ -42,7 +43,7 @@ it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
 
 
-<a id="org68a530b"></a>
+<a id="org94fdead"></a>
 
 ### Drawbacks
 
@@ -52,11 +53,11 @@ algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
 
-<a id="orgc6ab1bb"></a>
+<a id="org3a447d3"></a>
 
 ## Battle History
 
-**Bounty Snakes:**
+**Bounty Snakes**
 
 -   Beat all 3 of [Bambora](https://www.bambora.com/en/ca/)'s bounty snakes
 -   Beat all 3 of [Freshworks](https://freshworks.io/)' bounty snake levels
@@ -72,7 +73,7 @@ snake died by going for a food point and boxing itself in.
 -   Lost to [CheckFront](https://www.checkfront.com/)'s bounty snake
 -   Lost to [GitHub](https://github.com)'s bounty snake
 
-**Tournament:**
+**Tournament**
 
 The snake came 3rd in the first round of battle, and came 2nd in the second round. There were 29
 competitors in the expert tier.  Our games were played on a 11x11 board with 5 food spawned at start.
@@ -89,13 +90,13 @@ At our highest ranking, shortly after the end of the tournament,
 our snake was listed at #11 of ~150 snakes in the **[Arena](https://play.battlesnake.io/leaderboard/)**.
 Overall our snake seemed to fluctuate in-between #15-#40.
 
-<a id="orgae07e2d"></a>
 ![img](./screenshots/arena.png)
 
 This ranking is likely somewhat in-accurate as many snakes were
 pulled out of the arena for the tournament in-order to minimize load.
 
 
+<a id="org667c41f"></a>
 
 ## Game Snippets
 
@@ -103,25 +104,25 @@ pulled out of the arena for the tournament in-order to minimize load.
 ![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
 
 
-<a id="org390aed9"></a>
+<a id="orgde93732"></a>
 
 ## Usage
 
 
-<a id="orgd4faa34"></a>
+<a id="org37b2efb"></a>
 
 ### Prerequisites
 
 1.  Install JDK 11 or higher
-2.  Install Docker + Docker compose (required for [Docker container method](#org6458f95))
-3.  Install Heroku CLI (required for [Heroku CLI method](#org63e2320))
-4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy` ) (required for [Heroku CLI method](#org63e2320))
+2.  Install Docker + Docker compose (required for [Docker container method](#org3ff4c85))
+3.  Install Heroku CLI (required for [Heroku CLI method](#org08feee7))
+4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy` ) (required for [Heroku CLI method](#org08feee7))
 5.  Create a Heroku App online or using the Heroku CLI with `heroku create <name>`
 
     (alternatively any other hosting service can be used)
 
 
-<a id="org76b7c9e"></a>
+<a id="orgdb070fe"></a>
 
 ### Test Board
 
@@ -130,7 +131,7 @@ pulled out of the arena for the tournament in-order to minimize load.
 Goto [play.battlesnake.io](https://play.battlesnake.io)
 
 
-<a id="orgb6c38e4"></a>
+<a id="org52bee51"></a>
 
 ### Run Locally
 
@@ -140,14 +141,14 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 2.  Use `http://localhost:8080` as the snake URL.
 
 **Docker**
-<a id="org6458f95"></a>
+<a id="org3ff4c85"></a>
 
 1.  Build the project using either `./gradle build` or `gradlew build` for UNIX and Windows platforms respectively.
 2.  Run the Docker Tomcat image in a container with `docker-compose up`.
 3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
 
-<a id="org3321789"></a>
+<a id="org8fd235d"></a>
 
 ### Deployment
 
@@ -159,14 +160,14 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 4.  Enter the repository name and click `Connect`.
 
 **Heroku CLI**
-<a id="org63e2320"></a>
+<a id="org08feee7"></a>
 
 1.  Build .war file `./gradlew build`
 2.  Deploy to Heroku `heroku war:deploy build/libs/battlesnake.war --app <name>`
 3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
 
-<a id="orgd5b8901"></a>
+<a id="orge9015a3"></a>
 
 ## Acknowledgments
 
@@ -175,7 +176,21 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 -   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition
 
 
-<a id="orgb2c2492"></a>
+<a id="org23ee626"></a>
+
+### Training Snakes
+
+Below are some snakes which we found useful for testing our snake with:
+
+-   xtagon/Nagini
+-   jonknoll/Siamese Fighting Snake
+-   MarkZsombor/Ouroboros
+-   koryk/furd
+-   tbgiles/FeistySnake
+-   gsnake3/Schneider
+
+
+<a id="orgec2b967"></a>
 
 ### Notable Moments
 
