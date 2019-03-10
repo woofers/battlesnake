@@ -14,7 +14,7 @@ def getVersionName = { ->
     return stdout.toString().trim()
 }
 
-group = 'com.battlesnakes'
+group = 'com.battlesnake'
 description = "Battlesnake"
 version = getVersionName()
 
