@@ -29,6 +29,8 @@ Was entered in the expert divison of 2019's tournament as ****🐍 ‏‏‎ �
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
+Battlesnake documentation can be found at <https://docs.battlesnake.io>.
+
 [![img](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
