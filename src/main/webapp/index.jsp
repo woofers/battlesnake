@@ -27,7 +27,7 @@
     td.color {
       background-color: <%=SNAKE.color()%>;
       color: #FFF;
-      border: #000 1px solid;
+      border: #595959 1px solid;
       border-top-width: 0;
     }
     </style>
