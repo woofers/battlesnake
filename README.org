@@ -69,19 +69,22 @@ was listed #13 of 139 snakes in the *[[https://play.battlesnake.io/leaderboard/]
 
 ** Usage
 *** Prerequisites
-1. Install Java 11 or higher
-2. Install Docker + Docker compose
-3. Install Heroku
-4. Install .war Heroku deployment plug-in ~heroku plugins:install heroku-cli-deploy~
-5. Create a Heroku App ~heroku create <name>~
-*** Test Server
-1. Run ~docker run -it --rm -p 3000:3000 sendwithus/battlesnake-server~
-2. Goto ~localhost:3000~ in a browser.
+1. Install JDK 11 or higher
+2. Install Docker + Docker compose (required for [[sec:docker][Docker container method]])
+3. Install Heroku CLI (required for [[sec:heroku-cli][Heroku CLI method]])
+4. Install .war Heroku deployment plug-in ~heroku plugins:install heroku-cli-deploy~ ) (required for [[sec:heroku-cli][Heroku CLI method]])
+5. Create a Heroku App online or using the Heroku CLI with ~heroku create <name>~
+
+   (alternatively any other hosting service can be used)
+*** Test Board
+**** Online
+Goto [[https://play.battlesnake.io][play.battlesnake.io]]
 *** Run Locally
 **** Gradle
 1. Run the project using either ~./gradle run~ or ~gradlew run~ for UNIX and Windows platforms respectively.  This will build and run the project as a `JAR` using [[https://github.com/jsimone/webapp-runner][Webapp Runner]].
 2. Use ~http://localhost:8080~ as the snake URL.
 **** Docker
+<<sec:docker>>
 1. Build the project using either ~./gradle build~ or ~gradlew build~ for UNIX and Windows platforms respectively.
 2. Run the Docker Tomcat image in a container with ~docker-compose up~.
 3. Use ~http://localhost:8080/battlesnake~ as the snake URL.
@@ -91,7 +94,8 @@ was listed #13 of 139 snakes in the *[[https://play.battlesnake.io/leaderboard/]
 2. Click on the ~deploy~ tab.
 3. Scroll down to the ~Deployment method~ and select ~GitHub~.
 4. Enter the repository name and click ~Connect~.
-**** Manual
+**** Heroku CLI
+<<sec:heroku-cli>>
 1. Build .war file ~./gradlew build~
 2. Deploy to Heroku ~heroku war:deploy build/libs/battlesnake.war --app <name>~
 3. Use ~https://[name].herokuapp.com/~ as the snake URL.
