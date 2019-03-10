@@ -77,25 +77,33 @@ was listed #13 of 139 snakes in the *[[https://play.battlesnake.io/leaderboard/]
 
    (alternatively any other hosting service can be used)
 *** Test Board
-**** Online
+*Online*
+
 Goto [[https://play.battlesnake.io][play.battlesnake.io]]
 *** Run Locally
-**** Gradle
+*Gradle*
+
 1. Run the project using either ~./gradle run~ or ~gradlew run~ for UNIX and Windows platforms respectively.  This will build and run the project as a `JAR` using [[https://github.com/jsimone/webapp-runner][Webapp Runner]].
 2. Use ~http://localhost:8080~ as the snake URL.
-**** Docker
+
+*Docker*
 <<sec:docker>>
+
 1. Build the project using either ~./gradle build~ or ~gradlew build~ for UNIX and Windows platforms respectively.
 2. Run the Docker Tomcat image in a container with ~docker-compose up~.
 3. Use ~http://localhost:8080/battlesnake~ as the snake URL.
 *** Deployment
-**** Heroku-GitHub Integration
+
+*Heroku-GitHub Integration*
+
 1. Go the dashboard for the Heroku app.
 2. Click on the ~deploy~ tab.
 3. Scroll down to the ~Deployment method~ and select ~GitHub~.
 4. Enter the repository name and click ~Connect~.
-**** Heroku CLI
+
+*Heroku CLI*
 <<sec:heroku-cli>>
+
 1. Build .war file ~./gradlew build~
 2. Deploy to Heroku ~heroku war:deploy build/libs/battlesnake.war --app <name>~
 3. Use ~https://[name].herokuapp.com/~ as the snake URL.
