@@ -32,6 +32,12 @@ algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
 
+## Game Snippets
+
+![img](./screenshots/snake-win-1.gif) ![img](./screenshots/snake-win-2.gif)
+![img](./screenshots/snake-win-7.gif)
+
+
 ## Battle History
 
 **Bounty Snakes**
@@ -73,21 +79,15 @@ This ranking is likely somewhat in-accurate as many snakes were
 pulled out of the arena for the tournament in-order to minimize load.
 
 
-## Game Snippets
-
-![img](./screenshots/snake-win-1.gif) ![img](./screenshots/snake-win-2.gif)
-![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
-
-
 ## Usage
 
 
 ### Prerequisites
 
 1.  Install JDK 11 or higher
-2.  Install Docker + Docker compose (required for [Docker container method](#orgb827d49))
-3.  Install Heroku CLI (required for [Heroku CLI method](#orga53cba4))
-4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy` ) (required for [Heroku CLI method](#orga53cba4))
+2.  Install Docker + Docker compose (required for [Docker container method](#orgfd68ec6))
+3.  Install Heroku CLI (required for [Heroku CLI method](#org8843ce7))
+4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy` ) (required for [Heroku CLI method](#org8843ce7))
 5.  Create a Heroku App online or using the Heroku CLI with `heroku create <name>`
 
     (alternatively any other hosting service can be used)
@@ -108,7 +108,7 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 2.  Use `http://localhost:8080` as the snake URL.
 
 **Docker**
-<a id="orgb827d49"></a>
+<a id="orgfd68ec6"></a>
 
 1.  Build the project using either `./gradle build` or `gradlew build` for UNIX and Windows platforms respectively.
 2.  Run the Docker Tomcat image in a container with `docker-compose up`.
@@ -125,7 +125,7 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 4.  Enter the repository name and click `Connect`.
 
 **Heroku CLI**
-<a id="orga53cba4"></a>
+<a id="org8843ce7"></a>
 
 1.  Build .war file `./gradlew build`
 2.  Deploy to Heroku `heroku war:deploy build/libs/battlesnake.war --app <name>`

@@ -33,6 +33,11 @@ drawback was trapping itself in its own tail. Wedidn't implement an effective
 algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
+** Game Snippets
+
+[[./screenshots/snake-win-1.gif]] [[./screenshots/snake-win-2.gif]]
+[[./screenshots/snake-win-7.gif]]
+
 ** Battle History
 
 *Bounty Snakes*
@@ -72,12 +77,6 @@ Overall our snake seemed to fluctuate in-between #15-#40.
 
 This ranking is likely somewhat in-accurate as many snakes were
 pulled out of the arena for the tournament in-order to minimize load.
-
-** Game Snippets
-
-[[./screenshots/snake-win-1.gif]] [[./screenshots/snake-win-2.gif]]
-[[./screenshots/snake-win-7.gif]] [[./screenshots/snake-win-6.gif]]
-
 ** Usage
 *** Prerequisites
 1. Install JDK 11 or higher
