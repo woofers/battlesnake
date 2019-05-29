@@ -2,7 +2,7 @@
 #+TITLE:	Battlesnake 2019
 #+AUTHOR:	Jaxson Van Doorn
 #+EMAIL:	jaxson.vandoorn@gmail.com
-#+OPTIONS:  num:nil
+#+OPTIONS:  num:nil toc:nil
 
 * Battlesnake 2019
 
