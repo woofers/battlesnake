@@ -2,7 +2,7 @@
 #+TITLE:	Battlesnake 2019
 #+AUTHOR:	Jaxson Van Doorn
 #+EMAIL:	jaxson.vandoorn@gmail.com
-#+OPTIONS:  num:nil
+#+OPTIONS:  num:nil toc:nil
 
 * Battlesnake 2019
 
@@ -32,6 +32,11 @@ Despite efforts to improve the issue from 2018's entry, the snake's biggest
 drawback was trapping itself in its own tail. Wedidn't implement an effective
 algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
+
+** Game Snippets
+
+[[./screenshots/snake-win-1.gif]] [[./screenshots/snake-win-2.gif]]
+[[./screenshots/snake-win-7.gif]]
 
 ** Battle History
 
@@ -72,12 +77,6 @@ Overall our snake seemed to fluctuate in-between #15-#40.
 
 This ranking is likely somewhat in-accurate as many snakes were
 pulled out of the arena for the tournament in-order to minimize load.
-
-** Game Snippets
-
-[[./screenshots/snake-win-1.gif]] [[./screenshots/snake-win-2.gif]]
-[[./screenshots/snake-win-7.gif]] [[./screenshots/snake-win-6.gif]]
-
 ** Usage
 *** Prerequisites
 1. Install JDK 11 or higher

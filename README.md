@@ -1,23 +1,4 @@
 
-# Table of Contents
-
--   [Battlesnake 2019](#org7a845bc)
-    -   [Strategy](#org3ada019)
-        -   [Drawbacks](#org94fdead)
-    -   [Battle History](#org3a447d3)
-    -   [Game Snippets](#org667c41f)
-    -   [Usage](#orgde93732)
-        -   [Prerequisites](#org37b2efb)
-        -   [Test Board](#orgdb070fe)
-        -   [Run Locally](#org52bee51)
-        -   [Deployment](#org8fd235d)
-    -   [Acknowledgments](#orge9015a3)
-        -   [Training Snakes](#org23ee626)
-        -   [Notable Moments](#orgec2b967)
-
-
-
-<a id="org7a845bc"></a>
 
 # Battlesnake 2019
 
@@ -34,8 +15,6 @@ Battlesnake documentation can be found at <https://docs.battlesnake.io>.
 [![img](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
-<a id="org3ada019"></a>
-
 ## Strategy
 
 Our snake's strategy was aggresive. For each turn, if the snake wasn't
@@ -45,8 +24,6 @@ it would try to target the other snakes' heads to either eliminate the
 opponent in a head-on collision or trap them by cutting off their path.
 
 
-<a id="org94fdead"></a>
-
 ### Drawbacks
 
 Despite efforts to improve the issue from 2018's entry, the snake's biggest
@@ -55,7 +32,11 @@ algorithm to calculate dangerous regions of the board, and ultimately the
 snake died by going for a food point and boxing itself in.
 
 
-<a id="org3a447d3"></a>
+## Game Snippets
+
+![img](./screenshots/snake-win-1.gif) ![img](./screenshots/snake-win-2.gif)
+![img](./screenshots/snake-win-7.gif)
+
 
 ## Battle History
 
@@ -98,33 +79,19 @@ This ranking is likely somewhat in-accurate as many snakes were
 pulled out of the arena for the tournament in-order to minimize load.
 
 
-<a id="org667c41f"></a>
-
-## Game Snippets
-
-![img](./screenshots/snake-win-1.gif) ![img](./screenshots/snake-win-2.gif)
-![img](./screenshots/snake-win-7.gif) ![img](./screenshots/snake-win-6.gif)
-
-
-<a id="orgde93732"></a>
-
 ## Usage
 
-
-<a id="org37b2efb"></a>
 
 ### Prerequisites
 
 1.  Install JDK 11 or higher
-2.  Install Docker + Docker compose (required for [Docker container method](#org3ff4c85))
-3.  Install Heroku CLI (required for [Heroku CLI method](#org08feee7))
-4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy` ) (required for [Heroku CLI method](#org08feee7))
+2.  Install Docker + Docker compose (required for [Docker container method](#orgfd68ec6))
+3.  Install Heroku CLI (required for [Heroku CLI method](#org8843ce7))
+4.  Install .war Heroku deployment plug-in `heroku plugins:install heroku-cli-deploy` ) (required for [Heroku CLI method](#org8843ce7))
 5.  Create a Heroku App online or using the Heroku CLI with `heroku create <name>`
 
     (alternatively any other hosting service can be used)
 
-
-<a id="orgdb070fe"></a>
 
 ### Test Board
 
@@ -132,8 +99,6 @@ pulled out of the arena for the tournament in-order to minimize load.
 
 Goto [play.battlesnake.io](https://play.battlesnake.io)
 
-
-<a id="org52bee51"></a>
 
 ### Run Locally
 
@@ -143,14 +108,12 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 2.  Use `http://localhost:8080` as the snake URL.
 
 **Docker**
-<a id="org3ff4c85"></a>
+<a id="orgfd68ec6"></a>
 
 1.  Build the project using either `./gradle build` or `gradlew build` for UNIX and Windows platforms respectively.
 2.  Run the Docker Tomcat image in a container with `docker-compose up`.
 3.  Use `http://localhost:8080/battlesnake` as the snake URL.
 
-
-<a id="org8fd235d"></a>
 
 ### Deployment
 
@@ -162,14 +125,12 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 4.  Enter the repository name and click `Connect`.
 
 **Heroku CLI**
-<a id="org08feee7"></a>
+<a id="org8843ce7"></a>
 
 1.  Build .war file `./gradlew build`
 2.  Deploy to Heroku `heroku war:deploy build/libs/battlesnake.war --app <name>`
 3.  Use `https://[name].herokuapp.com/` as the snake URL.
 
-
-<a id="orge9015a3"></a>
 
 ## Acknowledgments
 
@@ -177,8 +138,6 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 -   **Adapted from** [tflinz's snake](https://github.com/tflinz/BasicBattleSnake2018)
 -   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition
 
-
-<a id="org23ee626"></a>
 
 ### Training Snakes
 
@@ -191,8 +150,6 @@ Below are some snakes which we found useful for testing our snake with:
 -   tbgiles/FeistySnake
 -   gsnake3/Schneider
 
-
-<a id="orgec2b967"></a>
 
 ### Notable Moments
 
