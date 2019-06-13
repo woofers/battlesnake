@@ -6,7 +6,7 @@
 
 A simple [Battlesnake](https://www.battlesnake.io) written in Java.
 
-Was entered in the expert divison of 2019's tournament as ****🐍 ‏‏‎ 𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏‏‎ 🐍****.
+Was entered in the expert divison of 2019's tournament as 🐍 ‏‏‎ ****𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔**** ‏‏‎ 🐍.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
