@@ -1,0 +1,14 @@
+name: build
+
+on: [push]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@master
+    - name: Build
+      uses: MrRamych/gradle-actions@1.0
+      with:
+        args: build
