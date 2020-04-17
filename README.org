@@ -31,7 +31,7 @@ competitions.
   [[https://github.com/woofers/battlesnake-2019/tree/battlesnake-2019][View
   Snake]]
 
-- Compted in the intermediate division Battlesnake 2018 as *Solid
+- Competed in the intermediate division Battlesnake 2018 as *Solid
   Snake* -
   [[https://github.com/woofers/battlesnake-2019/tree/battlesnake-2018][View
   Snake]]
