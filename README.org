@@ -13,7 +13,7 @@ Deployed to [[https://battlesnake-liquid.herokuapp.com/]]
 Battlesnake documentation can be found at
 [[https://docs.battlesnake.io]].
 
-[[https://heroku.com/deploy][[https://www.herokucdn.com/deploy/button.png]]
+[[https://heroku.com/deploy][https://www.herokucdn.com/deploy/button.png]]
 
 ** Competition History
    :PROPERTIES:
