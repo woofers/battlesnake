@@ -80,7 +80,7 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 ## Acknowledgments
 
 -   **Built by** [Jaxson Van Doorn](https://github.com/woofers) and [Ben Austin](https://github.com/austinben)
--   **Adapted from** [tflinz's snake] (https://github.com/tflinz/BasicBattleSnake2018)
+-   **Adapted from** [tflinz's snake](https://github.com/tflinz/BasicBattleSnake2018)
 -   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition
 
 
