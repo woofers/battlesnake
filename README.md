@@ -1,12 +1,12 @@
 
 
-# Battlesnake: Stay Home and Code 2020
+# Battlesnake
 
 <img height="120" width="120" src="screenshots/advanced.png" />
 
 A simple [Battlesnake](https://www.battlesnake.io) written in Java.
 
-To be entered in the Veteran division of the Battlesnake: Stay Home and Code online tournament as‏‏‎ ****SLIME LANGUAGE****.
+To be entered in the veteran division of the Battlesnake: Stay Home and Code online tournament as‏‏‎  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
@@ -14,6 +14,15 @@ Battlesnake documentation can be found at <https://docs.battlesnake.io>.
 
 [![img](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+## Competition History
+
+Variations of this snake have participated in multiple Battlesnake competitions.
+
+* To compete in the veteran division of Battlesnake: Stay Home and Code as  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒
+
+* Competed in the expert division of Battlesnake 2019 & Battlesnake 2019 Winter Classic as  🐍 ‏‏‎𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏🐍 - [View Snake](https://github.com/woofers/battlesnake-2019/tree/battlesnake-2019)
+
+* Competed in the intermediate division Battlesnake 2018 as **Solid Snake** - [View Snake](https://github.com/woofers/battlesnake-2019/tree/battlesnake-2018)
 
 ## Usage
 
@@ -70,10 +79,9 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 
 ## Acknowledgments
 
--   **Built by** [Ben Austin](https://github.com/austinben) and [Jaxson Van Doorn](https://github.com/woofers)
+-   **Built by** [Jaxson Van Doorn](https://github.com/woofers) and [Ben Austin](https://github.com/austinben)
 -   **Adapted from** [tflinz's snake](https://github.com/tflinz/BasicBattleSnake2018)
 -   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition
-
 
 
 <img align="left" height="120" width="120" src="screenshots/advanced.png" />

@@ -1,69 +1,123 @@
-
-#+TITLE:	Battlesnake 2019
-#+AUTHOR:	Jaxson Van Doorn
-#+EMAIL:	jaxson.vandoorn@gmail.com
-#+OPTIONS:  num:nil toc:nil
-
-* Battlesnake: Stay Home and Code 2020
-
-@@html:<img height="120" width="120" src="screenshots/advanced.png" />@@
+* Battlesnake
+  :PROPERTIES:
+  :CUSTOM_ID: battlesnake
+  :END:
 
 A simple [[https://www.battlesnake.io][Battlesnake]] written in Java.
 
-To be entered in the Veteran division of the Battlesnake: Stay Home and Code online tournament as **SLIME LANGUAGE**.
+To be entered in the veteran division of the Battlesnake: Stay Home and
+Code online tournament as‏‏‎ 🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒.
 
-Deployed to [[https://battlesnake-liquid.herokuapp.com/][https://battlesnake-liquid.herokuapp.com/]]
+Deployed to [[https://battlesnake-liquid.herokuapp.com/]]
 
-Battlesnake documentation can be found at https://docs.battlesnake.io.
+Battlesnake documentation can be found at
+[[https://docs.battlesnake.io]].
 
 [[https://heroku.com/deploy][https://www.herokucdn.com/deploy/button.png]]
 
+** Competition History
+   :PROPERTIES:
+   :CUSTOM_ID: competition-history
+   :END:
+
+Variations of this snake have participated in multiple Battlesnake
+competitions.
+
+- To compete in the veteran division of Battlesnake: Stay Home and Code
+  as 🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒
+
+- Competed in the expert division of Battlesnake 2019 & Battlesnake 2019
+  Winter Classic as 🐍 ‏‏‎𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏🐍 -
+  [[https://github.com/woofers/battlesnake-2019/tree/battlesnake-2019][View
+  Snake]]
+
+- Competed in the intermediate division Battlesnake 2018 as *Solid
+  Snake* -
+  [[https://github.com/woofers/battlesnake-2019/tree/battlesnake-2018][View
+  Snake]]
 
 ** Usage
+   :PROPERTIES:
+   :CUSTOM_ID: usage
+   :END:
+
 *** Prerequisites
+    :PROPERTIES:
+    :CUSTOM_ID: prerequisites
+    :END:
+
 1. Install JDK 11 or higher
-2. Install Docker + Docker compose (required for [[sec:docker][Docker container method]])
-3. Install Heroku CLI (required for [[sec:heroku-cli][Heroku CLI method]])
-4. Install .war Heroku deployment plug-in ~heroku plugins:install heroku-cli-deploy~ ) (required for [[sec:heroku-cli][Heroku CLI method]])
-5. Create a Heroku App online or using the Heroku CLI with ~heroku create <name>~
+
+2. Install Docker + Docker compose (required for [[#orgfd68ec6][Docker
+   container method]])
+
+3. Install Heroku CLI (required for [[#org8843ce7][Heroku CLI method]])
+
+4. Install .war Heroku deployment plug-in
+   =heroku plugins:install heroku-cli-deploy= ) (required for
+   [[#org8843ce7][Heroku CLI method]])
+
+5. Create a Heroku App online or using the Heroku CLI with
+   =heroku create <name>=
 
    (alternatively any other hosting service can be used)
+
 *** Test Board
+    :PROPERTIES:
+    :CUSTOM_ID: test-board
+    :END:
+
 *Online*
 
 Goto [[https://play.battlesnake.io][play.battlesnake.io]]
+
 *** Run Locally
+    :PROPERTIES:
+    :CUSTOM_ID: run-locally
+    :END:
+
 *Gradle*
 
-1. Run the project using either ~./gradle run~ or ~gradlew run~ for UNIX and Windows platforms respectively.  This will build and run the project as a `JAR` using [[https://github.com/jsimone/webapp-runner][Webapp Runner]].
-2. Use ~http://localhost:8080~ as the snake URL.
+1. Run the project using either =./gradle run= or =gradlew run= for UNIX
+   and Windows platforms respectively. This will build and run the
+   project as a `JAR` using
+   [[https://github.com/jsimone/webapp-runner][Webapp Runner]].
+2. Use =http://localhost:8080= as the snake URL.
 
 *Docker*
-<<sec:docker>>
 
-1. Build the project using either ~./gradle build~ or ~gradlew build~ for UNIX and Windows platforms respectively.
-2. Run the Docker Tomcat image in a container with ~docker-compose up~.
-3. Use ~http://localhost:8080/battlesnake~ as the snake URL.
+1. Build the project using either =./gradle build= or =gradlew build=
+   for UNIX and Windows platforms respectively.
+2. Run the Docker Tomcat image in a container with =docker-compose up=.
+3. Use =http://localhost:8080/battlesnake= as the snake URL.
+
 *** Deployment
+    :PROPERTIES:
+    :CUSTOM_ID: deployment
+    :END:
 
 *Heroku-GitHub Integration*
 
 1. Go the dashboard for the Heroku app.
-2. Click on the ~deploy~ tab.
-3. Scroll down to the ~Deployment method~ and select ~GitHub~.
-4. Enter the repository name and click ~Connect~.
+2. Click on the =deploy= tab.
+3. Scroll down to the =Deployment method= and select =GitHub=.
+4. Enter the repository name and click =Connect=.
 
 *Heroku CLI*
-<<sec:heroku-cli>>
 
-1. Build .war file ~./gradlew build~
-2. Deploy to Heroku ~heroku war:deploy build/libs/battlesnake.war --app <name>~
-3. Use ~https://[name].herokuapp.com/~ as the snake URL.
+1. Build .war file =./gradlew build=
+2. Deploy to Heroku
+   =heroku war:deploy build/libs/battlesnake.war --app <name>=
+3. Use =https://[name].herokuapp.com/= as the snake URL.
+
 ** Acknowledgments
+   :PROPERTIES:
+   :CUSTOM_ID: acknowledgments
+   :END:
 
--  *Built by* [[https://github.com/austinben][Ben Austin]] and [[https://github.com/woofers][Jaxson Van Doorn]]
--  *Adapted from* [[https://github.com/tflinz/BasicBattleSnake2018][tflinz's snake]]
--  *Designed for* [[https://github.com/battlesnakeio][Battlesnake.io]] competition
-
-
-@@html:<img align="left" height="120" width="120" src="screenshots/advanced.png" />@@
+- *Built by* [[https://github.com/woofers][Jaxson Van Doorn]] and
+  [[https://github.com/austinben][Ben Austin]]
+- *Adapted from*
+  [[https://github.com/tflinz/BasicBattleSnake2018][tflinz's snake]]
+- *Designed for* [[https://github.com/battlesnakeio][Battlesnake.io]]
+  competition
