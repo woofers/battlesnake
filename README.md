@@ -6,7 +6,7 @@
 
 A simple [Battlesnake](https://www.battlesnake.io) written in Java.
 
-To be entered in the veteran division of the Battlesnake: Stay Home and Code online tournament as‏‏‎ 🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒.
+To be entered in the veteran division of the Battlesnake: Stay Home and Code online tournament as‏‏‎  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
@@ -18,11 +18,11 @@ Battlesnake documentation can be found at <https://docs.battlesnake.io>.
 
 Variations of this snake have participated in multiple Battlesnake competitions.
 
-* To compete in the veteran division of Battlesnake: Stay Home and Code as 🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒
+* To compete in the veteran division of Battlesnake: Stay Home and Code as  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒
 
-* Competed in the expert division of Battlesnake 2019 & Battlesnake 2019 Winter Classic as 🐍 ‏‏‎𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏🐍 - [View Snake](https://github.com/woofers/battlesnake-2019/tree/battlesnake-2019)
+* Competed in the expert division of Battlesnake 2019 & Battlesnake 2019 Winter Classic as  🐍 ‏‏‎𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏🐍 - [View Snake](https://github.com/woofers/battlesnake-2019/tree/battlesnake-2019)
 
-* Compted in the intermediate division Battlesnake 2018 as **Solid Snake** - [View Snake](https://github.com/woofers/battlesnake-2019/tree/battlesnake-2018)
+* Competed in the intermediate division Battlesnake 2018 as **Solid Snake** - [View Snake](https://github.com/woofers/battlesnake-2019/tree/battlesnake-2018)
 
 ## Usage
 
