@@ -4,13 +4,11 @@
 
 <img height="120" width="120" src="screenshots/advanced.png" />
 
-A simple [Battlesnake](https://www.battlesnake.io) written in Java.
-
-To be entered in the veteran division of the Battlesnake: Stay Home and Code online tournament as‏‏‎  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒.
+A simple [Battlesnake](https://play.battlesnake.com/) written in Java.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
-Battlesnake documentation can be found at <https://docs.battlesnake.io>.
+Battlesnake documentation can be found at <https://docs.battlesnake.com/>.
 
 [![img](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
@@ -18,7 +16,7 @@ Battlesnake documentation can be found at <https://docs.battlesnake.io>.
 
 Variations of this snake have participated in multiple Battlesnake competitions.
 
-* To compete in the veteran division of Battlesnake: Stay Home and Code as  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒
+* Competed in the veteran division of Battlesnake: Stay Home and Code as  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒
 
 * Competed in the expert division of Battlesnake 2019 & Battlesnake 2019 Winter Classic as  🐍 ‏‏‎𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏🐍 - [View Snake](https://github.com/woofers/battlesnake-2019/tree/battlesnake-2019)
 
