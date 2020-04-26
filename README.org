@@ -77,6 +77,7 @@ Round 2]]*
 *[[https://clips.twitch.tv/WanderingHonorableCurlewPeteZaroll][Quaterfinals -
 Round 3]]*
 
+
 ** Usage
    :PROPERTIES:
    :CUSTOM_ID: usage
@@ -151,6 +152,7 @@ Goto [[https://play.battlesnake.io][play.battlesnake.io]]
    =heroku war:deploy build/libs/battlesnake.war --app <name>=
 3. Use =https://[name].herokuapp.com/= as the snake URL.
 
+
 ** Acknowledgments
    :PROPERTIES:
    :CUSTOM_ID: acknowledgments
@@ -161,4 +163,5 @@ Goto [[https://play.battlesnake.io][play.battlesnake.io]]
 - *Adapted from*
   [[https://github.com/tflinz/BasicBattleSnake2018][tflinz's snake]]
 - *Designed for*
-  [[https://github.com/battlesnakeofficial][Battlesnake.io]] competition
+  [[https://github.com/battlesnakeofficial][Battlesnake]] competition
+

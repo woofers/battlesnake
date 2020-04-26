@@ -4,6 +4,7 @@
 
 <img height="120" width="120" src="screenshots/advanced.png" />
 
+
 A simple [Battlesnake](https://play.battlesnake.com/) written in Java.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
@@ -106,6 +107,5 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 -   **Built by** [Jaxson Van Doorn](https://github.com/woofers) and [Ben Austin](https://github.com/austinben)
 -   **Adapted from** [tflinz's snake](https://github.com/tflinz/BasicBattleSnake2018)
 -   **Designed for** [Battlesnake.io](https://github.com/battlesnakeofficial) competition
-
 
 <img align="left" height="120" width="120" src="screenshots/advanced.png" />
