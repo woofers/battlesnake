@@ -106,6 +106,6 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 
 -   **Built by** [Jaxson Van Doorn](https://github.com/woofers) and [Ben Austin](https://github.com/austinben)
 -   **Adapted from** [tflinz's snake](https://github.com/tflinz/BasicBattleSnake2018)
--   **Designed for** [Battlesnake.io](https://github.com/battlesnakeofficial) competition
+-   **Designed for** [Battlesnake](https://github.com/battlesnakeofficial) competition
 
 <img align="left" height="120" width="120" src="screenshots/advanced.png" />
