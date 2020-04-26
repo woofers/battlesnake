@@ -4,13 +4,12 @@
 
 <img height="120" width="120" src="screenshots/advanced.png" />
 
-A simple [Battlesnake](https://www.battlesnake.io) written in Java.
 
-To be entered in the veteran division of the Battlesnake: Stay Home and Code online tournament as‏‏‎  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒.
+A simple [Battlesnake](https://play.battlesnake.com/) written in Java.
 
 Deployed to [https://battlesnake-liquid.herokuapp.com/](https://battlesnake-liquid.herokuapp.com/)
 
-Battlesnake documentation can be found at <https://docs.battlesnake.io>.
+Battlesnake documentation can be found at <https://docs.battlesnake.com/>.
 
 [![img](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
@@ -18,11 +17,37 @@ Battlesnake documentation can be found at <https://docs.battlesnake.io>.
 
 Variations of this snake have participated in multiple Battlesnake competitions.
 
-* To compete in the veteran division of Battlesnake: Stay Home and Code as  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒
+* Competed in the veteran division of Battlesnake: Stay Home and Code as  🚚🦴🐶 𝗪𝗔𝗟𝗧𝗘𝗥 👑 🚒
 
 * Competed in the expert division of Battlesnake 2019 & Battlesnake 2019 Winter Classic as  🐍 ‏‏‎𝙎𝙐𝙋𝙀𝙍 𝙎𝙇𝙄𝙈𝙀𝙔 ‏🐍 - [View Snake](https://github.com/woofers/battlesnake-2019/tree/battlesnake-2019)
 
 * Competed in the intermediate division Battlesnake 2018 as **Solid Snake** - [View Snake](https://github.com/woofers/battlesnake-2019/tree/battlesnake-2018)
+
+## Strategy
+
+Our snake's strategy was aggresive. For each turn, if the snake wasn't
+the largest on the board, or if the health was below a specific
+threshold, the snake would navigate towards the closest food. Otherwise,
+it would try to target the other snakes' heads to either eliminate the
+opponent in a head-on collision or trap them by cutting off their path.
+
+## Tournament - Stay Home and Code
+
+The snake beat six other competitors the second round of Group B to qualify for the Quaterfinals, where it was eliminated. There were 32
+competitors in the veteran division. Our games were played on a 11x11 board with 4 food spawned at start.
+
+Timestamp on the [BattlesnakeOfficial Twitch stream](https://www.twitch.tv/videos/602731416) is [2:16:32-2:25:35](https://www.twitch.tv/videos/602731416?t=02h16m32s) for Group B, and [4:04:08-4:15:18](https://www.twitch.tv/videos/602731416?t=04h04m08s) for Quaterfinals.
+
+**[Group B - Round 1](https://clips.twitch.tv/BeautifulCuteKleeResidentSleeper)**
+
+**[Group B - Round 2](https://clips.twitch.tv/CrackyElegantWaspPartyTime)**
+
+**[Quaterfinals - Round 1](https://clips.twitch.tv/WrongBitterDragonflyRitzMitz)**
+
+**[Quaterfinals - Round 2](https://clips.twitch.tv/PluckyElegantMouseEleGiggle)**
+
+**[Quaterfinals - Round 3](https://clips.twitch.tv/WanderingHonorableCurlewPeteZaroll)**
+
 
 ## Usage
 
@@ -81,7 +106,6 @@ Goto [play.battlesnake.io](https://play.battlesnake.io)
 
 -   **Built by** [Jaxson Van Doorn](https://github.com/woofers) and [Ben Austin](https://github.com/austinben)
 -   **Adapted from** [tflinz's snake](https://github.com/tflinz/BasicBattleSnake2018)
--   **Designed for** [Battlesnake.io](https://github.com/battlesnakeio) competition
-
+-   **Designed for** [Battlesnake Official's](https://github.com/battlesnakeofficial) competition
 
 <img align="left" height="120" width="120" src="screenshots/advanced.png" />
