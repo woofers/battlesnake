@@ -33,6 +33,50 @@ competitions.
   [[https://github.com/woofers/battlesnake-2019/tree/battlesnake-2018][View
   Snake]]
 
+** Strategy
+   :PROPERTIES:
+   :CUSTOM_ID: strategy
+   :END:
+
+Our snake's strategy was aggresive. For each turn, if the snake wasn't
+the largest on the board, or if the health was below a specific
+threshold, the snake would navigate towards the closest food. Otherwise,
+it would try to target the other snakes' heads to either eliminate the
+opponent in a head-on collision or trap them by cutting off their path.
+
+** Tournament - Stay Home and Code
+   :PROPERTIES:
+   :CUSTOM_ID: tournament---stay-home-and-code
+   :END:
+
+The snake beat six other competitors the second round of Group B to
+qualify for the Quaterfinals, where it was eliminated. There were 32
+competitors in the veteran division. Our games were played on a 11x11
+board with 4 food spawned at start.
+
+Timestamp on the
+[[https://www.twitch.tv/videos/602731416][BattlesnakeOfficial Twitch
+stream]] is
+[[https://www.twitch.tv/videos/602731416?t=02h16m32s][2:16:32-2:25:35]]
+for Group B, and
+[[https://www.twitch.tv/videos/602731416?t=04h04m08s][4:04:08-4:15:18]]
+for Quaterfinals.
+
+*[[https://clips.twitch.tv/BeautifulCuteKleeResidentSleeper][Group B -
+Round 1]]*
+
+*[[https://clips.twitch.tv/CrackyElegantWaspPartyTime][Group B - Round
+2]]*
+
+*[[https://clips.twitch.tv/WrongBitterDragonflyRitzMitz][Quaterfinals -
+Round 1]]*
+
+*[[https://clips.twitch.tv/PluckyElegantMouseEleGiggle][Quaterfinals -
+Round 2]]*
+
+*[[https://clips.twitch.tv/WanderingHonorableCurlewPeteZaroll][Quaterfinals -
+Round 3]]*
+
 ** Usage
    :PROPERTIES:
    :CUSTOM_ID: usage
@@ -116,5 +160,5 @@ Goto [[https://play.battlesnake.io][play.battlesnake.io]]
   [[https://github.com/austinben][Ben Austin]]
 - *Adapted from*
   [[https://github.com/tflinz/BasicBattleSnake2018][tflinz's snake]]
-- *Designed for* [[https://github.com/battlesnakeio][Battlesnake.io]]
-  competition
+- *Designed for*
+  [[https://github.com/battlesnakeofficial][Battlesnake.io]] competition
