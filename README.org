@@ -160,5 +160,5 @@ Goto [[https://play.battlesnake.io][play.battlesnake.io]]
   [[https://github.com/austinben][Ben Austin]]
 - *Adapted from*
   [[https://github.com/tflinz/BasicBattleSnake2018][tflinz's snake]]
-- *Designed for* [[https://github.com/battlesnakeofficial][Battlesnake]]
-  competition
+- *Designed for* [[https://github.com/battlesnakeofficial][Battlesnake
+  Official's]] competition
